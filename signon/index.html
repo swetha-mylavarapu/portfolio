@@ -1,0 +1,17150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>window.addEventListener('DOMContentLoaded', function () {
+    for (var ls = document.links, numLinks = ls.length, i=0; i<numLinks; i++){
+        var currLink = ls[i].href;
+        if (currLink.startsWith("anima://")) {
+            ls[i].href = currLink.replace("anima://", "/");
+            console.log(ls[i].href);
+        } else if (currLink.startsWith("http")) {
+            ls[i].href = "/" + currLink;
+            console.log(ls[i].href);
+        }
+    }
+});
+
+</script>   
+    <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=1366, maximum-scale=1.0"/>
+    
+        <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png"/>
+    
+    
+        <style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600');
+
+* {
+
+box-sizing: border-box;
+}
+.align-self-flex-center {
+
+align-self: flex-center;
+}
+.align-self-flex-end {
+
+align-self: flex-end;
+}
+.align-self-flex-start {
+
+align-self: flex-start;
+}
+.animate-nodelay {
+
+animation-delay: 0s;
+}
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+
+opacity: 1;
+}
+.auto-animated div {
+
+opacity: 0;
+position: absolute;
+--z-index: -1;
+}
+.component-wrapper * {
+
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+pointer-events: none
+}
+.component-wrapper a {
+
+text-decoration: none;
+display: contents;
+pointer-events: auto
+}
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+
+pointer-events: auto;
+}
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+
+visibility: hidden !important;
+}
+.container-center-horizontal {
+
+pointer-events: none;
+display: flex;
+flex-direction: row;
+justify-content: center;
+width: 100%;
+}
+.container-center-horizontal > * {
+
+pointer-events: auto;
+flex-shrink: 0;
+}
+.container-center-vertical {
+
+pointer-events: none;
+display: flex;
+flex-direction: row;
+align-items: center;
+height: 100%;
+}
+.container-center-vertical > * {
+
+pointer-events: auto;
+flex-shrink: 0;
+}
+.full-height-a {
+
+height: 100%;
+}
+.full-width-a {
+
+width: 100%;
+}
+.hidden,
+.hidden * {
+
+visibility: hidden;
+pointer-events: none;
+}
+.listeners-active,
+.listeners-active * {
+
+pointer-events: auto;
+}
+.listeners-active-click,
+.listeners-active-click * {
+
+cursor: pointer;
+}
+.overlay {
+
+position: absolute;
+opacity: 0;
+display: none;
+top: 0;
+width: 100%;
+height: 100%;
+position: fixed;
+}
+.overlay.animate-appear {
+
+opacity: 0;
+display: block;
+animation: reveal 0.3s ease-in-out 1 normal forwards;
+}
+.overlay.animate-disappear {
+
+opacity: 1;
+display: block;
+animation: reveal 0.3s ease-in-out 1 reverse forwards;
+}
+.screen * {
+
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+}
+.screen a {
+
+text-decoration: none;
+display: contents;
+}
+.screen div {
+
+-webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+
+outline: none;
+}
+.smart-layers-pointers,
+.smart-layers-pointers * {
+
+pointer-events: auto;
+visibility: visible;
+}
+.valign-text-bottom {
+
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+.valign-text-middle {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+@keyframes reveal {
+
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+input:focus {
+
+outline: none;
+}
+
+:root {
+  --black: #000000;
+  --blue: #2e5bff;
+  --blue-gem: #3100a8;
+  --midnight-moss: #030f09;
+  --monte-carlo: #79cecf;
+  --mountain-mist: #969696;
+  --seagull: #87d2f2;
+  --sonic-silver: #717474;
+  --sonic-silver-2: #737171;
+  --white: #ffffff;
+  --zircon: #f5fbff;
+
+  --font-size-l: 24px;
+  --font-size-m: 20px;
+  --font-size-s: 16px;
+  --font-size-xl: 26px;
+  --font-size-xs: 14px;
+  --font-size-xxl: 32px;
+  --font-size-xxxl: 35px;
+  --font-size-xxxxl: 36px;
+  --font-size-xxxxxl: 40px;
+  --font-size-xxxxxxl: 100px;
+  --font-size-xxxxxxxl: 250px;
+
+  --font-family-avenir-black: "Avenir-Black", Helvetica;
+  --font-family-avenir-medium: "Avenir-Medium", Helvetica;
+  --font-family-poppins: "Poppins", Helvetica;
+}
+.poppins-medium-blue-14px {
+  color: var(--blue);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-medium-white-16px {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-normal-sonic-silver-14px {
+  color: var(--sonic-silver);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-medium-midnight-moss-24px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-normal-sonic-silver-20px {
+  color: var(--sonic-silver-2);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-normal-midnight-moss-20px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-medium-midnight-moss-36px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-normal-midnight-moss-24px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-normal-sonic-silver-16px {
+  color: var(--sonic-silver-2);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-medium-black-16px {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-normal-black-32px {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-medium-midnight-moss-20px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-medium-black-20px {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-normal-white-32px {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-medium-blue-gem-26px {
+  color: var(--blue-gem);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-medium-blue-36px {
+  color: var(--blue);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-semi-bold-midnight-moss-36px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 600;
+}
+.border-1px-mountain-mist {
+  border: 1px solid var(--mountain-mist);
+}
+.border-2px-blue {
+  border: 2px solid var(--blue);
+}
+.border-2px-monte-carlo {
+  border: 2px solid var(--monte-carlo);
+}
+
+/* screen - desktophdcopy */
+
+.desktophdcopy {
+  background-color: var(--white);
+  height: 13874px;
+  overflow-x: hidden;
+  position: relative;
+  width: 1366px;
+}
+.desktophdcopy .a-KOsP6k {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxxxxl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 152px;
+  letter-spacing: 0.00px;
+  line-height: 376px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .a-aoJpZk {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxxxxl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 376px;
+  position: absolute;
+  text-align: left;
+  top: 9px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .a-digital-employee-c-3cZhlu {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-avenir-medium);
+  font-size: var(--font-size-xxxl);
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 127px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .add-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 994px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 32px;
+}
+.desktophdcopy .add-recipe-E582nk {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 977px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 101px;
+}
+.desktophdcopy .add-recipe-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 96px;
+}
+.desktophdcopy .age-26-vUOK69 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 325px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 270px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .age-36-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 944px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 4375px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .alerts-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 96px;
+}
+.desktophdcopy .anurag-loves-the-lo-vUOK69 {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 775px;
+  letter-spacing: 0.00px;
+  line-height: 28px;
+  position: absolute;
+  text-align: left;
+  top: 433px;
+  width: 468px;
+}
+.desktophdcopy .as-a-part-of-user-re-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 91px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 2670px;
+  width: 1150px;
+}
+.desktophdcopy .before-moving-onto-v-hvAGCq {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 77px;
+  width: 1145px;
+}
+.desktophdcopy .before-moving-onto-v-kK8Vvv {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 77px;
+  width: 1145px;
+}
+.desktophdcopy .bitmap-4VPhGS {
+  background-color: transparent;
+  height: 41px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 41px;
+}
+.desktophdcopy .bitmap-C61RwL {
+  background-color: transparent;
+  height: 499px;
+  left: -62px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+.desktophdcopy .bitmap-KztIp7 {
+  background-color: transparent;
+  height: 828px;
+  left: 290px;
+  position: absolute;
+  top: 132px;
+  width: 384px;
+}
+.desktophdcopy .bitmap-VMr6Om {
+  background-color: transparent;
+  height: 697px;
+  left: 521px;
+  position: absolute;
+  top: 979px;
+  width: 323px;
+}
+.desktophdcopy .bitmap-bitmap-mask-C61RwL {
+  background-color: transparent;
+  height: 444px;
+  left: 46px;
+  overflow: hidden;
+  position: absolute;
+  top: 55px;
+  width: 772px;
+}
+.desktophdcopy .bitmap-copy-OQytzO {
+  background-color: transparent;
+  height: 162px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 162px;
+}
+.desktophdcopy .bitmap-copy-vUOK69 {
+  background-color: transparent;
+  height: 162px;
+  left: 730px;
+  position: absolute;
+  top: 210px;
+  width: 162px;
+}
+.desktophdcopy .bitmap-ebBR7z {
+  background-color: transparent;
+  height: 41px;
+  left: 211px;
+  position: absolute;
+  top: 452px;
+  width: 41px;
+}
+.desktophdcopy .bitmap-mL5uCc {
+  background-color: transparent;
+  height: 162px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 162px;
+}
+.desktophdcopy .bitmap-mzXdH9 {
+  background-color: transparent;
+  height: 697px;
+  left: 521px;
+  position: absolute;
+  top: 979px;
+  width: 323px;
+}
+.desktophdcopy .bitmap-pHrE4w {
+  background-color: transparent;
+  height: 935px;
+  left: 48px;
+  position: absolute;
+  top: 25px;
+  width: 434px;
+}
+.desktophdcopy .bitmap-vUOK69 {
+  background-color: transparent;
+  height: 162px;
+  left: 112px;
+  position: absolute;
+  top: 211px;
+  width: 162px;
+}
+.desktophdcopy .boring-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2276px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .button-C61RwL {
+  background-color: transparent;
+  height: 74px;
+  left: 143px;
+  position: absolute;
+  top: 11367px;
+  width: 309px;
+}
+.desktophdcopy .button-QxM5SU {
+  background-color: transparent;
+  color: #a4a4a4;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 1035px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 11381px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .button-VMr6Om {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 245px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 11381px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .button-background-C61RwL {
+  background-color: var(--white);
+  border: 3px solid var(--blue);
+  border-radius: 8px;
+  height: 74px;
+  left: 538px;
+  position: absolute;
+  top: 11367px;
+  width: 309px;
+}
+.desktophdcopy .button-background-VMr6Om {
+  background-color: #e9e9e9;
+  border-radius: 8px;
+  height: 74px;
+  left: 933px;
+  position: absolute;
+  top: 11367px;
+  width: 309px;
+}
+.desktophdcopy .button-background-v2YC4H {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 74px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 309px;
+}
+.desktophdcopy .button-group-xHxYv9 {
+  background-color: transparent;
+  box-shadow: 0px 6px 20px #0c331f1a;
+  height: 74px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 309px;
+}
+.desktophdcopy .button-mzXdH9 {
+  background-color: transparent;
+  color: var(--blue);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 640px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 11381px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .cafeteria-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 356px;
+  white-space: nowrap;
+  width: 82px;
+}
+.desktophdcopy .challenge-1-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 120px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 11722px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .challenge-2-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 721px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 12456px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .challenge-3-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 120px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 13108px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .challenges-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 743px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 578px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .change-password-DV4Irz {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 87px;
+  white-space: nowrap;
+  width: 135px;
+}
+.desktophdcopy .change-password-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 732px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 489px;
+  white-space: nowrap;
+  width: 135px;
+}
+.desktophdcopy .channels-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 237px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 170px;
+  white-space: nowrap;
+  width: 178px;
+}
+.desktophdcopy .chat-bot-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 742px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 301px;
+  white-space: nowrap;
+  width: 101px;
+}
+.desktophdcopy .chat-box-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 270px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 267px;
+  width: 94px;
+}
+.desktophdcopy .child-care-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 386px;
+  white-space: nowrap;
+  width: 141px;
+}
+.desktophdcopy .clear-information-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 788px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2279px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .company-1-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 91px;
+  letter-spacing: 0.00px;
+  line-height: 39px;
+  position: absolute;
+  text-align: left;
+  top: 2806px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .company-2-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 91px;
+  letter-spacing: 0.00px;
+  line-height: 39px;
+  position: absolute;
+  text-align: left;
+  top: 3046px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .company-3-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 91px;
+  letter-spacing: 0.00px;
+  line-height: 39px;
+  position: absolute;
+  text-align: left;
+  top: 3326px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .configured-laptop-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 91px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 3095px;
+  width: 1150px;
+}
+.desktophdcopy .could-be-more-intera-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2349px;
+  width: auto;
+}
+.desktophdcopy .digital-companion-C61RwL {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 121px;
+  letter-spacing: 0.00px;
+  line-height: 47px;
+  position: absolute;
+  text-align: left;
+  top: 13222px;
+  width: 562px;
+}
+.desktophdcopy .disabled-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 938px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 11302px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .e0-e7-ff-zUixHA {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 1016px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 511px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .e9-e9-e9-zUixHA {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 839px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 258px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .edit-profile-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 245px;
+  white-space: nowrap;
+  width: 87px;
+}
+.desktophdcopy .edit-profile-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 332px;
+  white-space: nowrap;
+  width: 147px;
+}
+.desktophdcopy .edit-recipe-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 970px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 94px;
+}
+.desktophdcopy .email-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 242px;
+  white-space: nowrap;
+  width: 42px;
+}
+.desktophdcopy .employees-get-a-lot-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 120px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 11917px;
+  width: 576px;
+}
+.desktophdcopy .employees-get-a-lot-VMr6Om {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 720px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 12651px;
+  width: 576px;
+}
+.desktophdcopy .employees-often-when-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 121px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 13303px;
+  width: 576px;
+}
+.desktophdcopy .feed-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 289px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 42px;
+}
+.desktophdcopy .ffffff-zUixHA {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 532px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 189px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .fill-118-zUixHA {
+  background-color: transparent;
+  height: 11px;
+  left: 1216px;
+  position: absolute;
+  top: 2px;
+  width: 11px;
+}
+.desktophdcopy .fill-120-C61RwL {
+  background-color: transparent;
+  height: 118px;
+  left: 99px;
+  position: absolute;
+  top: 10583px;
+  width: 328px;
+}
+.desktophdcopy .fill-120-VMr6Om {
+  background-color: transparent;
+  height: 118px;
+  left: 571px;
+  position: absolute;
+  top: 10583px;
+  width: 328px;
+}
+.desktophdcopy .fill-121-C61RwL {
+  background-color: transparent;
+  height: 20px;
+  left: 185px;
+  position: absolute;
+  top: 10700px;
+  width: 214px;
+}
+.desktophdcopy .fill-121-VMr6Om {
+  background-color: transparent;
+  height: 20px;
+  left: 657px;
+  position: absolute;
+  top: 10700px;
+  width: 214px;
+}
+.desktophdcopy .fill-126-zUixHA {
+  background-color: transparent;
+  height: 2px;
+  left: 1227px;
+  position: absolute;
+  top: 0px;
+  width: 2px;
+}
+.desktophdcopy .filter-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 332px;
+  white-space: nowrap;
+  width: 36px;
+}
+.desktophdcopy .followers-E582nk {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 268px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 511px;
+  white-space: nowrap;
+  width: 113px;
+}
+.desktophdcopy .followers-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 302px;
+  white-space: nowrap;
+  width: 78px;
+}
+.desktophdcopy .for-our-research-pro-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 1961px;
+  width: 1150px;
+}
+.desktophdcopy .forums-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 1022px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 239px;
+  white-space: nowrap;
+  width: 125px;
+}
+.desktophdcopy .gallery-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 970px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 245px;
+  white-space: nowrap;
+  width: 60px;
+}
+.desktophdcopy .group-10-XSCsvl {
+  background-color: transparent;
+  height: 186px;
+  left: 649px;
+  position: absolute;
+  top: 437px;
+  width: 205px;
+}
+.desktophdcopy .group-11-C61RwL {
+  background-color: transparent;
+  height: 429px;
+  left: 792px;
+  position: absolute;
+  top: 6793px;
+  width: 196px;
+}
+.desktophdcopy .group-12-C61RwL {
+  background-color: transparent;
+  height: 429px;
+  left: 555px;
+  position: absolute;
+  top: 6793px;
+  width: 177px;
+}
+.desktophdcopy .group-13-C61RwL {
+  background-color: transparent;
+  height: 429px;
+  left: 319px;
+  position: absolute;
+  top: 6793px;
+  width: 176px;
+}
+.desktophdcopy .group-14-C61RwL {
+  background-color: transparent;
+  height: 429px;
+  left: 1047px;
+  position: absolute;
+  top: 6329px;
+  width: 175px;
+}
+.desktophdcopy .group-15-C61RwL {
+  background-color: transparent;
+  height: 432px;
+  left: 812px;
+  position: absolute;
+  top: 6329px;
+  width: 176px;
+}
+.desktophdcopy .group-16-C61RwL {
+  background-color: transparent;
+  height: 979px;
+  left: 0px;
+  position: absolute;
+  top: 4105px;
+  width: 1366px;
+}
+.desktophdcopy .group-17-C61RwL {
+  background-color: transparent;
+  height: 368px;
+  left: 107px;
+  position: absolute;
+  top: 3613px;
+  width: 1150px;
+}
+.desktophdcopy .group-18-B2GfxI {
+  background-color: transparent;
+  height: 184px;
+  left: 0px;
+  position: absolute;
+  top: 184px;
+  width: 1080px;
+}
+.desktophdcopy .group-19-C61RwL {
+  background-color: transparent;
+  height: 600px;
+  left: 890px;
+  position: absolute;
+  top: 13030px;
+  width: 278px;
+}
+.desktophdcopy .group-2-C61RwL {
+  background-color: transparent;
+  height: 759px;
+  left: 67px;
+  position: absolute;
+  top: 10436px;
+  width: 1229px;
+}
+.desktophdcopy .group-20-ebBR7z {
+  background-color: transparent;
+  height: 213px;
+  left: 30px;
+  position: absolute;
+  top: 239px;
+  width: 228px;
+}
+.desktophdcopy .group-3-C61RwL {
+  background-color: transparent;
+  height: 198px;
+  left: 107px;
+  position: absolute;
+  top: 6106px;
+  width: 1145px;
+}
+.desktophdcopy .group-3-copy-C61RwL {
+  background-color: transparent;
+  height: 198px;
+  left: 107px;
+  position: absolute;
+  top: 7379px;
+  width: 1145px;
+}
+.desktophdcopy .group-3-copy-VMr6Om {
+  background-color: transparent;
+  height: 198px;
+  left: 97px;
+  position: absolute;
+  top: 9904px;
+  width: 1145px;
+}
+.desktophdcopy .group-4-C61RwL {
+  background-color: transparent;
+  height: 360px;
+  left: 849px;
+  position: absolute;
+  top: 10052px;
+  width: 321px;
+}
+.desktophdcopy .group-5-C61RwL {
+  background-color: transparent;
+  height: 389px;
+  left: 107px;
+  position: absolute;
+  top: 6329px;
+  width: 177px;
+}
+.desktophdcopy .group-6-C61RwL {
+  background-color: transparent;
+  height: 434px;
+  left: 343px;
+  position: absolute;
+  top: 6329px;
+  width: 177px;
+}
+.desktophdcopy .group-7-C61RwL {
+  background-color: transparent;
+  height: 429px;
+  left: 579px;
+  position: absolute;
+  top: 6329px;
+  width: 175px;
+}
+.desktophdcopy .group-8-C61RwL {
+  background-color: transparent;
+  height: 175px;
+  left: 809px;
+  position: absolute;
+  top: 190px;
+  width: 499px;
+}
+.desktophdcopy .group-9-C61RwL {
+  background-color: transparent;
+  height: 95px;
+  left: 1059px;
+  position: absolute;
+  top: 208px;
+  width: 95px;
+}
+.desktophdcopy .group-9-VMr6Om {
+  background-color: transparent;
+  height: 201px;
+  left: 284px;
+  position: absolute;
+  top: 2194px;
+  width: 170px;
+}
+.desktophdcopy .group-9-mzXdH9 {
+  background-color: transparent;
+  height: 201px;
+  left: 995px;
+  position: absolute;
+  top: 2194px;
+  width: 277px;
+}
+.desktophdcopy .group-C61RwL {
+  background-color: transparent;
+  height: 588px;
+  left: 1661px;
+  position: absolute;
+  top: 4225px;
+  width: 1132px;
+}
+.desktophdcopy .group-VMr6Om {
+  background-color: transparent;
+  height: 623px;
+  left: 107px;
+  position: absolute;
+  top: 5287px;
+  width: 1183px;
+}
+.desktophdcopy .group-messages-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 1022px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 213px;
+  white-space: nowrap;
+  width: 125px;
+}
+.desktophdcopy .help-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 96px;
+}
+.desktophdcopy .how-was-the-orientat-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 2093px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .how-was-the-orientat-VMr6Om {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 788px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 2093px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .icebreaker-session-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 91px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 2855px;
+  width: 566px;
+}
+.desktophdcopy .in-order-make-our-wo-FnxWB8 {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 77px;
+  width: 1145px;
+}
+.desktophdcopy .information-architec-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 5192px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .ingredients-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 970px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 273px;
+  white-space: nowrap;
+  width: 96px;
+}
+.desktophdcopy .interactive-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2197px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .it-support-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 443px;
+  white-space: nowrap;
+  width: 141px;
+}
+.desktophdcopy .less-information-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 788px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2352px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .library-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 416px;
+  white-space: nowrap;
+  width: 141px;
+}
+.desktophdcopy .list-new-employees-xQ6VrF {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 51px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 106px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .log-out-DV4Irz {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: 71px;
+}
+.desktophdcopy .log-out-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 732px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 461px;
+  white-space: nowrap;
+  width: 71px;
+}
+.desktophdcopy .login-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 39px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: right;
+  top: 58px;
+  white-space: nowrap;
+  width: 42px;
+}
+.desktophdcopy .login-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 58px;
+  white-space: nowrap;
+  width: 42px;
+}
+.desktophdcopy .mask-GoEWZg {
+  background-color: transparent;
+  height: 499px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+.desktophdcopy .mask-KztIp7 {
+  background-color: transparent;
+  height: 444px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 772px;
+}
+.desktophdcopy .messaging-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 1021px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 167px;
+  white-space: nowrap;
+  width: 125px;
+}
+.desktophdcopy .most-important-findi-xQ6VrF {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .my-profile-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 730px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 101px;
+}
+.desktophdcopy .name-anurag-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 944px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 4324px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .name-sirisha-vUOK69 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 325px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 219px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .new-employees-should-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 651px;
+  width: 514px;
+}
+.desktophdcopy .noise-texture-dark-C61RwL {
+  background-color: transparent;
+  height: 499px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+.desktophdcopy .notification-setting-DV4Irz {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 144px;
+  white-space: nowrap;
+  width: 142px;
+}
+.desktophdcopy .notification-setting-E582nk {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 268px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 538px;
+  white-space: nowrap;
+  width: 132px;
+}
+.desktophdcopy .notification-setting-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 732px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 546px;
+  white-space: nowrap;
+  width: 142px;
+}
+.desktophdcopy .notifications-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 732px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 170px;
+  white-space: nowrap;
+  width: 125px;
+}
+.desktophdcopy .ocupation-app-devel-vUOK69 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 325px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 321px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .ocupation-developer-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 944px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 4426px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .onboarding-session-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 91px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 3375px;
+  width: 1150px;
+}
+.desktophdcopy .other-profiles-E582nk {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 250px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 414px;
+  white-space: nowrap;
+  width: 141px;
+}
+.desktophdcopy .other-profiles-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 273px;
+  white-space: nowrap;
+  width: 97px;
+}
+.desktophdcopy .oval-0qXeXf {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.desktophdcopy .oval-10KR2y {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 279px;
+  width: 8px;
+}
+.desktophdcopy .oval-1RbjJS {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 1001px;
+  position: absolute;
+  top: 219px;
+  width: 8px;
+}
+.desktophdcopy .oval-1n9Xo5 {
+  background-color: var(--monte-carlo);
+  border-radius: 7px;
+  height: 7px;
+  left: 248px;
+  position: absolute;
+  top: 463px;
+  width: 7px;
+}
+.desktophdcopy .oval-2E3Rx7 {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 306px;
+  width: 8px;
+}
+.desktophdcopy .oval-4jLlkI {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 276px;
+  width: 8px;
+}
+.desktophdcopy .oval-5Um2Np {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 249px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.desktophdcopy .oval-6TXaq6 {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 22px;
+  position: absolute;
+  top: 150px;
+  width: 8px;
+}
+.desktophdcopy .oval-87Ncb6 {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 307px;
+  width: 8px;
+}
+.desktophdcopy .oval-935aTa {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 949px;
+  position: absolute;
+  top: 250px;
+  width: 8px;
+}
+.desktophdcopy .oval-9dtg3L {
+  background-color: transparent;
+  border: 12px solid var(--white);
+  border-radius: 95px;
+  height: 95px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 95px;
+}
+.desktophdcopy .oval-A0xXPm {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 449px;
+  width: 8px;
+}
+.desktophdcopy .oval-B0a7gX {
+  background-color: var(--monte-carlo);
+  border-radius: 7px;
+  height: 7px;
+  left: 248px;
+  position: absolute;
+  top: 516px;
+  width: 7px;
+}
+.desktophdcopy .oval-C61RwL {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 356px;
+  position: absolute;
+  top: 5794px;
+  width: 8px;
+}
+.desktophdcopy .oval-CFmTVx {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 249px;
+  position: absolute;
+  top: 247px;
+  width: 8px;
+}
+.desktophdcopy .oval-DV4Irz {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 22px;
+  position: absolute;
+  top: 64px;
+  width: 8px;
+}
+.desktophdcopy .oval-E582nk {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 90px;
+  width: 8px;
+}
+.desktophdcopy .oval-GE0XEQ {
+  background-color: #e8e8e8;
+  border-radius: 207px;
+  height: 207px;
+  left: 804px;
+  position: absolute;
+  top: 177px;
+  width: 207px;
+}
+.desktophdcopy .oval-IxEnRr {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.desktophdcopy .oval-JxQPVm {
+  background-color: var(--monte-carlo);
+  border-radius: 7px;
+  height: 7px;
+  left: 248px;
+  position: absolute;
+  top: 543px;
+  width: 7px;
+}
+.desktophdcopy .oval-KhVtzg {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 307px;
+  width: 8px;
+}
+.desktophdcopy .oval-N6wehN {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 366px;
+  width: 8px;
+}
+.desktophdcopy .oval-N9dAOH {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 248px;
+  width: 8px;
+}
+.desktophdcopy .oval-NOXmfT {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 64px;
+  width: 8px;
+}
+.desktophdcopy .oval-NxlUOU {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 711px;
+  position: absolute;
+  top: 523px;
+  width: 8px;
+}
+.desktophdcopy .oval-OJs9Oe {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 1001px;
+  position: absolute;
+  top: 245px;
+  width: 8px;
+}
+.desktophdcopy .oval-ObIvdc {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 22px;
+  position: absolute;
+  top: 121px;
+  width: 8px;
+}
+.desktophdcopy .oval-PIZntI {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 949px;
+  position: absolute;
+  top: 279px;
+  width: 8px;
+}
+.desktophdcopy .oval-Pj2bid {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 279px;
+  width: 8px;
+}
+.desktophdcopy .oval-RYy1WS {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 362px;
+  width: 8px;
+}
+.desktophdcopy .oval-Sf5MCN {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 337px;
+  width: 8px;
+}
+.desktophdcopy .oval-VMr6Om {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 356px;
+  position: absolute;
+  top: 5819px;
+  width: 8px;
+}
+.desktophdcopy .oval-VWPIkS {
+  background-color: transparent;
+  border: 5px solid var(--blue);
+  border-radius: 171px;
+  height: 171px;
+  left: 726px;
+  position: absolute;
+  top: 206px;
+  width: 171px;
+}
+.desktophdcopy .oval-VrYlAT {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 248px;
+  width: 8px;
+}
+.desktophdcopy .oval-Wh5CmH {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 336px;
+  width: 8px;
+}
+.desktophdcopy .oval-XNq8nV {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 250px;
+  width: 8px;
+}
+.desktophdcopy .oval-XSCsvl {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 64px;
+  width: 8px;
+}
+.desktophdcopy .oval-Z0i9ih {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 353px;
+  width: 8px;
+}
+.desktophdcopy .oval-ZH4vOj {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 250px;
+  width: 8px;
+}
+.desktophdcopy .oval-ZTOnhR {
+  background-color: #e0e7ff;
+  border-radius: 245px;
+  height: 245px;
+  left: 966px;
+  position: absolute;
+  top: 411px;
+  width: 245px;
+}
+.desktophdcopy .oval-fWH2tV {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 249px;
+  position: absolute;
+  top: 273px;
+  width: 8px;
+}
+.desktophdcopy .oval-hxlH3w {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 422px;
+  width: 8px;
+}
+.desktophdcopy .oval-iMAlWq {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.desktophdcopy .oval-jFiEvx {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 22px;
+  position: absolute;
+  top: 93px;
+  width: 8px;
+}
+.desktophdcopy .oval-jsbgv1 {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 249px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.desktophdcopy .oval-kGFtrF {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.desktophdcopy .oval-kTiyrb {
+  background-color: var(--white);
+  border-radius: 337px;
+  height: 337px;
+  left: 549px;
+  position: absolute;
+  top: 422px;
+  width: 337px;
+}
+.desktophdcopy .oval-mOLTFT {
+  background-color: var(--monte-carlo);
+  border-radius: 7px;
+  height: 7px;
+  left: 248px;
+  position: absolute;
+  top: 490px;
+  width: 7px;
+}
+.desktophdcopy .oval-mzXdH9 {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 356px;
+  position: absolute;
+  top: 5845px;
+  width: 8px;
+}
+.desktophdcopy .oval-nUNztg {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 949px;
+  position: absolute;
+  top: 307px;
+  width: 8px;
+}
+.desktophdcopy .oval-nbyLeh {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 392px;
+  width: 8px;
+}
+.desktophdcopy .oval-nzgatl {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.desktophdcopy .oval-odhd3Z {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 711px;
+  position: absolute;
+  top: 495px;
+  width: 8px;
+}
+.desktophdcopy .oval-pO6V4x {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 307px;
+  width: 8px;
+}
+.desktophdcopy .oval-q26NeC {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 711px;
+  position: absolute;
+  top: 466px;
+  width: 8px;
+}
+.desktophdcopy .oval-qFbsfk {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 949px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.desktophdcopy .oval-s2JxyW {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 337px;
+  width: 8px;
+}
+.desktophdcopy .oval-sdxwGy {
+  background-color: #151414;
+  border-radius: 289px;
+  height: 289px;
+  left: 449px;
+  position: absolute;
+  top: 67px;
+  width: 289px;
+}
+.desktophdcopy .oval-uLiLDx {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 90px;
+  width: 8px;
+}
+.desktophdcopy .oval-uojbMS {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 250px;
+  width: 8px;
+}
+.desktophdcopy .oval-vUOK69 {
+  background-color: transparent;
+  border: 5px solid var(--blue);
+  border-radius: 171px;
+  height: 171px;
+  left: 107px;
+  position: absolute;
+  top: 206px;
+  width: 171px;
+}
+.desktophdcopy .oval-wynS9M {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 711px;
+  position: absolute;
+  top: 552px;
+  width: 8px;
+}
+.desktophdcopy .oval-x1xxgM {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.desktophdcopy .oval-xvSYm3 {
+  background-color: var(--blue);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 334px;
+  width: 8px;
+}
+.desktophdcopy .oval-yfnr7g {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 279px;
+  width: 8px;
+}
+.desktophdcopy .oval-zUixHA {
+  background-color: var(--blue);
+  border-radius: 437px;
+  height: 437px;
+  left: 0px;
+  position: absolute;
+  top: 226px;
+  width: 437px;
+}
+.desktophdcopy .pain-points-faced-is-vUOK69 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 775px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 586px;
+  width: 527px;
+}
+.desktophdcopy .pain-points-no-clari-vUOK69 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 156px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 586px;
+  width: 527px;
+}
+.desktophdcopy .path-23-C61RwL {
+  background-color: transparent;
+  height: 59px;
+  left: 428px;
+  position: absolute;
+  top: 5386px;
+  width: 761px;
+}
+.desktophdcopy .path-3-7arjzY {
+  background-color: transparent;
+  height: 201px;
+  left: 0px;
+  opacity: 0.52;
+  position: absolute;
+  top: 0px;
+  width: 2px;
+}
+.desktophdcopy .path-3-ufhbXJ {
+  background-color: transparent;
+  height: 201px;
+  left: 0px;
+  opacity: 0.52;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+.desktophdcopy .path-4-9dtg3L {
+  background-color: transparent;
+  height: 5px;
+  left: 29px;
+  position: absolute;
+  top: 45px;
+  width: 37px;
+}
+.desktophdcopy .path-5-9dtg3L {
+  background-color: transparent;
+  height: 28px;
+  left: 54px;
+  position: absolute;
+  top: 34px;
+  width: 14px;
+}
+.desktophdcopy .path-6-JjeIqM {
+  background-color: transparent;
+  height: 21px;
+  left: 0px;
+  position: absolute;
+  top: 158px;
+  width: 10px;
+}
+.desktophdcopy .path-6-muq34s {
+  background-color: transparent;
+  height: 21px;
+  left: 0px;
+  position: absolute;
+  top: 108px;
+  width: 10px;
+}
+.desktophdcopy .path-6-xQ6VrF {
+  background-color: transparent;
+  height: 21px;
+  left: 0px;
+  position: absolute;
+  top: 61px;
+  width: 10px;
+}
+.desktophdcopy .path-8-2E3Rx7 {
+  background-color: transparent;
+  height: 38px;
+  left: 672px;
+  position: absolute;
+  top: 338px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.desktophdcopy .path-8-4jLlkI {
+  background-color: transparent;
+  height: 38px;
+  left: 672px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.desktophdcopy .path-8-E582nk {
+  background-color: transparent;
+  height: 38px;
+  left: 790px;
+  position: absolute;
+  top: 366px;
+  width: 3px;
+}
+.desktophdcopy .path-8-IxEnRr {
+  background-color: transparent;
+  height: 38px;
+  left: 909px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.desktophdcopy .path-8-N9dAOH {
+  background-color: transparent;
+  height: 38px;
+  left: 433px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.desktophdcopy .path-8-NOXmfT {
+  background-color: transparent;
+  height: 38px;
+  left: 94px;
+  position: absolute;
+  top: 120px;
+  width: 3px;
+}
+.desktophdcopy .path-8-VrYlAT {
+  background-color: transparent;
+  height: 38px;
+  left: 433px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.desktophdcopy .path-8-XSCsvl {
+  background-color: transparent;
+  height: 38px;
+  left: 94px;
+  position: absolute;
+  top: 120px;
+  width: 3px;
+}
+.desktophdcopy .path-8-iMAlWq {
+  background-color: transparent;
+  height: 38px;
+  left: 206px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.desktophdcopy .path-8-jsbgv1 {
+  background-color: transparent;
+  height: 38px;
+  left: 672px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.desktophdcopy .path-8-uLiLDx {
+  background-color: transparent;
+  height: 128px;
+  left: 553px;
+  position: absolute;
+  top: 403px;
+  width: 94px;
+}
+.desktophdcopy .path-8-uojbMS {
+  background-color: transparent;
+  height: 126px;
+  left: 322px;
+  position: absolute;
+  top: 279px;
+  width: 3px;
+}
+.desktophdcopy .path-8-x1xxgM {
+  background-color: transparent;
+  height: 38px;
+  left: 206px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.desktophdcopy .path-9-NOXmfT {
+  background-color: transparent;
+  height: 133px;
+  left: 418px;
+  position: absolute;
+  top: 365px;
+  width: 139px;
+}
+.desktophdcopy .path-9-XSCsvl {
+  background-color: transparent;
+  height: 46px;
+  left: 77px;
+  position: absolute;
+  top: 482px;
+  width: 152px;
+}
+.desktophdcopy .payslips-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 377px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 5813px;
+  width: 94px;
+}
+.desktophdcopy .persona-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 4155px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .poppins-medium-C61RwL {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxxl);
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 164px;
+  letter-spacing: 0.00px;
+  line-height: 60px;
+  position: absolute;
+  text-align: left;
+  top: 10214px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .poppins-regular-C61RwL {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxxl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 164px;
+  letter-spacing: 0.00px;
+  line-height: 60px;
+  position: absolute;
+  text-align: left;
+  top: 10299px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .poppins-semibold-C61RwL {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxxl);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 164px;
+  letter-spacing: 0.00px;
+  line-height: 60px;
+  position: absolute;
+  text-align: left;
+  top: 10128px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .post-to-feed-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 970px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 302px;
+  white-space: nowrap;
+  width: 100px;
+}
+.desktophdcopy .primary-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 148px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 11302px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .privacy-settings-DV4Irz {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 116px;
+  white-space: nowrap;
+  width: 121px;
+}
+.desktophdcopy .privacy-settings-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 732px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 518px;
+  white-space: nowrap;
+  width: 121px;
+}
+.desktophdcopy .profile-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 514px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 170px;
+  white-space: nowrap;
+  width: 64px;
+}
+.desktophdcopy .profile-picture-E582nk {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 268px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 458px;
+  white-space: nowrap;
+  width: 107px;
+}
+.desktophdcopy .profile-picture-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 330px;
+  white-space: nowrap;
+  width: 114px;
+}
+.desktophdcopy .profile-picture-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 361px;
+  white-space: nowrap;
+  width: 147px;
+}
+.desktophdcopy .project-vision-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 578px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .quick-help-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 347px;
+  white-space: nowrap;
+  width: 94px;
+}
+.desktophdcopy .quick-links-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 48px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 170px;
+  white-space: nowrap;
+  width: 100px;
+}
+.desktophdcopy .recent-recipes-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 270px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 112px;
+}
+.desktophdcopy .recent-uploads-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 270px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 141px;
+}
+.desktophdcopy .recipes-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 268px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 484px;
+  white-space: nowrap;
+  width: 126px;
+}
+.desktophdcopy .recommendations-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 245px;
+  white-space: nowrap;
+  width: 129px;
+}
+.desktophdcopy .rectangle-10KR2y {
+  background-color: var(--white);
+  height: 173px;
+  left: 228px;
+  position: absolute;
+  top: 403px;
+  width: 191px;
+}
+.desktophdcopy .rectangle-2E3Rx7 {
+  background-color: var(--blue);
+  height: 47px;
+  left: 226px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-2P4qUJ {
+  background-color: transparent;
+  height: 589px;
+  left: 444px;
+  position: absolute;
+  top: 7658px;
+  width: 242px;
+}
+.desktophdcopy .rectangle-3kIbHG {
+  background-color: transparent;
+  height: 573px;
+  left: 107px;
+  position: absolute;
+  top: 9047px;
+  width: 278px;
+}
+.desktophdcopy .rectangle-4jLlkI {
+  background-color: var(--white);
+  height: 142px;
+  left: 226px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-5Um2Np {
+  background-color: var(--blue);
+  height: 47px;
+  left: 978px;
+  position: absolute;
+  top: 155px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-7arjzY {
+  background-color: var(--seagull);
+  height: 36px;
+  left: 1px;
+  position: absolute;
+  top: 2px;
+  width: 219px;
+}
+.desktophdcopy .rectangle-A0xXPm {
+  background-color: var(--white);
+  height: 141px;
+  left: 978px;
+  position: absolute;
+  top: 155px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-AX7pWk {
+  background-color: transparent;
+  height: 429px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 174px;
+}
+.desktophdcopy .rectangle-C61RwL {
+  background-color: var(--zircon);
+  height: 660px;
+  left: 0px;
+  position: absolute;
+  top: 1829px;
+  width: 1366px;
+}
+.desktophdcopy .rectangle-CFmTVx {
+  background-color: var(--white);
+  height: 148px;
+  left: 228px;
+  position: absolute;
+  top: 446px;
+  width: 191px;
+}
+.desktophdcopy .rectangle-DV4Irz {
+  background-color: var(--white);
+  height: 186px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-E582nk {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-HlKRTo {
+  background-color: transparent;
+  height: 573px;
+  left: 446px;
+  position: absolute;
+  top: 9047px;
+  width: 265px;
+}
+.desktophdcopy .rectangle-IxEnRr {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 226px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-J1YQmd {
+  background-color: transparent;
+  height: 589px;
+  left: 1003px;
+  position: absolute;
+  top: 7658px;
+  width: 242px;
+}
+.desktophdcopy .rectangle-KhVtzg {
+  background-color: var(--white);
+  height: 208px;
+  left: 689px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-MIZxEt {
+  background-color: var(--seagull);
+  height: 36px;
+  left: 1px;
+  position: absolute;
+  top: 161px;
+  width: 32px;
+}
+.desktophdcopy .rectangle-N9dAOH {
+  background-color: var(--blue);
+  height: 47px;
+  left: 0px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-NOXmfT {
+  background-color: var(--white);
+  height: 121px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-PIEh7b {
+  background-color: transparent;
+  height: 432px;
+  left: 0px;
+  position: absolute;
+  top: 2px;
+  width: 177px;
+}
+.desktophdcopy .rectangle-QxM5SU {
+  background-color: transparent;
+  height: 589px;
+  left: 112px;
+  position: absolute;
+  top: 7658px;
+  width: 272px;
+}
+.desktophdcopy .rectangle-R7WrHk {
+  background-color: transparent;
+  height: 589px;
+  left: 725px;
+  position: absolute;
+  top: 8314px;
+  width: 242px;
+}
+.desktophdcopy .rectangle-RYy1WS {
+  background-color: var(--blue);
+  height: 47px;
+  left: 452px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-SO40Oe {
+  background-color: transparent;
+  height: 429px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 174px;
+}
+.desktophdcopy .rectangle-VMr6Om {
+  background-color: var(--zircon);
+  height: 1733px;
+  left: 0px;
+  position: absolute;
+  top: 9860px;
+  width: 1366px;
+}
+.desktophdcopy .rectangle-VWPIkS {
+  background-color: var(--blue);
+  height: 122px;
+  left: 118px;
+  position: absolute;
+  top: 446px;
+  width: 3px;
+}
+.desktophdcopy .rectangle-VkPPtx {
+  background-color: transparent;
+  height: 589px;
+  left: 446px;
+  position: absolute;
+  top: 8314px;
+  width: 242px;
+}
+.desktophdcopy .rectangle-VrYlAT {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 0px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-WQXeF1 {
+  background-color: transparent;
+  height: 429px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 174px;
+}
+.desktophdcopy .rectangle-Wh5CmH {
+  background-color: var(--white);
+  height: 186px;
+  left: 927px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-XNq8nV {
+  background-color: var(--blue);
+  height: 47px;
+  left: 690px;
+  position: absolute;
+  top: 289px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-XSCsvl {
+  background-color: var(--white);
+  height: 121px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-YWzA7M {
+  background-color: transparent;
+  height: 589px;
+  left: 1004px;
+  position: absolute;
+  top: 8314px;
+  width: 242px;
+}
+.desktophdcopy .rectangle-ZH4vOj {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 689px;
+  position: absolute;
+  top: 402px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-a5WPlX {
+  background-color: transparent;
+  height: 668px;
+  left: 112px;
+  position: absolute;
+  top: 8314px;
+  width: 272px;
+}
+.desktophdcopy .rectangle-a73nmY {
+  background-color: transparent;
+  height: 570px;
+  left: 741px;
+  position: absolute;
+  top: 9050px;
+  width: 233px;
+}
+.desktophdcopy .rectangle-aD65qG {
+  background-color: var(--seagull);
+  height: 36px;
+  left: 0px;
+  position: absolute;
+  top: 161px;
+  width: 150px;
+}
+.desktophdcopy .rectangle-b1Ip74 {
+  background-color: var(--blue);
+  height: 122px;
+  left: 737px;
+  position: absolute;
+  top: 442px;
+  width: 3px;
+}
+.desktophdcopy .rectangle-bAyQtV {
+  background-color: transparent;
+  height: 429px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 196px;
+}
+.desktophdcopy .rectangle-fWH2tV {
+  background-color: var(--blue);
+  height: 43px;
+  left: 228px;
+  position: absolute;
+  top: 446px;
+  width: 191px;
+}
+.desktophdcopy .rectangle-hxlH3w {
+  background-color: var(--blue);
+  height: 47px;
+  left: 689px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-iMAlWq {
+  background-color: var(--white);
+  height: 121px;
+  left: 0px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-iZjIT4 {
+  background-color: transparent;
+  height: 389px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 177px;
+}
+.desktophdcopy .rectangle-jFiEvx {
+  background-color: var(--blue);
+  height: 47px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-jsbgv1 {
+  background-color: var(--white);
+  height: 121px;
+  left: 226px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-kGFtrF {
+  background-color: var(--white);
+  height: 186px;
+  left: 689px;
+  position: absolute;
+  top: 402px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-mzXdH9 {
+  background-color: var(--zircon);
+  border-radius: 54px;
+  box-shadow: -20px 20px 45px #09090912;
+  height: 337px;
+  left: 97px;
+  position: absolute;
+  top: 10069px;
+  width: 1169px;
+}
+.desktophdcopy .rectangle-n5QdvL {
+  background-color: #3942b5;
+  height: 36px;
+  left: 1px;
+  position: absolute;
+  top: 82px;
+  width: 143px;
+}
+.desktophdcopy .rectangle-nbyLeh {
+  background-color: var(--white);
+  height: 100px;
+  left: 689px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-nxJxoR {
+  background-color: #3942b5;
+  height: 36px;
+  left: 0px;
+  position: absolute;
+  top: 82px;
+  width: 169px;
+}
+.desktophdcopy .rectangle-nzgatl {
+  background-color: var(--white);
+  height: 96px;
+  left: 690px;
+  position: absolute;
+  top: 289px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-pO6V4x {
+  background-color: var(--monte-carlo);
+  height: 43px;
+  left: 228px;
+  position: absolute;
+  top: 403px;
+  width: 191px;
+}
+.desktophdcopy .rectangle-q26NeC {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 927px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-qr8e7q {
+  background-color: transparent;
+  height: 589px;
+  left: 724px;
+  position: absolute;
+  top: 7658px;
+  width: 242px;
+}
+.desktophdcopy .rectangle-s2JxyW {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 689px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-uLiLDx {
+  background-color: var(--blue);
+  height: 47px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-ufhbXJ {
+  background-color: var(--seagull);
+  height: 36px;
+  left: 0px;
+  position: absolute;
+  top: 2px;
+  width: 74px;
+}
+.desktophdcopy .rectangle-uojbMS {
+  background-color: var(--white);
+  height: 208px;
+  left: 452px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-vUOK69 {
+  background-color: #edf7ff;
+  height: 870px;
+  left: 0px;
+  opacity: 0.6;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+.desktophdcopy .rectangle-wz60dm {
+  background-color: transparent;
+  height: 429px;
+  left: 0px;
+  position: absolute;
+  top: 3px;
+  width: 174px;
+}
+.desktophdcopy .rectangle-x1xxgM {
+  background-color: var(--white);
+  height: 326px;
+  left: 0px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.desktophdcopy .rectangle-xFApRQ {
+  background-color: transparent;
+  height: 429px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 177px;
+}
+.desktophdcopy .rectangle-xvSYm3 {
+  background-color: var(--white);
+  height: 245px;
+  left: 452px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .rectangle-yfnr7g {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 452px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.desktophdcopy .reducing-the-emails-C61RwL {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 113px;
+  letter-spacing: 0.00px;
+  line-height: 47px;
+  position: absolute;
+  text-align: left;
+  top: 11822px;
+  width: 562px;
+}
+.desktophdcopy .register-E582nk {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 39px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: right;
+  top: 84px;
+  white-space: nowrap;
+  width: 61px;
+}
+.desktophdcopy .register-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 46px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 76px;
+}
+.desktophdcopy .register-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 84px;
+  white-space: nowrap;
+  width: 61px;
+}
+.desktophdcopy .requests-raised-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 302px;
+  white-space: nowrap;
+  width: 121px;
+}
+.desktophdcopy .screenshot-2021-10-at-70517-pm-C61RwL {
+  background-color: transparent;
+  height: 600px;
+  left: 890px;
+  position: absolute;
+  top: 11672px;
+  width: 278px;
+}
+.desktophdcopy .screenshot-2021-10-at-70517-pm-ebBR7z {
+  background-color: transparent;
+  height: 600px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 278px;
+}
+.desktophdcopy .screenshot-2021-10-at-92914-pm-C61RwL {
+  background-color: transparent;
+  height: 600px;
+  left: 113px;
+  position: absolute;
+  top: 12378px;
+  width: 278px;
+}
+.desktophdcopy .screenshot-2021-10-at-92955-pm-C61RwL {
+  background-color: transparent;
+  height: 600px;
+  left: 345px;
+  position: absolute;
+  top: 12378px;
+  width: 278px;
+}
+.desktophdcopy .search-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 512px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 64px;
+}
+.desktophdcopy .secondary-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 543px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 11302px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .settings-DV4Irz {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 53px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 13px;
+  white-space: nowrap;
+  width: 78px;
+}
+.desktophdcopy .settings-E582nk {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 740px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 415px;
+  white-space: nowrap;
+  width: 78px;
+}
+.desktophdcopy .settings-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 273px;
+  white-space: nowrap;
+  width: 69px;
+}
+.desktophdcopy .settings-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 126px;
+}
+.desktophdcopy .should-reduce-a-lot-xQ6VrF {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 51px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 156px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .sign-n-3cZhlu {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-avenir-black);
+  font-size: var(--font-size-xxxxxxl);
+  font-weight: 900;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 137px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .sirisha-is-an-ardent-vUOK69 {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 156px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 442px;
+  width: 527px;
+}
+.desktophdcopy .social-networking-C61RwL {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 720px;
+  letter-spacing: 0.00px;
+  line-height: 47px;
+  position: absolute;
+  text-align: left;
+  top: 12570px;
+  width: 562px;
+}
+.desktophdcopy .span1-IAtnd1 {
+
+}
+.desktophdcopy .span1-LdIYcg {
+
+}
+.desktophdcopy .span1-Z7fpPM {
+
+}
+.desktophdcopy .span1-bhjryJ {
+
+}
+.desktophdcopy .span1-gDkfM5 {
+
+}
+.desktophdcopy .span1-hJditx {
+
+}
+.desktophdcopy .span1-siqZ5Y {
+
+}
+.desktophdcopy .span1-yJgN4N {
+
+}
+.desktophdcopy .span2-IAtnd1 {
+
+}
+.desktophdcopy .span2-LdIYcg {
+
+}
+.desktophdcopy .span2-Z7fpPM {
+
+}
+.desktophdcopy .span2-bhjryJ {
+
+}
+.desktophdcopy .span2-gDkfM5 {
+
+}
+.desktophdcopy .span2-hJditx {
+
+}
+.desktophdcopy .span2-siqZ5Y {
+
+}
+.desktophdcopy .span2-yJgN4N {
+
+}
+.desktophdcopy .splash-screen-2E3Rx7 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 253px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 415px;
+  white-space: nowrap;
+  width: 109px;
+}
+.desktophdcopy .splash-screen-4jLlkI {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 716px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 415px;
+  white-space: nowrap;
+  width: 117px;
+}
+.desktophdcopy .splash-screen-E582nk {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 252px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 117px;
+}
+.desktophdcopy .splash-screen-IxEnRr {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 251px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 415px;
+  white-space: nowrap;
+  width: 109px;
+}
+.desktophdcopy .splash-screen-N9dAOH {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 717px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 170px;
+  white-space: nowrap;
+  width: 117px;
+}
+.desktophdcopy .splash-screen-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 35px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 12px;
+  white-space: nowrap;
+  width: 125px;
+}
+.desktophdcopy .splash-screen-VrYlAT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 715px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 117px;
+}
+.desktophdcopy .splash-screen-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 37px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 12px;
+  white-space: nowrap;
+  width: 125px;
+}
+.desktophdcopy .splash-screen-iMAlWq {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 477px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 117px;
+}
+.desktophdcopy .splash-screen-jsbgv1 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 714px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 415px;
+  white-space: nowrap;
+  width: 117px;
+}
+.desktophdcopy .splash-screen-uLiLDx {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 254px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 170px;
+  white-space: nowrap;
+  width: 117px;
+}
+.desktophdcopy .splash-screen-x1xxgM {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 479px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 170px;
+  white-space: nowrap;
+  width: 117px;
+}
+.desktophdcopy .stories-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 270px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 241px;
+  width: 94px;
+}
+.desktophdcopy .style-guide-FnxWB8 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .tags-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 302px;
+  white-space: nowrap;
+  width: 36px;
+}
+.desktophdcopy .tax-related-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 377px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 5839px;
+  width: 94px;
+}
+.desktophdcopy .they-wanted-the-prog-xQ6VrF {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 51px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 59px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .too-much-information-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 788px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2200px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .trainings-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 328px;
+  white-space: nowrap;
+  width: 82px;
+}
+.desktophdcopy .trainings-status-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 245px;
+  white-space: nowrap;
+  width: 150px;
+}
+.desktophdcopy .transport-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 270px;
+  white-space: nowrap;
+  width: 82px;
+}
+.desktophdcopy .trending-recipes-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 126px;
+}
+.desktophdcopy .upload-documents-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 377px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 5788px;
+  white-space: nowrap;
+  width: 141px;
+}
+.desktophdcopy .user-interview-B2GfxI {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .user-research-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 91px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 2597px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .user-survey-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 1888px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .username-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 39px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: right;
+  top: 216px;
+  white-space: nowrap;
+  width: 76px;
+}
+.desktophdcopy .visual-design-kK8Vvv {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .we-conducted-few-int-B2GfxI {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 73px;
+  width: 1150px;
+}
+.desktophdcopy .welcome-AX7pWk {
+  background-color: transparent;
+  height: 429px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 175px;
+}
+.desktophdcopy .welcome-copy-3-iZjIT4 {
+  background-color: transparent;
+  height: 382px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 177px;
+}
+.desktophdcopy .welcome-copy-4-PIEh7b {
+  background-color: transparent;
+  height: 434px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 177px;
+}
+.desktophdcopy .welcome-copy-5-SO40Oe {
+  background-color: transparent;
+  height: 429px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 175px;
+}
+.desktophdcopy .welcome-copy-6-wz60dm {
+  background-color: transparent;
+  height: 432px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 176px;
+}
+.desktophdcopy .welcome-copy-7-xFApRQ {
+  background-color: transparent;
+  height: 429px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 175px;
+}
+.desktophdcopy .welcome-copy-8-WQXeF1 {
+  background-color: transparent;
+  height: 429px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 175px;
+}
+.desktophdcopy .wellness-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 242px;
+  white-space: nowrap;
+  width: 82px;
+}
+.desktophdcopy .what-to-do-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 273px;
+  white-space: nowrap;
+  width: 97px;
+}
+.desktophdcopy .wireframes-hvAGCq {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .x000000-zUixHA {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 644px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 568px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .x1-C61RwL {
+  background-color: transparent;
+  height: 589px;
+  left: 112px;
+  position: absolute;
+  top: 7658px;
+  width: 272px;
+}
+.desktophdcopy .x1-VMr6Om {
+  background-color: transparent;
+  height: 582px;
+  left: 114px;
+  position: absolute;
+  top: 7661px;
+  width: 269px;
+}
+.desktophdcopy .x1-reducing-number-o-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 743px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: left;
+  top: 651px;
+  width: 514px;
+}
+.desktophdcopy .x10-C61RwL {
+  background-color: transparent;
+  height: 573px;
+  left: 112px;
+  position: absolute;
+  top: 9047px;
+  width: 272px;
+}
+.desktophdcopy .x10-VMr6Om {
+  background-color: transparent;
+  height: 572px;
+  left: 111px;
+  position: absolute;
+  top: 9047px;
+  width: 272px;
+}
+.desktophdcopy .x11-C61RwL {
+  background-color: transparent;
+  height: 573px;
+  left: 449px;
+  position: absolute;
+  top: 9047px;
+  width: 262px;
+}
+.desktophdcopy .x11-VMr6Om {
+  background-color: transparent;
+  height: 573px;
+  left: 448px;
+  position: absolute;
+  top: 9048px;
+  width: 262px;
+}
+.desktophdcopy .x125-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 369px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2202px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .x156-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 1042px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2362px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .x2-C61RwL {
+  background-color: transparent;
+  height: 589px;
+  left: 446px;
+  position: absolute;
+  top: 7658px;
+  width: 240px;
+}
+.desktophdcopy .x2-VMr6Om {
+  background-color: transparent;
+  height: 587px;
+  left: 445px;
+  position: absolute;
+  top: 7660px;
+  width: 239px;
+}
+.desktophdcopy .x2-e5-bff-zUixHA {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 144px;
+  letter-spacing: 0.00px;
+  line-height: 48px;
+  position: absolute;
+  text-align: left;
+  top: 422px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .x3-C61RwL {
+  background-color: transparent;
+  height: 589px;
+  left: 725px;
+  position: absolute;
+  top: 7658px;
+  width: 240px;
+}
+.desktophdcopy .x3-VMr6Om {
+  background-color: transparent;
+  height: 589px;
+  left: 725px;
+  position: absolute;
+  top: 7659px;
+  width: 240px;
+}
+.desktophdcopy .x331-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 1153px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2284px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .x4-C61RwL {
+  background-color: transparent;
+  height: 589px;
+  left: 1004px;
+  position: absolute;
+  top: 7658px;
+  width: 240px;
+}
+.desktophdcopy .x4-VMr6Om {
+  background-color: transparent;
+  height: 583px;
+  left: 1005px;
+  position: absolute;
+  top: 7659px;
+  width: 237px;
+}
+.desktophdcopy .x413-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 448px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2362px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .x462-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 462px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 2286px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .x5-C61RwL {
+  background-color: transparent;
+  height: 668px;
+  left: 112px;
+  position: absolute;
+  top: 8314px;
+  width: 272px;
+}
+.desktophdcopy .x5-VMr6Om {
+  background-color: transparent;
+  height: 660px;
+  left: 114px;
+  position: absolute;
+  top: 8315px;
+  width: 269px;
+}
+.desktophdcopy .x513-7arjzY {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 235px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 8px;
+  white-space: nowrap;
+  width: auto;
+}
+.desktophdcopy .x6-C61RwL {
+  background-color: transparent;
+  height: 589px;
+  left: 446px;
+  position: absolute;
+  top: 8314px;
+  width: 240px;
+}
+.desktophdcopy .x6-VMr6Om {
+  background-color: transparent;
+  height: 584px;
+  left: 448px;
+  position: absolute;
+  top: 8315px;
+  width: 238px;
+}
+.desktophdcopy .x7-C61RwL {
+  background-color: transparent;
+  height: 589px;
+  left: 726px;
+  position: absolute;
+  top: 8314px;
+  width: 240px;
+}
+.desktophdcopy .x7-VMr6Om {
+  background-color: transparent;
+  height: 588px;
+  left: 726px;
+  position: absolute;
+  top: 8314px;
+  width: 239px;
+}
+.desktophdcopy .x7-user-profile-copy-bAyQtV {
+  background-color: transparent;
+  height: 429px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 196px;
+}
+.desktophdcopy .x8-C61RwL {
+  background-color: transparent;
+  height: 570px;
+  left: 742px;
+  position: absolute;
+  top: 9051px;
+  width: 232px;
+}
+.desktophdcopy .x9-C61RwL {
+  background-color: transparent;
+  height: 589px;
+  left: 1005px;
+  position: absolute;
+  top: 8314px;
+  width: 240px;
+}
+.desktophdcopy .x9-VMr6Om {
+  background-color: transparent;
+  height: 588px;
+  left: 1005px;
+  position: absolute;
+  top: 8314px;
+  width: 239px;
+}
+.desktophdcopy .your-docs-XSCsvl {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 300px;
+  white-space: nowrap;
+  width: 150px;
+}
+.desktophdcopy .your-docs-uLiLDx {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 252px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 457px;
+  white-space: nowrap;
+  width: 141px;
+}
+</style>
+    
+    
+    
+    <meta name="author" content="AnimaApp.com - Design to code, Automated.">
+</head>
+<body style="margin: 0;background: #ffffff;">
+<input type="hidden" id="anPageName" name="page" value="desktophdcopy"/>
+
+    <div class="container-center-horizontal">
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="desktophdcopy screen " >
+    
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-NOXmfT border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-NOXmfT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-E582nk" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-E582nk" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-NOXmfT poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-NOXmfT"  
+src="./img/desktop-hd-copy-path-8-14BBF9C3-FBE8-41AA-971C-F0392FB45D17@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-E582nk"  
+src="./img/desktop-hd-copy-path-8-932DD53F-C2A7-483A-A960-96F1614E6880@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-iMAlWq border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-VrYlAT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="register-NOXmfT poppins-medium-white-16px" 
+>REGISTER</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-E582nk poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-jsbgv1 border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-IxEnRr" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="feed-NOXmfT poppins-medium-white-16px" 
+>FEED</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-iMAlWq"  
+src="./img/desktop-hd-copy-path-8-82378D95-A97A-4E16-95B4-0758CB2F79C3@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-VrYlAT"  
+src="./img/desktop-hd-copy-path-8-E148139E-1EED-4E12-9AF3-9115E64570C5@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-jsbgv1"  
+src="./img/desktop-hd-copy-path-8-DBFAE8D6-6664-4111-BA5B-713F04023C2D@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="login-NOXmfT poppins-normal-sonic-silver-14px" 
+>Login</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="register-E582nk poppins-normal-sonic-silver-14px" 
+>Register</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-iMAlWq" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-VrYlAT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="username-NOXmfT poppins-normal-sonic-silver-14px" 
+>Username</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="email-NOXmfT poppins-normal-sonic-silver-14px" 
+>Email</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-jsbgv1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="recent-recipes-NOXmfT poppins-normal-sonic-silver-14px" 
+>Recent Recipes</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-iMAlWq poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-uojbMS border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-yfnr7g" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="search-NOXmfT poppins-medium-white-16px" 
+>SEARCH</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-IxEnRr" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="trending-recipes-NOXmfT poppins-normal-sonic-silver-14px" 
+>Trending Recipes</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-uojbMS" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="recommendations-NOXmfT poppins-normal-sonic-silver-14px" 
+>Recommendations</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-yfnr7g" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="other-profiles-NOXmfT poppins-normal-sonic-silver-14px" 
+>Other Profiles</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-KhVtzg" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="tags-NOXmfT poppins-normal-sonic-silver-14px" 
+>Tags</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-s2JxyW" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="filter-NOXmfT poppins-normal-sonic-silver-14px" 
+>Filter</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-IxEnRr"  
+src="./img/desktop-hd-copy-path-8-474C8993-AD2C-4D6F-8373-451599BF9A12@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-VrYlAT poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-KhVtzg border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-s2JxyW" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-kGFtrF border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="my-profile-NOXmfT poppins-medium-white-16px" 
+>MY PROFILE</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-kGFtrF" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="add-recipe-NOXmfT poppins-normal-sonic-silver-14px" 
+>Add Recipe</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-ZH4vOj" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="edit-profile-NOXmfT poppins-normal-sonic-silver-14px" 
+>Edit Profile</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-10KR2y" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="settings-NOXmfT poppins-normal-sonic-silver-14px" 
+>Settings</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-pO6V4x" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="followers-NOXmfT poppins-normal-sonic-silver-14px" 
+>Followers</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-Wh5CmH" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="profile-picture-NOXmfT poppins-normal-sonic-silver-14px" 
+>Profile Picture</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-jsbgv1 poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-ZH4vOj" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="settings-E582nk poppins-medium-white-16px" 
+>SETTINGS</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-q26NeC" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="log-out-NOXmfT poppins-normal-sonic-silver-14px" 
+>Log Out</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-odhd3Z" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="change-password-NOXmfT poppins-normal-sonic-silver-14px" 
+>Change Password</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-NxlUOU" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="privacy-settings-NOXmfT poppins-normal-sonic-silver-14px" 
+>Privacy Settings</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-wynS9M" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="notification-setting-NOXmfT poppins-normal-sonic-silver-14px" 
+>Notification Settings</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-uojbMS"  
+src="./img/desktop-hd-copy-path-8-3E583DEE-DB73-4139-A44C-0E702D969C2E@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-10KR2y border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-IxEnRr poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-pO6V4x" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="other-profiles-E582nk poppins-medium-white-16px" 
+>OTHER PROFILES</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-1n9Xo5" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="profile-picture-E582nk poppins-normal-sonic-silver-14px" 
+>Profile Picture</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-mOLTFT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="recipes-NOXmfT poppins-normal-sonic-silver-14px" 
+>Recipes</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-B0a7gX" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="followers-E582nk poppins-normal-sonic-silver-14px" 
+>Followers</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-JxQPVm" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="notification-setting-E582nk poppins-normal-sonic-silver-14px" 
+>Notification Settings</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="add-NOXmfT poppins-medium-white-16px" 
+>ADD</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-Wh5CmH border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-q26NeC" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="add-recipe-E582nk poppins-medium-white-16px" 
+>ADD RECIPE</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-qFbsfk" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="edit-recipe-NOXmfT poppins-normal-sonic-silver-14px" 
+>Edit Recipe</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-935aTa" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="gallery-NOXmfT poppins-normal-sonic-silver-14px" 
+>Gallery</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-PIZntI" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ingredients-NOXmfT poppins-normal-sonic-silver-14px" 
+>Ingredients</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-nUNztg" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="post-to-feed-NOXmfT poppins-normal-sonic-silver-14px" 
+>Post to feed</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-9-NOXmfT"  
+src="./img/desktop-hd-copy-path-9-F2D13604-A3AE-4B16-86D9-A209CC0DC587@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-16-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-vUOK69" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-VWPIkS" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="name-sirisha-vUOK69 poppins-medium-midnight-moss-24px" 
+><span class="span1-gDkfM5 poppins-medium-midnight-moss-24px">Name</span><span class="span2-gDkfM5 poppins-normal-midnight-moss-24px">: Sirisha</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="age-26-vUOK69 poppins-medium-midnight-moss-24px" 
+><span class="span1-IAtnd1 poppins-medium-midnight-moss-24px">Age</span><span class="span2-IAtnd1 poppins-normal-midnight-moss-24px">: 26</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ocupation-app-devel-vUOK69 poppins-medium-midnight-moss-24px" 
+><span class="span1-yJgN4N poppins-medium-midnight-moss-24px">Ocupation: </span><span class="span2-yJgN4N poppins-normal-midnight-moss-24px">App Developer</span></div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-vUOK69" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-vUOK69" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-mL5uCc"  
+src="./img/desktop-hd-copy-bitmap-B88B679F-C46F-49D3-BDEF-EEBF98517FC6@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-copy-vUOK69" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-copy-OQytzO"  
+src="./img/desktop-hd-copy-bitmap-copy-0B20E198-1281-477B-A255-62D84C45F81B@2x.png"
+/>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="pain-points-no-clari-vUOK69 poppins-medium-midnight-moss-20px" 
+><span class="span1-siqZ5Y poppins-medium-midnight-moss-20px">PAIN POINTS</span><span class="span2-siqZ5Y poppins-normal-midnight-moss-20px"><br>No clarity on company Links.<br>No Readiness plan.<br>No Induction program on the day of joining.<br>No proper response from onboarding POC even&nbsp;&nbsp;<br>after multiple emails.<br></span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="pain-points-faced-is-vUOK69 poppins-medium-midnight-moss-20px" 
+><span class="span1-bhjryJ poppins-medium-midnight-moss-20px">PAIN POINTS</span><span class="span2-bhjryJ poppins-normal-midnight-moss-20px"><br>Faced issues with Transportation <br>No clarity on the role assigned in the project.<br>There shouldn’t be delay after raising a request/ office assets<br></span></div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-b1Ip74" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-VWPIkS" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="anurag-loves-the-lo-vUOK69 poppins-normal-midnight-moss-20px" 
+>Anurag, loves the logic and structure of coding and always strive to write elegant and effective code, whether it be HTML or CSS. He is passionate about travelling.<br></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="sirisha-is-an-ardent-vUOK69 poppins-normal-midnight-moss-20px" 
+>Sirisha is an ardent Web developer having 4+ years of experience in front-end. She is an introvert in nature. Love to explore new food and restaurants in the town !!</div>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="project-vision-C61RwL poppins-medium-midnight-moss-36px" 
+>Project Vision</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="user-survey-C61RwL poppins-medium-midnight-moss-36px" 
+>User Survey</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="for-our-research-pro-C61RwL poppins-normal-sonic-silver-20px" 
+>For our research process, we decided to take interviews and a survey to better know what the employee needs Surveys are the great first look at the user environment because they provide more of quantitative data.&nbsp;&nbsp;<br></div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-17-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="user-interview-B2GfxI poppins-medium-midnight-moss-36px" 
+>User Interview</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="we-conducted-few-int-B2GfxI poppins-normal-sonic-silver-20px" 
+>We conducted few interviews among our newly joined employeesto understand the pain points, behaviors and motivations</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-18-B2GfxI" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="most-important-findi-xQ6VrF poppins-medium-black-20px" 
+>Most important findings from the interviews are</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-6-xQ6VrF"  
+src="./img/desktop-hd-copy-path-6-2EF12165-C63C-427F-8099-14343225408D@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="they-wanted-the-prog-xQ6VrF poppins-normal-sonic-silver-20px" 
+>They wanted the program to be fun and interactive</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-6-muq34s"  
+src="./img/desktop-hd-copy-path-6-14CDED0B-87FA-4217-B2BF-964CB5A6F745@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="list-new-employees-xQ6VrF poppins-normal-sonic-silver-20px" 
+>List new employee’s responsibilities, who they report to and their department before day of orientation. </div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-6-JjeIqM"  
+src="./img/desktop-hd-copy-path-6-D93532E7-5444-47B2-AF00-553DE03FAE14@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="should-reduce-a-lot-xQ6VrF poppins-normal-sonic-silver-20px" 
+>Should reduce a lot of paper work during submission of documents or filling the forms etc.</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="persona-C61RwL poppins-medium-midnight-moss-36px" 
+>Persona</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="new-employees-should-C61RwL poppins-normal-sonic-silver-20px" 
+>New employees should leave their first day feeling excited about their new journey and engaged in their work. We came up with an app which transforms the employee experience for a new joiner onboarding journey with modren digital place.</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-reducing-number-o-C61RwL poppins-normal-sonic-silver-20px" 
+>1. Reducing number of organization mails sent to employees from the day of onboarding.<br>2. Digitial Companion for the employees to know about the organization facilities <br>3. Social Networking platform for the employees to broadcast and advertise events happening in the organization</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="challenges-C61RwL poppins-medium-midnight-moss-36px" 
+>Challenges</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="name-anurag-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-hJditx poppins-medium-midnight-moss-24px">Name</span><span class="span2-hJditx poppins-normal-midnight-moss-24px">: Anurag</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="age-36-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-Z7fpPM poppins-medium-midnight-moss-24px">Age</span><span class="span2-Z7fpPM poppins-normal-midnight-moss-24px">: 36</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ocupation-developer-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-LdIYcg poppins-medium-midnight-moss-24px">Ocupation: </span><span class="span2-LdIYcg poppins-normal-midnight-moss-24px">Developer</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="information-architec-C61RwL poppins-medium-midnight-moss-36px" 
+>Information Architechture</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="wireframes-hvAGCq poppins-medium-midnight-moss-36px" 
+>Wireframes</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="before-moving-onto-v-hvAGCq poppins-normal-midnight-moss-20px" 
+>Before moving onto visual design, I have created wireframes. Wireframing is a quick and effective way to identify usability issues early on in your design process.</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-copy-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="visual-design-kK8Vvv poppins-medium-midnight-moss-36px" 
+>Visual Design</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="before-moving-onto-v-kK8Vvv poppins-normal-midnight-moss-20px" 
+>Before moving onto visual design, I have created wireframes. Wireframing is a quick and effective way to identify usability issues early on in your design process.</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-copy-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="style-guide-FnxWB8 poppins-medium-midnight-moss-36px" 
+>Style Guide</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="in-order-make-our-wo-FnxWB8 poppins-normal-midnight-moss-20px" 
+>In order make our work much easier and organized, we have created a style guide.</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-mzXdH9" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-4-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="a-KOsP6k" 
+>a</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="a-aoJpZk" 
+>A</div>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="poppins-semibold-C61RwL" 
+>Poppins Semibold</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="poppins-medium-C61RwL" 
+>Poppins Medium</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="poppins-regular-C61RwL" 
+>Poppins Regular</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="fill-120-C61RwL"  
+src="./img/desktop-hd-copy-fill-120-6A6C39DC-47CA-431B-A399-AC14314B1FF2.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="fill-120-VMr6Om"  
+src="./img/desktop-hd-copy-fill-120-20FCF190-322C-4C08-B874-07CB2AD50524.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="noise-texture-dark-C61RwL"  
+src="./img/desktop-hd-copy-noise-texture-dark-F8C6A287-C62B-4F84-8A72-FEA3589AACDE.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="mask-GoEWZg"  
+src="./img/desktop-hd-copy-mask-8656DA8B-AA87-476C-B52F-89F167B205A9.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-8-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="sign-n-3cZhlu" 
+>Sign&nbsp;&nbsp;&nbsp;&nbsp; n</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="a-digital-employee-c-3cZhlu" 
+>A Digital Employee Companion</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-9-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-9dtg3L" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-4-9dtg3L"  
+src="./img/desktop-hd-copy-path-4-9CEEECFE-5388-432A-9387-DDBD170D00A2@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-5-9dtg3L"  
+src="./img/desktop-hd-copy-path-5-F2052C13-19BA-45A8-8070-2589925AFC45@2x.png"
+/>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="how-was-the-orientat-C61RwL poppins-medium-black-20px" 
+>How was the Orientation Program?</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="how-was-the-orientat-VMr6Om poppins-medium-black-20px" 
+>How was the Orientation Program?</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-9-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-ufhbXJ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-aD65qG" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-nxJxoR" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-3-ufhbXJ"  
+src="./img/desktop-hd-copy-path-3-D65A2A5F-EFED-439D-A529-01A0BB4832F9@2x.png"
+/>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="interactive-C61RwL poppins-normal-sonic-silver-16px" 
+>Interactive</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="boring-C61RwL poppins-normal-sonic-silver-16px" 
+>Boring</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="could-be-more-intera-C61RwL poppins-normal-sonic-silver-16px" 
+>Could be more<br>Interactive</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x125-C61RwL poppins-medium-black-16px" 
+>12.5%</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x462-C61RwL poppins-medium-black-16px" 
+>46.2%</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x413-C61RwL poppins-medium-black-16px" 
+>41.3%</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-9-mzXdH9" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-7arjzY" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x513-7arjzY poppins-medium-black-16px" 
+>51.3%</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-MIZxEt" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-n5QdvL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-3-7arjzY"  
+src="./img/desktop-hd-copy-path-3-0BD6D7FF-F646-4E1A-8D2C-CE26C30C3B6B@2x.png"
+/>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="too-much-information-C61RwL poppins-normal-sonic-silver-16px" 
+>Too much Information</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clear-information-C61RwL poppins-normal-sonic-silver-16px" 
+>Clear Information</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="less-information-C61RwL poppins-normal-sonic-silver-16px" 
+>Less Information</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x331-C61RwL poppins-medium-black-16px" 
+>33.1%</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x156-C61RwL poppins-medium-black-16px" 
+>15.6%</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-XSCsvl border-2px-blue" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-XSCsvl" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-uLiLDx" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-uLiLDx" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-XSCsvl poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-XSCsvl"  
+src="./img/desktop-hd-copy-path-8-EF480E79-9175-4B19-B77E-140BCACBD46A@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-uLiLDx"  
+src="./img/desktop-hd-copy-path-8-E12518D6-ED30-4F5C-89FC-40EA6B2F9744@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-x1xxgM border-2px-blue" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-N9dAOH" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="quick-links-XSCsvl poppins-medium-white-16px" 
+>QUICK LINKS</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-uLiLDx poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-4jLlkI border-2px-blue" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-2E3Rx7" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="channels-XSCsvl poppins-medium-white-16px" 
+>CHANNELS</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-x1xxgM"  
+src="./img/desktop-hd-copy-path-8-45BA89D4-3DD5-4C27-990F-E72E6C26C2B1@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-N9dAOH"  
+src="./img/desktop-hd-copy-path-8-1DC0AEEF-E394-43FE-A064-A13D9C092B09@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-4jLlkI"  
+src="./img/desktop-hd-copy-path-8-7D754D78-3EF8-4D5E-A660-09DCAA4784C5@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="login-XSCsvl poppins-medium-blue-14px" 
+>Login</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="register-XSCsvl poppins-medium-blue-14px" 
+>Register</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-x1xxgM" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-N9dAOH" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="help-XSCsvl poppins-medium-blue-14px" 
+>Help</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="wellness-XSCsvl poppins-medium-blue-14px" 
+>Wellness</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-4jLlkI" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="transport-XSCsvl poppins-medium-blue-14px" 
+>Transport</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-2E3Rx7" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="your-docs-XSCsvl poppins-medium-blue-14px" 
+>Your Docs</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-xvSYm3" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="trainings-XSCsvl poppins-medium-blue-14px" 
+>Trainings</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-RYy1WS" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="cafeteria-XSCsvl poppins-medium-blue-14px" 
+>Cafeteria</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-nbyLeh" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="child-care-XSCsvl poppins-medium-blue-14px" 
+>Child Care</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-hxlH3w" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="library-XSCsvl poppins-medium-blue-14px" 
+>Library</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-A0xXPm" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="it-support-XSCsvl poppins-medium-blue-14px" 
+>IT Support</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-5Um2Np" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="recent-uploads-XSCsvl poppins-medium-blue-14px" 
+>Recent Uploads</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-CFmTVx" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="stories-XSCsvl poppins-medium-blue-14px" 
+>Stories</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-fWH2tV" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="chat-box-XSCsvl poppins-medium-blue-14px" 
+>Chat Box</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-x1xxgM poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-xvSYm3 border-2px-blue" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-RYy1WS" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="profile-XSCsvl poppins-medium-white-16px" 
+>PROFILE</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-nzgatl" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="settings-XSCsvl poppins-medium-blue-14px" 
+>Settings</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-XNq8nV" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="trainings-status-XSCsvl poppins-medium-blue-14px" 
+>Trainings Status</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-Pj2bid" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="what-to-do-XSCsvl poppins-medium-blue-14px" 
+>What to do</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-87Ncb6" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="requests-raised-XSCsvl poppins-medium-blue-14px" 
+>Requests raised</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-Sf5MCN" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="edit-profile-XSCsvl poppins-medium-blue-14px" 
+>Edit Profile</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-N6wehN" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="profile-picture-XSCsvl poppins-medium-blue-14px" 
+>Profile Picture</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-2E3Rx7"  
+src="./img/desktop-hd-copy-path-8-6CA35D36-B86C-4BC3-B677-0A097B62D9EB@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-N9dAOH poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-nbyLeh border-2px-blue" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-hxlH3w" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-10-XSCsvl" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-DV4Irz border-2px-blue" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-jFiEvx" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="settings-DV4Irz poppins-medium-white-16px" 
+>SETTINGS</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-DV4Irz" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="log-out-DV4Irz poppins-medium-blue-14px" 
+>Log Out</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-jFiEvx" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="change-password-DV4Irz poppins-medium-blue-14px" 
+>Change Password</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-ObIvdc" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="privacy-settings-DV4Irz poppins-medium-blue-14px" 
+>Privacy Settings</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-6TXaq6" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="notification-setting-DV4Irz poppins-medium-blue-14px" 
+>Notification Settings</div>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="notifications-XSCsvl poppins-medium-white-16px" 
+>NOTIFICATIONS</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-0qXeXf" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="alerts-XSCsvl poppins-medium-blue-14px" 
+>Alerts</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-A0xXPm border-2px-blue" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-5Um2Np" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="messaging-XSCsvl poppins-medium-white-16px" 
+>MESSAGING</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-1RbjJS" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-messages-XSCsvl poppins-medium-blue-14px" 
+>Group Messages</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-OJs9Oe" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="forums-XSCsvl poppins-medium-blue-14px" 
+>Forums</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-4jLlkI poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-CFmTVx border-2px-blue" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-2E3Rx7 poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-fWH2tV" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="your-docs-uLiLDx poppins-medium-white-16px" 
+>YOUR DOCS</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-nzgatl border-2px-blue" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-XNq8nV" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="chat-bot-XSCsvl poppins-medium-white-16px" 
+>CHAT BOT</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-Z0i9ih" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="quick-help-XSCsvl poppins-medium-blue-14px" 
+>Quick Help</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-9-XSCsvl"  
+src="./img/desktop-hd-copy-path-9-9C712AB0-1109-4B47-94E1-88C4997ADE88@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="upload-documents-C61RwL poppins-medium-blue-14px" 
+>Upload Documents</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="payslips-C61RwL poppins-medium-blue-14px" 
+>Payslips</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-mzXdH9" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="tax-related-C61RwL poppins-medium-blue-14px" 
+>Tax related</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-23-C61RwL"  
+src="./img/desktop-hd-copy-path-23-2D0C09B2-30AE-4AD1-9FDA-0174DE8DA467.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-group-xHxYv9" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-background-v2YC4H" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-VMr6Om poppins-normal-white-32px" 
+>Button</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="primary-C61RwL poppins-normal-black-32px" 
+>Primary</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-background-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-mzXdH9" 
+>Button</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="secondary-C61RwL poppins-normal-black-32px" 
+>Secondary</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-background-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-QxM5SU" 
+>Button</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="disabled-C61RwL poppins-normal-black-32px" 
+>Disabled</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-2-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-zUixHA" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x2-e5-bff-zUixHA poppins-normal-white-32px" 
+>#2E5BFF</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-sdxwGy" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-kTiyrb" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-GE0XEQ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-ZTOnhR" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ffffff-zUixHA poppins-normal-white-32px" 
+>#FFFFFF</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x000000-zUixHA poppins-normal-black-32px" 
+>#000000</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="e9-e9-e9-zUixHA poppins-normal-black-32px" 
+>#E9E9E9</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="e0-e7-ff-zUixHA poppins-normal-black-32px" 
+>#E0E7FF</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="fill-118-zUixHA"  
+src="./img/desktop-hd-copy-fill-118-3C122F3F-A431-4182-9B6F-10B0DC88F2EA@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="fill-126-zUixHA"  
+src="./img/desktop-hd-copy-fill-126-CF884E2E-154E-4E3F-85B7-16C49FB5ADF3@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-5-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="welcome-copy-3-iZjIT4"  
+src="./img/desktop-hd-copy-welcome-copy-3-AFEF50B6-E9C8-47B8-93E4-7D47B8F20506.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-iZjIT4 border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-6-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="welcome-copy-4-PIEh7b"  
+src="./img/desktop-hd-copy-welcome-copy-4-A21ABC63-38D4-45E1-A1AB-7FD84317C006.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-PIEh7b border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-7-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="welcome-copy-5-SO40Oe"  
+src="./img/desktop-hd-copy-welcome-copy-5-1A05FAE9-93DD-4EEE-924B-9DADA299AA8B.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-SO40Oe border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-15-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="welcome-copy-6-wz60dm"  
+src="./img/desktop-hd-copy-welcome-copy-6-7B83319B-99CF-4FC9-8A50-6CCA0432D754.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-wz60dm border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-14-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="welcome-AX7pWk"  
+src="./img/desktop-hd-copy-welcome-DD377A49-E64A-4F7F-952F-7A0DA1DEBCC9.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-AX7pWk border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-13-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="welcome-copy-8-WQXeF1"  
+src="./img/desktop-hd-copy-welcome-copy-8-087CF54B-7059-40D9-9EC8-D5C294F4B1E5.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-WQXeF1 border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-12-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="welcome-copy-7-xFApRQ"  
+src="./img/desktop-hd-copy-welcome-copy-7-AC5E408D-05A3-4FB8-B3CD-0203716564E3.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-xFApRQ border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-11-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x7-user-profile-copy-bAyQtV"  
+src="./img/desktop-hd-copy-7-u2013-user-profile-copy-4485AFC3-85CC-4FAF-A5C6-529CD08CB41F.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-bAyQtV border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="user-research-C61RwL poppins-medium-midnight-moss-36px" 
+>User Research</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="as-a-part-of-user-re-C61RwL poppins-normal-sonic-silver-20px" 
+>As a part of user research several top tier companies were consulted to generate a curated list of best practices for employee onboarding.</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="icebreaker-session-C61RwL poppins-normal-sonic-silver-20px" 
+>- Icebreaker sessions.<br>- Visually represent the company cultures and&nbsp;&nbsp;values<br>- Configured laptops are given on the first day.<br>- Fun&nbsp;&nbsp;and interactive induction program.<br></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="company-1-C61RwL poppins-medium-blue-gem-26px" 
+>Company 1</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="configured-laptop-C61RwL poppins-normal-sonic-silver-20px" 
+>- Configured Laptop with your email id and other stuff is given to the employee on the first day.<br>- Interesting and interactive induction program<br>- There is less paper work and less sessions.<br>- Opportunity will be discussed before deploying you into the project.<br>- Supportive if the employee is willing to learn new skills.<br></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="company-2-C61RwL poppins-medium-blue-gem-26px" 
+>Company 2</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="onboarding-session-C61RwL poppins-normal-sonic-silver-20px" 
+>- Onboarding Session is 45 minutes.<br>- Six week bootcamp.<br>- It allows employees to choose their own teams and projects which they are most passionate about.</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="company-3-C61RwL poppins-medium-blue-gem-26px" 
+>Company 3</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-C61RwL"  
+src="./img/desktop-hd-copy-1-D69A1E11-C800-49B3-83C4-63AA7FCD1D4A.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-QxM5SU border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x2-C61RwL"  
+src="./img/desktop-hd-copy-2-B56B036F-48BD-4AC7-9264-B863258AAB1D.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x3-C61RwL"  
+src="./img/desktop-hd-copy-3-11B30B0B-F0D4-46B1-B94C-4475EE3FA250.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x4-C61RwL"  
+src="./img/desktop-hd-copy-4-51F0B04C-6625-4764-ADDF-629D6D567C36.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x7-C61RwL"  
+src="./img/desktop-hd-copy-7-F7D8CABC-842C-4161-A324-3014E6A53C15.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x5-C61RwL"  
+src="./img/desktop-hd-copy-5-D26A8331-33E5-4831-A3E4-2ABBBB8D1DD7.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x9-C61RwL"  
+src="./img/desktop-hd-copy-9-A375C2CC-CD35-47AC-B738-677C4AA0D4FB.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x9-VMr6Om"  
+src="./img/desktop-hd-copy-9-B339447C-EB8E-41AE-BF4C-631FF2E579B0.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x10-C61RwL"  
+src="./img/desktop-hd-copy-10-17F697CA-5A84-4CCA-B552-0D2AF4D8F8C2.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x11-C61RwL"  
+src="./img/desktop-hd-copy-11-9B2E710E-C2D5-452A-AAEA-EBB0C254043A.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-2P4qUJ border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-qr8e7q border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-J1YQmd border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-a5WPlX border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-HlKRTo border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x6-C61RwL"  
+src="./img/desktop-hd-copy-6-7D0A29C4-8D8B-413A-83F6-8AF16E0609D4.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-VMr6Om"  
+src="./img/desktop-hd-copy-bitmap-CBDC8C5D-BF76-426C-8D28-4AA832CB1A2B.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-VkPPtx border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-YWzA7M border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-mzXdH9"  
+src="./img/desktop-hd-copy-bitmap-B911FCE9-E2EA-485E-8B0F-B717B3802139.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="challenge-1-C61RwL poppins-medium-blue-36px" 
+>Challenge 1</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="reducing-the-emails-C61RwL poppins-semi-bold-midnight-moss-36px" 
+>Reducing the Emails</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="employees-get-a-lot-C61RwL poppins-normal-midnight-moss-20px" 
+>Employees get a lot of emails from the organization after getting onbaorded by the organization, the application can provide features for smooth onboarding of the employee and also subscribe to interests of activities performed in the organization </div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x11-VMr6Om"  
+src="./img/desktop-hd-copy-11-27ABBBDB-B7EE-4D87-8313-20C5A1C361A7.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x10-VMr6Om"  
+src="./img/desktop-hd-copy-10-E61CFA8A-7431-4F8F-87C2-9FEB7EBDF630.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-3kIbHG border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x8-C61RwL"  
+src="./img/desktop-hd-copy-8-13F70D20-F168-4C80-9312-AEC2836A1309.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-a73nmY border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x7-VMr6Om"  
+src="./img/desktop-hd-copy-7-0C546FD4-53C2-49E9-882C-83271DD54D22.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-VMr6Om"  
+src="./img/desktop-hd-copy-1-63D62773-BDA3-48D5-BC40-DAFD3AA87905.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x6-VMr6Om"  
+src="./img/desktop-hd-copy-6-E83C932B-EDFD-4606-9B82-4A227B097A10.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x5-VMr6Om"  
+src="./img/desktop-hd-copy-5-8E1A2178-8630-4AD6-8C6E-EEF87905CC39.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x4-VMr6Om"  
+src="./img/desktop-hd-copy-4-465DF6CF-7B62-4386-89F3-EB2107D9F3F2.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x3-VMr6Om"  
+src="./img/desktop-hd-copy-3-5E169260-B033-4A94-A5A9-DE6EBF1C9E6D.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x2-VMr6Om"  
+src="./img/desktop-hd-copy-2-470CD5BE-BA92-42C9-9B1F-E9B6C336FA94.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-R7WrHk border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-bitmap-mask-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="mask-KztIp7" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-KztIp7"  
+src="./img/desktop-hd-copy-bitmap-21F4DA41-C4D8-4B0A-ADCA-1CC77764ACE6.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-pHrE4w"  
+src="./img/desktop-hd-copy-bitmap-89547963-16E0-4C7E-81EE-EDB14E90EB49.png"
+/>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="challenge-3-C61RwL poppins-medium-blue-36px" 
+>Challenge 3</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="digital-companion-C61RwL poppins-semi-bold-midnight-moss-36px" 
+>Digital Companion </div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="employees-often-when-C61RwL poppins-normal-midnight-moss-20px" 
+>Employees often when placed at new locations, they are a bit lost to the new environment. Hence the application acts as a Digital Compaion and can provide information available on the nearby amenities and with interactive navigation to the&nbsp;&nbsp;locations .</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="challenge-2-C61RwL poppins-medium-blue-36px" 
+>Challenge 2</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="social-networking-C61RwL poppins-semi-bold-midnight-moss-36px" 
+>Social Networking </div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="employees-get-a-lot-VMr6Om poppins-normal-midnight-moss-20px" 
+>Employees get a lot of emails from the organization after getting onbaorded by the organization, the application can provide features for smooth onboarding of the employee and also subscribe to interests of activities performed in the organization </div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-10-at-70517-pm-C61RwL"  
+src="./img/desktop-hd-copy-screenshot-2021-05-10-at-70517-pm-4579A34A-E6BB-4D2A-A3FF-0E18E8B458EC.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-10-at-92914-pm-C61RwL"  
+src="./img/desktop-hd-copy-screenshot-2021-05-10-at-92914-pm-5186CA75-77D9-46FD-976E-15456C62D526.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-10-at-92955-pm-C61RwL"  
+src="./img/desktop-hd-copy-screenshot-2021-05-10-at-92955-pm-1C596E0B-9FBA-4021-A1F2-4A4641907943.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-19-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-10-at-70517-pm-ebBR7z"  
+src="./img/desktop-hd-copy-screenshot-2021-05-10-at-70517-pm-665D79D6-EBC3-4E2C-BDDB-2493A4FBA790.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-ebBR7z" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-4VPhGS"  
+src="./img/desktop-hd-copy-bitmap-9B5B4238-434F-4E6A-A4CD-0B6C4CE98BE4@2x.png"
+/>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-20-ebBR7z"  
+src="./img/desktop-hd-copy-group-20-9C9E5AA4-3332-427C-994B-FB12305B484D@2x.png"
+/>
+
+</div>
+
+ </div>
+    </div>
+    
+
+
+
+    <!-- V 85a5324ed726a32bb9e0a65645a1bf5a3e292f59 Mon May 10 13:17:08 UTC 2021 -->
+</body>
+</html>

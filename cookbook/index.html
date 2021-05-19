@@ -1,0 +1,17677 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>window.addEventListener('DOMContentLoaded', function () {
+    for (var ls = document.links, numLinks = ls.length, i=0; i<numLinks; i++){
+        var currLink = ls[i].href;
+        if (currLink.startsWith("anima://")) {
+            ls[i].href = currLink.replace("anima://", "/");
+            console.log(ls[i].href);
+        } else if (currLink.startsWith("http")) {
+            ls[i].href = "/" + currLink;
+            console.log(ls[i].href);
+        }
+    }
+});
+
+</script>   
+    <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=1366, maximum-scale=1.0"/>
+    
+        <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png"/>
+    
+    
+        <style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600');
+
+* {
+
+box-sizing: border-box;
+}
+.align-self-flex-center {
+
+align-self: flex-center;
+}
+.align-self-flex-end {
+
+align-self: flex-end;
+}
+.align-self-flex-start {
+
+align-self: flex-start;
+}
+.animate-nodelay {
+
+animation-delay: 0s;
+}
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+
+opacity: 1;
+}
+.auto-animated div {
+
+opacity: 0;
+position: absolute;
+--z-index: -1;
+}
+.component-wrapper * {
+
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+pointer-events: none
+}
+.component-wrapper a {
+
+text-decoration: none;
+display: contents;
+pointer-events: auto
+}
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+
+pointer-events: auto;
+}
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+
+visibility: hidden !important;
+}
+.container-center-horizontal {
+
+pointer-events: none;
+display: flex;
+flex-direction: row;
+justify-content: center;
+width: 100%;
+}
+.container-center-horizontal > * {
+
+pointer-events: auto;
+flex-shrink: 0;
+}
+.container-center-vertical {
+
+pointer-events: none;
+display: flex;
+flex-direction: row;
+align-items: center;
+height: 100%;
+}
+.container-center-vertical > * {
+
+pointer-events: auto;
+flex-shrink: 0;
+}
+.full-height-a {
+
+height: 100%;
+}
+.full-width-a {
+
+width: 100%;
+}
+.hidden,
+.hidden * {
+
+visibility: hidden;
+pointer-events: none;
+}
+.listeners-active,
+.listeners-active * {
+
+pointer-events: auto;
+}
+.listeners-active-click,
+.listeners-active-click * {
+
+cursor: pointer;
+}
+.overlay {
+
+position: absolute;
+opacity: 0;
+display: none;
+top: 0;
+width: 100%;
+height: 100%;
+position: fixed;
+}
+.overlay.animate-appear {
+
+opacity: 0;
+display: block;
+animation: reveal 0.3s ease-in-out 1 normal forwards;
+}
+.overlay.animate-disappear {
+
+opacity: 1;
+display: block;
+animation: reveal 0.3s ease-in-out 1 reverse forwards;
+}
+.screen * {
+
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+}
+.screen a {
+
+text-decoration: none;
+display: contents;
+}
+.screen div {
+
+-webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+
+outline: none;
+}
+.smart-layers-pointers,
+.smart-layers-pointers * {
+
+pointer-events: auto;
+visibility: visible;
+}
+.valign-text-bottom {
+
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+.valign-text-middle {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+@keyframes reveal {
+
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+input:focus {
+
+outline: none;
+}
+
+:root {
+  --black: #000000;
+  --iceberg: #d7f0f1;
+  --midnight-moss: #030f09;
+  --monte-carlo: #79cecf;
+  --monte-carlo-2: #7aced0;
+  --shark: #262626;
+  --sonic-silver: #717474;
+  --sonic-silver-2: #737272;
+  --sonic-silver-3: #737171;
+  --white: #ffffff;
+
+  --font-size-l: 22px;
+  --font-size-m: 20px;
+  --font-size-s: 18px;
+  --font-size-xl: 24px;
+  --font-size-xs: 16px;
+  --font-size-xxl: 26px;
+  --font-size-xxs: 15px;
+  --font-size-xxxl: 36px;
+  --font-size-xxxs: 14px;
+  --font-size-xxxxl: 100px;
+  --font-size-xxxxs: 10px;
+  --font-size-xxxxxs: 8px;
+
+  --font-family-poppins: "Poppins", Helvetica;
+}
+.poppins-normal-sonic-silver-14px {
+  color: var(--sonic-silver);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-medium-white-16px {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-medium-midnight-moss-24px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-medium-midnight-moss-36px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-normal-midnight-moss-20px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-normal-midnight-moss-24px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-semi-bold-shark-22px {
+  color: var(--shark);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+.poppins-normal-sonic-silver-18px {
+  color: var(--sonic-silver-3);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-normal-sonic-silver-20px {
+  color: var(--sonic-silver-3);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-normal-shark-22px {
+  color: var(--shark);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-normal-midnight-moss-15px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-normal-black-8px {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-medium-monte-carlo-36px {
+  color: var(--monte-carlo);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-semi-bold-midnight-moss-36px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 600;
+}
+.border-1px-monte-carlo-2 {
+  border: 1px solid var(--monte-carlo-2);
+}
+.border-2px-monte-carlo {
+  border: 2px solid var(--monte-carlo);
+}
+
+/* screen - fianl1 */
+
+.fianl1 {
+  background-color: var(--white);
+  height: 12936px;
+  overflow-x: hidden;
+  position: relative;
+  width: 1366px;
+}
+.fianl1 .add-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 994px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 32px;
+}
+.fianl1 .add-recipe-E582nk {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 977px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 101px;
+}
+.fianl1 .add-recipe-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 96px;
+}
+.fianl1 .age-20-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 325px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 3702px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .age-45-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 944px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 3702px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .authenticity-ufhbXJ {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 8px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: 352px;
+  white-space: nowrap;
+  width: 210px;
+}
+.fianl1 .before-moving-onto-h-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 5229px;
+  width: 1145px;
+}
+.fianl1 .before-moving-onto-v-hvAGCq {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 77px;
+  width: 1145px;
+}
+.fianl1 .before-moving-onto-v-kK8Vvv {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 77px;
+  width: 1145px;
+}
+.fianl1 .bitmap-2P4qUJ {
+  background-color: transparent;
+  height: 711px;
+  left: 878px;
+  position: absolute;
+  top: 11958px;
+  width: 330px;
+}
+.fianl1 .bitmap-2TzeM5 {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .bitmap-8p1NQq {
+  background-color: transparent;
+  height: 305px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 272px;
+}
+.fianl1 .bitmap-C61RwL {
+  background-color: transparent;
+  height: 162px;
+  left: 112px;
+  position: absolute;
+  top: 3643px;
+  width: 162px;
+}
+.fianl1 .bitmap-F7OKnx {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 143px;
+}
+.fianl1 .bitmap-Fyhjkd {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 140px;
+}
+.fianl1 .bitmap-GoEWZg {
+  background-color: transparent;
+  height: 162px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 162px;
+}
+.fianl1 .bitmap-HK5PSN {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .bitmap-OgyUZn {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .bitmap-QxM5SU {
+  background-color: transparent;
+  height: 426px;
+  left: 302px;
+  position: absolute;
+  top: 11332px;
+  width: 444px;
+}
+.fianl1 .bitmap-R80W4S {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .bitmap-RWN935 {
+  background-color: transparent;
+  height: 375px;
+  left: 0px;
+  position: absolute;
+  top: -332px;
+  width: 133px;
+}
+.fianl1 .bitmap-U0KV5x {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 140px;
+}
+.fianl1 .bitmap-VMr6Om {
+  background-color: transparent;
+  height: 627px;
+  left: 200px;
+  position: absolute;
+  top: -135px;
+  transform: rotate(-34deg);
+  width: 291px;
+}
+.fianl1 .bitmap-XAW5mx {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .bitmap-copy-C61RwL {
+  background-color: transparent;
+  height: 162px;
+  left: 730px;
+  position: absolute;
+  top: 3642px;
+  width: 162px;
+}
+.fianl1 .bitmap-copy-TUaSoE {
+  background-color: transparent;
+  height: 162px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 162px;
+}
+.fianl1 .bitmap-mzXdH9 {
+  background-color: transparent;
+  height: 706px;
+  left: 878px;
+  position: absolute;
+  top: 10358px;
+  width: 327px;
+}
+.fianl1 .bitmap-oorHpU {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: -328px;
+  width: 133px;
+}
+.fianl1 .bitmap-qPkZVN {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .bitmap-rIAxu5 {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .bitmap-ttavVl {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .bitmap-ufhbXJ {
+  background-color: transparent;
+  height: 32px;
+  left: 346px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .bitmap-vjdpZY {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: -328px;
+  width: 133px;
+}
+.fianl1 .bitmap-znuZ3T {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .books-magazines-ufhbXJ {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 596px;
+  letter-spacing: 0.00px;
+  line-height: 39px;
+  position: absolute;
+  text-align: right;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .challenge-1-MLW1n6 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .challenge-2-SJCx52 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .challenge-3-Qwfpuv {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .challenges-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 743px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 578px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .change-password-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 732px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 489px;
+  white-space: nowrap;
+  width: 135px;
+}
+.fianl1 .clipped-56a4US {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .clipped-609sHQ {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .clipped-8k29n2 {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .clipped-9d531R {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .clipped-T6MxIZ {
+  background-color: transparent;
+  height: 42px;
+  left: 0px;
+  overflow: hidden;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .clipped-TBiyhA {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .clipped-TTx5dp {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .clipped-jxrRzZ {
+  background-color: transparent;
+  height: 42px;
+  left: 0px;
+  overflow: hidden;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .clipped-uyifZx {
+  background-color: transparent;
+  height: 43px;
+  left: 0px;
+  overflow: hidden;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .competitive-analysis-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 2444px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .cook-book-C61RwL {
+  background-color: transparent;
+  color: var(--shark);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 723px;
+  letter-spacing: 0.00px;
+  line-height: 150px;
+  position: absolute;
+  text-align: left;
+  top: 125px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .cook-book-app-is-a-gu-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: justify;
+  top: 651px;
+  width: 514px;
+}
+.fianl1 .cookbook-8p1NQq {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 136px;
+  letter-spacing: 0.00px;
+  line-height: 23px;
+  position: absolute;
+  text-align: left;
+  top: 70px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .descriptive-ufhbXJ {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 8px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: 67px;
+  white-space: nowrap;
+  width: 160px;
+}
+.fianl1 .duration-jan-feb-C61RwL {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 723px;
+  letter-spacing: 0.00px;
+  line-height: 33px;
+  position: absolute;
+  text-align: left;
+  top: 357px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .edit-profile-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 245px;
+  white-space: nowrap;
+  width: 87px;
+}
+.fianl1 .edit-recipe-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 970px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 94px;
+}
+.fianl1 .ellipse2-trVNTN {
+  background-color: #fffefd;
+  border: 1px solid #020106;
+  border-radius: 6px;
+  height: 6px;
+  left: 0px;
+  position: absolute;
+  top: 1px;
+  transform: rotate(-86.68deg);
+  width: 6px;
+}
+.fianl1 .email-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 242px;
+  white-space: nowrap;
+  width: 42px;
+}
+.fianl1 .feed-3cZhlu {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 386px;
+  letter-spacing: 0.00px;
+  line-height: 23px;
+  position: absolute;
+  text-align: left;
+  top: 23px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .feed-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 289px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 42px;
+}
+.fianl1 .fill-61-Z9eCye {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 30px;
+}
+.fianl1 .filter-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 332px;
+  white-space: nowrap;
+  width: 36px;
+}
+.fianl1 .followers-E582nk {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 268px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 511px;
+  white-space: nowrap;
+  width: 113px;
+}
+.fianl1 .followers-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 302px;
+  white-space: nowrap;
+  width: 78px;
+}
+.fianl1 .gallery-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 970px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 245px;
+  white-space: nowrap;
+  width: 60px;
+}
+.fianl1 .group-10-C61RwL {
+  background-color: transparent;
+  height: 402px;
+  left: 61px;
+  position: absolute;
+  top: 6171px;
+  width: 1229px;
+}
+.fianl1 .group-10-WQXeF1 {
+  background-color: transparent;
+  height: 313px;
+  left: 746px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .group-11-0kOvHB {
+  background-color: transparent;
+  height: 308px;
+  left: 735px;
+  position: absolute;
+  top: 358px;
+  width: 133px;
+}
+.fianl1 .group-11-C61RwL {
+  background-color: transparent;
+  height: 1318px;
+  left: 1px;
+  position: absolute;
+  top: 8973px;
+  width: 1366px;
+}
+.fianl1 .group-11-WQXeF1 {
+  background-color: transparent;
+  height: 308px;
+  left: 735px;
+  position: absolute;
+  top: 358px;
+  width: 133px;
+}
+.fianl1 .group-12-Ngo5aa {
+  background-color: transparent;
+  height: 313px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .group-13-C61RwL {
+  background-color: transparent;
+  height: 849px;
+  left: 98px;
+  position: absolute;
+  top: 6840px;
+  width: 1171px;
+}
+.fianl1 .group-2-CcEnn8 {
+  background-color: transparent;
+  height: 37px;
+  left: 110px;
+  position: absolute;
+  top: 0px;
+  width: 983px;
+}
+.fianl1 .group-3-C61RwL {
+  background-color: transparent;
+  height: 198px;
+  left: 107px;
+  position: absolute;
+  top: 6616px;
+  width: 1145px;
+}
+.fianl1 .group-3-copy-2-C61RwL {
+  background-color: transparent;
+  height: 411px;
+  left: 107px;
+  position: absolute;
+  top: 10506px;
+  width: 576px;
+}
+.fianl1 .group-3-copy-2-VMr6Om {
+  background-color: transparent;
+  height: 523px;
+  left: 107px;
+  position: absolute;
+  top: 12037px;
+  width: 576px;
+}
+.fianl1 .group-3-copy-2-mzXdH9 {
+  background-color: transparent;
+  height: 451px;
+  left: 716px;
+  position: absolute;
+  top: 11307px;
+  width: 576px;
+}
+.fianl1 .group-3-copy-C61RwL {
+  background-color: transparent;
+  height: 198px;
+  left: 107px;
+  position: absolute;
+  top: 7852px;
+  width: 1145px;
+}
+.fianl1 .group-3-copy-VMr6Om {
+  background-color: transparent;
+  height: 198px;
+  left: 98px;
+  position: absolute;
+  top: 9017px;
+  width: 1145px;
+}
+.fianl1 .group-3Szh1U {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .group-5onaRx {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .group-6-8p1NQq {
+  background-color: transparent;
+  height: 48px;
+  left: 55px;
+  position: absolute;
+  top: 43px;
+  width: 30px;
+}
+.fianl1 .group-70-Ho6yPV {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 30px;
+}
+.fianl1 .group-70-Z9eCye {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 30px;
+}
+.fianl1 .group-8-C61RwL {
+  background-color: transparent;
+  height: 354px;
+  left: 61px;
+  position: absolute;
+  top: 5400px;
+  width: 1230px;
+}
+.fianl1 .group-8-VMr6Om {
+  background-color: transparent;
+  height: 305px;
+  left: 103px;
+  position: absolute;
+  top: 11411px;
+  width: 272px;
+}
+.fianl1 .group-9-C61RwL {
+  background-color: transparent;
+  height: 355px;
+  left: 89px;
+  position: absolute;
+  top: 5774px;
+  width: 1188px;
+}
+.fianl1 .group-9-VMr6Om {
+  background-color: transparent;
+  height: 404px;
+  left: 107px;
+  position: absolute;
+  top: 2935px;
+  width: 1150px;
+}
+.fianl1 .group-9-WQXeF1 {
+  background-color: transparent;
+  height: 3px;
+  left: 298px;
+  position: absolute;
+  top: 162px;
+  transform: rotate(180deg);
+  width: 45px;
+}
+.fianl1 .group-C61RwL {
+  background-color: transparent;
+  height: 588px;
+  left: 107px;
+  position: absolute;
+  top: 4398px;
+  width: 1132px;
+}
+.fianl1 .group-VRFRKg {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .group-WIzNie {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .group-YXmhOI {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .group-aoME9c {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .group-grFyyT {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .group-nxX0j0 {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transform: rotate(-1deg);
+  width: 30px;
+}
+.fianl1 .group-oPGucQ {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .group-ti2iyy {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .group10-ny8xxp {
+  background-color: transparent;
+  height: 2px;
+  left: 2px;
+  position: absolute;
+  top: 1px;
+  width: 14px;
+}
+.fianl1 .group11-ny8xxp {
+  background-color: transparent;
+  height: 5px;
+  left: 0px;
+  position: absolute;
+  top: 4px;
+  width: 17px;
+}
+.fianl1 .group12-KUe2YO {
+  background-color: transparent;
+  height: 8px;
+  left: 6px;
+  position: absolute;
+  top: 8px;
+  width: 17px;
+}
+.fianl1 .group13-hHWpaJ {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 3px;
+  width: 29px;
+}
+.fianl1 .group14-rRHKs1 {
+  background-color: transparent;
+  height: 27px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 29px;
+}
+.fianl1 .group15-F3619W {
+  background-color: transparent;
+  height: 27px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 29px;
+}
+.fianl1 .group16-nxX0j0 {
+  background-color: transparent;
+  height: 27px;
+  left: 1px;
+  position: absolute;
+  top: 21px;
+  width: 29px;
+}
+.fianl1 .group7-hyFoNB {
+  background-color: transparent;
+  height: 6px;
+  left: 23px;
+  position: absolute;
+  top: 0px;
+  width: 6px;
+}
+.fianl1 .group8-hyFoNB {
+  background-color: transparent;
+  height: 6px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 6px;
+}
+.fianl1 .group9-KUe2YO {
+  background-color: transparent;
+  height: 7px;
+  left: 0px;
+  position: absolute;
+  top: 10px;
+  width: 29px;
+}
+.fianl1 .guidance-ufhbXJ {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 8px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: 136px;
+  white-space: nowrap;
+  width: 225px;
+}
+.fianl1 .i-initially-started-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: justify;
+  top: 1961px;
+  width: 1150px;
+}
+.fianl1 .in-order-make-our-wo-FnxWB8 {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: left;
+  top: 77px;
+  width: 1145px;
+}
+.fianl1 .in-order-to-evaluate-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: justify;
+  top: 2517px;
+  width: 1150px;
+}
+.fianl1 .information-architec-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 4272px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .ingredients-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 970px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 273px;
+  white-space: nowrap;
+  width: 96px;
+}
+.fianl1 .kick-off-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 1888px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .log-out-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 732px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 461px;
+  white-space: nowrap;
+  width: 71px;
+}
+.fianl1 .login-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 39px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: right;
+  top: 58px;
+  white-space: nowrap;
+  width: 42px;
+}
+.fianl1 .mask-C61RwL {
+  background-color: transparent;
+  height: 56px;
+  left: 906px;
+  position: absolute;
+  top: 12555px;
+  width: 268px;
+}
+.fianl1 .mask-VjCs8a {
+  background-color: #b3edee;
+  height: 514px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1440px;
+}
+.fianl1 .mask-rJmpkO {
+  background-color: transparent;
+  height: 902px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1279px;
+}
+.fianl1 .meet-the-users-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 3482px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .my-profile-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 730px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 101px;
+}
+.fianl1 .my-recipes-9dtg3L {
+  background-color: transparent;
+  height: 21px;
+  left: 812px;
+  position: absolute;
+  top: 0px;
+  width: 84px;
+}
+.fianl1 .name-sara-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 325px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 3651px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .name-vijay-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 944px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 3651px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .notification-setting-E582nk {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 268px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 538px;
+  white-space: nowrap;
+  width: 132px;
+}
+.fianl1 .notification-setting-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 732px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 546px;
+  white-space: nowrap;
+  width: 142px;
+}
+.fianl1 .ocupation-chef-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 325px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 3753px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .ocupation-developer-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 944px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 3753px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .offline-access-ufhbXJ {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 8px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: 278px;
+  white-space: nowrap;
+  width: 143px;
+}
+.fianl1 .often-during-cooking-MLW1n6 {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: justify;
+  top: 195px;
+  width: 576px;
+}
+.fianl1 .other-profiles-E582nk {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 250px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 414px;
+  white-space: nowrap;
+  width: 141px;
+}
+.fianl1 .other-profiles-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 273px;
+  white-space: nowrap;
+  width: 97px;
+}
+.fianl1 .ouch-water-is-boili-8p1NQq {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 44px;
+  letter-spacing: 0.00px;
+  line-height: 23px;
+  position: absolute;
+  text-align: left;
+  top: 124px;
+  width: 176px;
+}
+.fianl1 .oval-0kOvHB {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 142px;
+  position: absolute;
+  top: 470px;
+  width: 5px;
+}
+.fianl1 .oval-10KR2y {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 279px;
+  width: 8px;
+}
+.fianl1 .oval-12cwrM {
+  background-color: transparent;
+  border-radius: 17px;
+  height: 17px;
+  left: 704px;
+  position: absolute;
+  top: 144px;
+  width: 17px;
+}
+.fianl1 .oval-1n9Xo5 {
+  background-color: var(--monte-carlo);
+  border-radius: 7px;
+  height: 7px;
+  left: 248px;
+  position: absolute;
+  top: 463px;
+  width: 7px;
+}
+.fianl1 .oval-2P4qUJ {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 106px;
+  position: absolute;
+  top: 2162px;
+  width: 8px;
+}
+.fianl1 .oval-3cZhlu {
+  background-color: var(--monte-carlo-2);
+  border-radius: 8px;
+  height: 8px;
+  left: 671px;
+  position: absolute;
+  top: 28px;
+  width: 8px;
+}
+.fianl1 .oval-7PrKg3 {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 912px;
+  position: absolute;
+  top: 405px;
+  width: 5px;
+}
+.fianl1 .oval-8p1NQq {
+  background-color: var(--monte-carlo);
+  border-radius: 57px;
+  height: 57px;
+  left: 40px;
+  position: absolute;
+  top: 39px;
+  width: 57px;
+}
+.fianl1 .oval-8v7f9Z {
+  background-color: var(--monte-carlo-2);
+  border-radius: 8px;
+  height: 8px;
+  left: 1085px;
+  position: absolute;
+  top: 28px;
+  width: 8px;
+}
+.fianl1 .oval-935aTa {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 949px;
+  position: absolute;
+  top: 250px;
+  width: 8px;
+}
+.fianl1 .oval-9dtg3L {
+  background-color: transparent;
+  height: 8px;
+  left: 643px;
+  position: absolute;
+  top: 29px;
+  width: 8px;
+}
+.fianl1 .oval-9yWA2f {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 798px;
+  position: absolute;
+  top: 623px;
+  width: 5px;
+}
+.fianl1 .oval-AMUKPY {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 250px;
+  position: absolute;
+  top: 292px;
+  width: 5px;
+}
+.fianl1 .oval-B0a7gX {
+  background-color: var(--monte-carlo);
+  border-radius: 7px;
+  height: 7px;
+  left: 248px;
+  position: absolute;
+  top: 516px;
+  width: 7px;
+}
+.fianl1 .oval-BIx5Oq {
+  background-color: var(--monte-carlo);
+  border-radius: 6px;
+  height: 6px;
+  left: 373px;
+  position: absolute;
+  top: 31px;
+  width: 6px;
+}
+.fianl1 .oval-C61RwL {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 106px;
+  position: absolute;
+  top: 2015px;
+  width: 8px;
+}
+.fianl1 .oval-Cj8Cb9 {
+  background-color: transparent;
+  border-radius: 17px;
+  height: 17px;
+  left: 704px;
+  position: absolute;
+  top: 217px;
+  width: 17px;
+}
+.fianl1 .oval-Dzgab5 {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 492px;
+  position: absolute;
+  top: 403px;
+  width: 5px;
+}
+.fianl1 .oval-E582nk {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 90px;
+  width: 8px;
+}
+.fianl1 .oval-EVvNu8 {
+  background-color: transparent;
+  height: 6px;
+  left: 320px;
+  position: absolute;
+  top: 23px;
+  width: 6px;
+}
+.fianl1 .oval-GAxYsH {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 298px;
+  position: absolute;
+  top: 160px;
+  width: 5px;
+}
+.fianl1 .oval-IxEnRr {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.fianl1 .oval-J1YQmd {
+  background-color: transparent;
+  border: 5px solid var(--monte-carlo);
+  border-radius: 171px;
+  height: 171px;
+  left: 726px;
+  position: absolute;
+  top: 3638px;
+  width: 171px;
+}
+.fianl1 .oval-JTYf6j {
+  background-color: var(--monte-carlo);
+  border-radius: 17px;
+  height: 17px;
+  left: 704px;
+  position: absolute;
+  top: 288px;
+  width: 17px;
+}
+.fianl1 .oval-JxQPVm {
+  background-color: var(--monte-carlo);
+  border-radius: 7px;
+  height: 7px;
+  left: 248px;
+  position: absolute;
+  top: 543px;
+  width: 7px;
+}
+.fianl1 .oval-KhVtzg {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 307px;
+  width: 8px;
+}
+.fianl1 .oval-MJhzU1 {
+  background-color: var(--sonic-silver-2);
+  border-radius: 6px;
+  height: 6px;
+  left: 1111px;
+  position: absolute;
+  top: 678px;
+  width: 6px;
+}
+.fianl1 .oval-MoXXhw {
+  background-color: transparent;
+  border-radius: 17px;
+  height: 17px;
+  left: 704px;
+  position: absolute;
+  top: 361px;
+  width: 17px;
+}
+.fianl1 .oval-NOXmfT {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 64px;
+  width: 8px;
+}
+.fianl1 .oval-NxlUOU {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 711px;
+  position: absolute;
+  top: 523px;
+  width: 8px;
+}
+.fianl1 .oval-PIZntI {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 949px;
+  position: absolute;
+  top: 279px;
+  width: 8px;
+}
+.fianl1 .oval-PTXWcf {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 402px;
+  position: absolute;
+  top: 649px;
+  width: 5px;
+}
+.fianl1 .oval-PpNnA2 {
+  background-color: transparent;
+  border-radius: 17px;
+  height: 17px;
+  left: 1005px;
+  position: absolute;
+  top: 78px;
+  width: 17px;
+}
+.fianl1 .oval-QxM5SU {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 106px;
+  position: absolute;
+  top: 2126px;
+  width: 8px;
+}
+.fianl1 .oval-SZ6ZfY {
+  background-color: var(--monte-carlo);
+  border-radius: 17px;
+  height: 17px;
+  left: 704px;
+  position: absolute;
+  top: 78px;
+  width: 17px;
+}
+.fianl1 .oval-SqBzKP {
+  background-color: transparent;
+  border-radius: 17px;
+  height: 17px;
+  left: 396px;
+  position: absolute;
+  top: 217px;
+  width: 17px;
+}
+.fianl1 .oval-VMr6Om {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 106px;
+  position: absolute;
+  top: 2052px;
+  width: 8px;
+}
+.fianl1 .oval-VrYlAT {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 248px;
+  width: 8px;
+}
+.fianl1 .oval-WO1ew4 {
+  background-color: transparent;
+  height: 7px;
+  left: 296px;
+  position: absolute;
+  top: 293px;
+  width: 7px;
+}
+.fianl1 .oval-WQXeF1 {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 203px;
+  position: absolute;
+  top: 294px;
+  width: 5px;
+}
+.fianl1 .oval-Wh5CmH {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 336px;
+  width: 8px;
+}
+.fianl1 .oval-ZH4vOj {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 250px;
+  width: 8px;
+}
+.fianl1 .oval-aD65qG {
+  background-color: var(--monte-carlo);
+  border-radius: 17px;
+  height: 17px;
+  left: 396px;
+  position: absolute;
+  top: 78px;
+  width: 17px;
+}
+.fianl1 .oval-aX2jdN {
+  background-color: var(--monte-carlo);
+  border-radius: 6px;
+  height: 6px;
+  left: 87px;
+  position: absolute;
+  top: 31px;
+  width: 6px;
+}
+.fianl1 .oval-brvx35 {
+  background-color: transparent;
+  border-radius: 17px;
+  height: 17px;
+  left: 1005px;
+  position: absolute;
+  top: 217px;
+  width: 17px;
+}
+.fianl1 .oval-d5UlOQ {
+  background-color: transparent;
+  height: 8px;
+  left: 1057px;
+  position: absolute;
+  top: 29px;
+  width: 8px;
+}
+.fianl1 .oval-eSbDB4 {
+  background-color: transparent;
+  border-radius: 17px;
+  height: 17px;
+  left: 1005px;
+  position: absolute;
+  top: 144px;
+  width: 17px;
+}
+.fianl1 .oval-ep1hS4 {
+  background-color: var(--monte-carlo);
+  border-radius: 17px;
+  height: 17px;
+  left: 1005px;
+  position: absolute;
+  top: 361px;
+  width: 17px;
+}
+.fianl1 .oval-iMAlWq {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 20px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.fianl1 .oval-jsbgv1 {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 249px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.fianl1 .oval-k4MoSL {
+  background-color: transparent;
+  height: 6px;
+  left: 90px;
+  position: absolute;
+  top: 23px;
+  width: 6px;
+}
+.fianl1 .oval-kGFtrF {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.fianl1 .oval-l78eZL {
+  background-color: transparent;
+  border-radius: 17px;
+  height: 17px;
+  left: 396px;
+  position: absolute;
+  top: 288px;
+  width: 17px;
+}
+.fianl1 .oval-mB5fqI {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 840px;
+  position: absolute;
+  top: 380px;
+  width: 5px;
+}
+.fianl1 .oval-mI35Ka {
+  background-color: var(--monte-carlo);
+  border-radius: 17px;
+  height: 17px;
+  left: 1005px;
+  position: absolute;
+  top: 288px;
+  width: 17px;
+}
+.fianl1 .oval-mOLTFT {
+  background-color: var(--monte-carlo);
+  border-radius: 7px;
+  height: 7px;
+  left: 248px;
+  position: absolute;
+  top: 490px;
+  width: 7px;
+}
+.fianl1 .oval-mzXdH9 {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 106px;
+  position: absolute;
+  top: 2089px;
+  width: 8px;
+}
+.fianl1 .oval-nUNztg {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 949px;
+  position: absolute;
+  top: 307px;
+  width: 8px;
+}
+.fianl1 .oval-nxJxoR {
+  background-color: var(--monte-carlo);
+  border-radius: 17px;
+  height: 17px;
+  left: 396px;
+  position: absolute;
+  top: 78px;
+  width: 17px;
+}
+.fianl1 .oval-odhd3Z {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 711px;
+  position: absolute;
+  top: 495px;
+  width: 8px;
+}
+.fianl1 .oval-pO6V4x {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 712px;
+  position: absolute;
+  top: 307px;
+  width: 8px;
+}
+.fianl1 .oval-q26NeC {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 711px;
+  position: absolute;
+  top: 466px;
+  width: 8px;
+}
+.fianl1 .oval-qFbsfk {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 949px;
+  position: absolute;
+  top: 222px;
+  width: 8px;
+}
+.fianl1 .oval-qr8e7q {
+  background-color: transparent;
+  border: 5px solid var(--monte-carlo);
+  border-radius: 171px;
+  height: 171px;
+  left: 107px;
+  position: absolute;
+  top: 3638px;
+  width: 171px;
+}
+.fianl1 .oval-rF4OeA {
+  background-color: var(--black);
+  border-radius: 2px/3px;
+  height: 3px;
+  left: 71px;
+  position: absolute;
+  top: 83px;
+  width: 2px;
+}
+.fianl1 .oval-s2JxyW {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 337px;
+  width: 8px;
+}
+.fianl1 .oval-sR9OkK {
+  background-color: var(--monte-carlo);
+  border-radius: 17px;
+  height: 17px;
+  left: 396px;
+  position: absolute;
+  top: 144px;
+  width: 17px;
+}
+.fianl1 .oval-snh6SV {
+  background-color: transparent;
+  height: 7px;
+  left: 358px;
+  position: absolute;
+  top: 469px;
+  width: 7px;
+}
+.fianl1 .oval-uUCLfB {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 537px;
+  position: absolute;
+  top: 403px;
+  width: 5px;
+}
+.fianl1 .oval-ufhbXJ {
+  background-color: transparent;
+  border-radius: 17px;
+  height: 17px;
+  left: 396px;
+  position: absolute;
+  top: 361px;
+  width: 17px;
+}
+.fianl1 .oval-uojbMS {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 250px;
+  width: 8px;
+}
+.fianl1 .oval-wLBeD7 {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 342px;
+  position: absolute;
+  top: 160px;
+  width: 5px;
+}
+.fianl1 .oval-wynS9M {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 711px;
+  position: absolute;
+  top: 552px;
+  width: 8px;
+}
+.fianl1 .oval-yMmxsz {
+  background-color: var(--sonic-silver-2);
+  border-radius: 5px;
+  height: 5px;
+  left: 868px;
+  position: absolute;
+  top: 405px;
+  width: 5px;
+}
+.fianl1 .oval-yfnr7g {
+  background-color: var(--monte-carlo);
+  border-radius: 8px;
+  height: 8px;
+  left: 474px;
+  position: absolute;
+  top: 279px;
+  width: 8px;
+}
+.fianl1 .oval-zVzI8p {
+  background-color: var(--sonic-silver-2);
+  border-radius: 7px;
+  height: 7px;
+  left: 1095px;
+  position: absolute;
+  top: 353px;
+  width: 7px;
+}
+.fianl1 .path-10-3cZhlu {
+  background-color: transparent;
+  height: 3px;
+  left: 678px;
+  position: absolute;
+  top: 31px;
+  width: 409px;
+}
+.fianl1 .path-10-9dtg3L {
+  background-color: transparent;
+  height: 3px;
+  left: 650px;
+  position: absolute;
+  top: 31px;
+  width: 409px;
+}
+.fianl1 .path-11-0kOvHB {
+  background-color: transparent;
+  height: 175px;
+  left: 299px;
+  position: absolute;
+  top: 299px;
+  width: 62px;
+}
+.fianl1 .path-11-WO1ew4 {
+  background-color: transparent;
+  height: 3px;
+  left: 494px;
+  position: absolute;
+  top: 404px;
+  transform: rotate(180deg);
+  width: 43px;
+}
+.fianl1 .path-11-WQXeF1 {
+  background-color: transparent;
+  height: 175px;
+  left: 143px;
+  position: absolute;
+  top: 299px;
+  width: 63px;
+}
+.fianl1 .path-11-snh6SV {
+  background-color: transparent;
+  height: 3px;
+  left: 869px;
+  position: absolute;
+  top: 406px;
+  transform: rotate(180deg);
+  width: 43px;
+}
+.fianl1 .path-11-uUCLfB {
+  background-color: transparent;
+  height: 397px;
+  left: 571px;
+  position: absolute;
+  top: 484px;
+  transform: rotate(90deg);
+  width: 63px;
+}
+.fianl1 .path-12-RWN935 {
+  background-color: transparent;
+  height: 43px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .path-12-WQXeF1 {
+  background-color: transparent;
+  height: 3px;
+  left: 757px;
+  position: absolute;
+  top: 668px;
+  transform: rotate(90deg);
+  width: 88px;
+}
+.fianl1 .path-13-WQXeF1 {
+  background-color: transparent;
+  height: 55px;
+  left: 842px;
+  position: absolute;
+  top: 331px;
+  width: 257px;
+}
+.fianl1 .path-14-WQXeF1 {
+  background-color: transparent;
+  height: 517px;
+  left: 252px;
+  position: absolute;
+  top: 293px;
+  width: 863px;
+}
+.fianl1 .path-15-YXmhOI {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .path-15-ti2iyy {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .path-16-0kOvHB {
+  background-color: transparent;
+  height: 42px;
+  left: 713px;
+  position: absolute;
+  top: 131px;
+  width: 21px;
+}
+.fianl1 .path-16-WQXeF1 {
+  background-color: transparent;
+  height: 42px;
+  left: 497px;
+  position: absolute;
+  top: 127px;
+  width: 21px;
+}
+.fianl1 .path-19-vjdpZY {
+  background-color: transparent;
+  height: 42px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .path-2-ufhbXJ {
+  background-color: transparent;
+  height: 354px;
+  left: 254px;
+  opacity: 0.56;
+  position: absolute;
+  top: 51px;
+  width: 3px;
+}
+.fianl1 .path-22-5onaRx {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .path-22-VRFRKg {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .path-26-oorHpU {
+  background-color: transparent;
+  height: 42px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .path-8-E582nk {
+  background-color: transparent;
+  height: 38px;
+  left: 790px;
+  position: absolute;
+  top: 366px;
+  width: 3px;
+}
+.fianl1 .path-8-IxEnRr {
+  background-color: transparent;
+  height: 38px;
+  left: 909px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.fianl1 .path-8-NOXmfT {
+  background-color: transparent;
+  height: 38px;
+  left: 94px;
+  position: absolute;
+  top: 120px;
+  width: 3px;
+}
+.fianl1 .path-8-VrYlAT {
+  background-color: transparent;
+  height: 38px;
+  left: 433px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.fianl1 .path-8-WIzNie {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .path-8-grFyyT {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .path-8-iMAlWq {
+  background-color: transparent;
+  height: 38px;
+  left: 206px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.fianl1 .path-8-jsbgv1 {
+  background-color: transparent;
+  height: 38px;
+  left: 672px;
+  position: absolute;
+  top: 207px;
+  transform: rotate(90deg);
+  width: 3px;
+}
+.fianl1 .path-8-uojbMS {
+  background-color: transparent;
+  height: 126px;
+  left: 322px;
+  position: absolute;
+  top: 279px;
+  width: 3px;
+}
+.fianl1 .path-9-NOXmfT {
+  background-color: transparent;
+  height: 133px;
+  left: 418px;
+  position: absolute;
+  top: 365px;
+  width: 139px;
+}
+.fianl1 .path-SZ6ZfY {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  opacity: 0.56;
+  position: absolute;
+  top: 333px;
+  width: 1150px;
+}
+.fianl1 .path-aD65qG {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  opacity: 0.56;
+  position: absolute;
+  top: 50px;
+  width: 1150px;
+}
+.fianl1 .path-nxJxoR {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  opacity: 0.56;
+  position: absolute;
+  top: 190px;
+  width: 1150px;
+}
+.fianl1 .path-sR9OkK {
+  background-color: transparent;
+  height: 1px;
+  left: 0px;
+  opacity: 0.56;
+  position: absolute;
+  top: 258px;
+  width: 1150px;
+}
+.fianl1 .path-ufhbXJ {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  opacity: 0.56;
+  position: absolute;
+  top: 115px;
+  width: 1150px;
+}
+.fianl1 .path10-ny8xxp {
+  background-color: transparent;
+  height: 4px;
+  left: 8px;
+  position: absolute;
+  top: 0px;
+  width: 2px;
+}
+.fianl1 .path11-DTOFdC {
+  background-color: transparent;
+  height: 2px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 2px;
+}
+.fianl1 .path12-DTOFdC {
+  background-color: transparent;
+  height: 2px;
+  left: 11px;
+  position: absolute;
+  top: 0px;
+  width: 2px;
+}
+.fianl1 .path13-939mlu {
+  background-color: transparent;
+  height: 5px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 5px;
+}
+.fianl1 .path14-939mlu {
+  background-color: transparent;
+  height: 5px;
+  left: 12px;
+  position: absolute;
+  top: 0px;
+  width: 5px;
+}
+.fianl1 .path16-hHWpaJ {
+  background-color: transparent;
+  height: 11px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 27px;
+}
+.fianl1 .path7-fww64x {
+  background-color: transparent;
+  height: 8px;
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  width: 8px;
+}
+.fianl1 .path8-fww64x {
+  background-color: transparent;
+  height: 3px;
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  width: 3px;
+}
+.fianl1 .path9-trVNTN {
+  background-color: transparent;
+  height: 3px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 3px;
+}
+.fianl1 .personalised-options-ufhbXJ {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 874px;
+  letter-spacing: 0.00px;
+  line-height: 39px;
+  position: absolute;
+  text-align: right;
+  top: 2px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .post-to-feed-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 970px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 302px;
+  white-space: nowrap;
+  width: 100px;
+}
+.fianl1 .privacy-settings-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 732px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 518px;
+  white-space: nowrap;
+  width: 121px;
+}
+.fianl1 .process-1-CTqNVN {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 27px;
+}
+.fianl1 .process-1-WQXeF1 {
+  background-color: transparent;
+  height: 24px;
+  left: 786px;
+  position: absolute;
+  top: 56px;
+  width: 27px;
+}
+.fianl1 .process-2-WQXeF1 {
+  background-color: transparent;
+  height: 24px;
+  left: 786px;
+  position: absolute;
+  top: 97px;
+  width: 29px;
+}
+.fianl1 .process-2-YVIknx {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 29px;
+}
+.fianl1 .process-3-WQXeF1 {
+  background-color: transparent;
+  height: 24px;
+  left: 786px;
+  position: absolute;
+  top: 134px;
+  width: 29px;
+}
+.fianl1 .process-3-to8NLN {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 29px;
+}
+.fianl1 .profile-3cZhlu {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 860px;
+  letter-spacing: 0.00px;
+  line-height: 23px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .profile-picture-E582nk {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 268px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 458px;
+  white-space: nowrap;
+  width: 107px;
+}
+.fianl1 .profile-picture-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 330px;
+  white-space: nowrap;
+  width: 114px;
+}
+.fianl1 .progress-tracking-ufhbXJ {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 8px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: 209px;
+  white-space: nowrap;
+  width: 177px;
+}
+.fianl1 .project-cook-book-C61RwL {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 723px;
+  letter-spacing: 0.00px;
+  line-height: 33px;
+  position: absolute;
+  text-align: left;
+  top: 265px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .project-vision-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 105px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: right;
+  top: 578px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .recent-recipes-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 270px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 112px;
+}
+.fianl1 .recipes-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 268px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 484px;
+  white-space: nowrap;
+  width: 126px;
+}
+.fianl1 .recommendations-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 245px;
+  white-space: nowrap;
+  width: 129px;
+}
+.fianl1 .rect-1-link-U0KV5x {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 140px;
+}
+.fianl1 .rect-1-ouncD5 {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 140px;
+}
+.fianl1 .rect-10-6gWKeM {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-10-link-qPkZVN {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-11-ZmLVXg {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-11-link-rIAxu5 {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-17-9nW5hG {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-17-link-znuZ3T {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-18-8gnEWD {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-18-link-R80W4S {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-2-gsO4iE {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .rect-2-link-ttavVl {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .rect-24-UfnzMK {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-24-link-OgyUZn {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-25-EfmkN4 {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-25-link-HK5PSN {
+  background-color: transparent;
+  height: 370px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .rect-3-fbDwi3 {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 143px;
+}
+.fianl1 .rect-3-link-F7OKnx {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 143px;
+}
+.fianl1 .rect-4-cQSbwz {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 140px;
+}
+.fianl1 .rect-4-link-Fyhjkd {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 140px;
+}
+.fianl1 .rect-5-gjJhDI {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .rect-5-link-2TzeM5 {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .rect-6-link-XAW5mx {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .rect-6-zgpLmn {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .rectangle-0kOvHB {
+  background-color: var(--white);
+  height: 313px;
+  left: 547px;
+  position: absolute;
+  top: 2px;
+  width: 142px;
+}
+.fianl1 .rectangle-10KR2y {
+  background-color: var(--white);
+  height: 173px;
+  left: 228px;
+  position: absolute;
+  top: 403px;
+  width: 191px;
+}
+.fianl1 .rectangle-2P4qUJ {
+  background-color: var(--monte-carlo);
+  height: 122px;
+  left: 737px;
+  position: absolute;
+  top: 3874px;
+  width: 3px;
+}
+.fianl1 .rectangle-2RZRR5 {
+  background-color: transparent;
+  height: 313px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 141px;
+}
+.fianl1 .rectangle-8p1NQq {
+  background-color: #1f2424;
+  height: 135px;
+  left: 36px;
+  position: absolute;
+  top: 113px;
+  width: 192px;
+}
+.fianl1 .rectangle-C61RwL {
+  background-color: #b3edee;
+  height: 514px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1440px;
+}
+.fianl1 .rectangle-Dzgab5 {
+  background-color: transparent;
+  height: 490px;
+  left: 880px;
+  position: absolute;
+  top: 359px;
+  width: 140px;
+}
+.fianl1 .rectangle-E582nk {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 190px;
+}
+.fianl1 .rectangle-GAxYsH {
+  background-color: var(--iceberg);
+  height: 23px;
+  left: 758px;
+  position: absolute;
+  top: 89px;
+  width: 23px;
+}
+.fianl1 .rectangle-I0knkT {
+  background-color: transparent;
+  height: 100px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 309px;
+}
+.fianl1 .rectangle-Iru44i {
+  background-color: transparent;
+  height: 307px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 132px;
+}
+.fianl1 .rectangle-IxEnRr {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 226px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.fianl1 .rectangle-J1YQmd {
+  background-color: transparent;
+  height: 100px;
+  left: 887px;
+  position: absolute;
+  top: 12528px;
+  width: 309px;
+}
+.fianl1 .rectangle-KhVtzg {
+  background-color: var(--white);
+  height: 208px;
+  left: 689px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.fianl1 .rectangle-NOXmfT {
+  background-color: var(--white);
+  height: 121px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 190px;
+}
+.fianl1 .rectangle-Ngo5aa {
+  background-color: var(--white);
+  height: 203px;
+  left: 2px;
+  position: absolute;
+  top: 38px;
+  width: 139px;
+}
+.fianl1 .rectangle-PTXWcf {
+  background-color: var(--iceberg);
+  height: 23px;
+  left: 758px;
+  position: absolute;
+  top: 125px;
+  width: 23px;
+}
+.fianl1 .rectangle-QxM5SU {
+  background-color: var(--monte-carlo);
+  height: 122px;
+  left: 118px;
+  position: absolute;
+  top: 3874px;
+  width: 3px;
+}
+.fianl1 .rectangle-VMr6Om {
+  background-color: var(--monte-carlo);
+  border: 1px solid #969696;
+  height: 542px;
+  left: 0px;
+  opacity: 0.11;
+  position: absolute;
+  top: 1843px;
+  width: 1366px;
+}
+.fianl1 .rectangle-VrYlAT {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 0px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.fianl1 .rectangle-WO1ew4 {
+  background-color: transparent;
+  height: 313px;
+  left: 547px;
+  position: absolute;
+  top: 2px;
+  width: 142px;
+}
+.fianl1 .rectangle-WQXeF1 {
+  background-color: var(--iceberg);
+  height: 21px;
+  left: 539px;
+  position: absolute;
+  top: 615px;
+  width: 124px;
+}
+.fianl1 .rectangle-Wh5CmH {
+  background-color: var(--white);
+  height: 186px;
+  left: 927px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.fianl1 .rectangle-ZH4vOj {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 689px;
+  position: absolute;
+  top: 402px;
+  width: 205px;
+}
+.fianl1 .rectangle-fSpzM4 {
+  background-color: transparent;
+  height: 307px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 132px;
+}
+.fianl1 .rectangle-iMAlWq {
+  background-color: var(--white);
+  height: 121px;
+  left: 0px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.fianl1 .rectangle-jsbgv1 {
+  background-color: var(--white);
+  height: 121px;
+  left: 226px;
+  position: absolute;
+  top: 158px;
+  width: 190px;
+}
+.fianl1 .rectangle-kGFtrF {
+  background-color: var(--white);
+  height: 186px;
+  left: 689px;
+  position: absolute;
+  top: 402px;
+  width: 205px;
+}
+.fianl1 .rectangle-mzXdH9 {
+  background-color: var(--monte-carlo);
+  border: 1px solid #969696;
+  height: 753px;
+  left: 0px;
+  opacity: 0.11;
+  position: absolute;
+  top: 3432px;
+  width: 1366px;
+}
+.fianl1 .rectangle-nhjzXJ {
+  background-color: var(--white);
+  height: 313px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 141px;
+}
+.fianl1 .rectangle-pO6V4x {
+  background-color: var(--monte-carlo);
+  height: 43px;
+  left: 228px;
+  position: absolute;
+  top: 403px;
+  width: 191px;
+}
+.fianl1 .rectangle-q26NeC {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 927px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.fianl1 .rectangle-qr8e7q {
+  background-color: transparent;
+  border: 1px solid var(--monte-carlo);
+  height: 315px;
+  left: 844px;
+  position: absolute;
+  top: 6840px;
+  width: 142px;
+}
+.fianl1 .rectangle-rF4OeA {
+  background-color: #474c50;
+  height: 33px;
+  left: 141px;
+  position: absolute;
+  top: 64px;
+  width: 89px;
+}
+.fianl1 .rectangle-s2JxyW {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 689px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.fianl1 .rectangle-snh6SV {
+  background-color: var(--white);
+  height: 14px;
+  left: 625px;
+  position: absolute;
+  top: 162px;
+  width: 54px;
+}
+.fianl1 .rectangle-uUCLfB {
+  background-color: transparent;
+  height: 378px;
+  left: 1032px;
+  position: absolute;
+  top: 359px;
+  width: 138px;
+}
+.fianl1 .rectangle-uojbMS {
+  background-color: var(--white);
+  height: 208px;
+  left: 452px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.fianl1 .rectangle-wLBeD7 {
+  background-color: var(--iceberg);
+  height: 23px;
+  left: 758px;
+  position: absolute;
+  top: 50px;
+  width: 23px;
+}
+.fianl1 .rectangle-yfnr7g {
+  background-color: var(--monte-carlo);
+  height: 47px;
+  left: 452px;
+  position: absolute;
+  top: 158px;
+  width: 205px;
+}
+.fianl1 .rectangle3-KUe2YO {
+  background-color: transparent;
+  height: 20px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  transform: rotate(-86.71deg);
+  width: 25px;
+}
+.fianl1 .register-E582nk {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 39px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: right;
+  top: 84px;
+  white-space: nowrap;
+  width: 61px;
+}
+.fianl1 .register-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 46px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 76px;
+}
+.fianl1 .role-concept-resea-C61RwL {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 723px;
+  letter-spacing: 0.00px;
+  line-height: 33px;
+  position: absolute;
+  text-align: left;
+  top: 311px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .sara-is-junior-chef-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 156px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: justify;
+  top: 3861px;
+  width: 468px;
+}
+.fianl1 .save-WQXeF1 {
+  background-color: transparent;
+  height: 32px;
+  left: 589px;
+  position: absolute;
+  top: 620px;
+  width: 19px;
+}
+.fianl1 .save-r6hIF5 {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxs);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 19px;
+}
+.fianl1 .screenshot-2021-03-at-113057-am-C61RwL {
+  background-color: transparent;
+  height: 514px;
+  left: -99px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 1440px;
+}
+.fianl1 .screenshot-2021-06-at-113654-pm-C61RwL {
+  background-color: transparent;
+  height: 902px;
+  left: 60px;
+  overflow: hidden;
+  position: absolute;
+  top: 8032px;
+  width: 1279px;
+}
+.fianl1 .screenshot-2021-06-at-113654-pm-rJmpkO {
+  background-color: transparent;
+  height: 1183px;
+  left: -311px;
+  position: absolute;
+  top: -172px;
+  width: 1893px;
+}
+.fianl1 .screenshot-2021-06-at-52659-pm-C61RwL {
+  background-color: transparent;
+  height: 678px;
+  left: 526px;
+  position: absolute;
+  top: 1080px;
+  width: 314px;
+}
+.fianl1 .screenshot-2021-06-at-70330-pm-VjCs8a {
+  background-color: transparent;
+  height: 627px;
+  left: 112px;
+  position: absolute;
+  top: -141px;
+  transform: rotate(-34deg);
+  width: 291px;
+}
+.fianl1 .screenshot-2021-06-at-70330-pm-j8S3dD {
+  background-color: transparent;
+  height: 627px;
+  left: 293px;
+  position: absolute;
+  top: -141px;
+  transform: rotate(-34deg);
+  width: 291px;
+}
+.fianl1 .seamless-integration-SJCx52 {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 47px;
+  position: absolute;
+  text-align: left;
+  top: 114px;
+  width: 562px;
+}
+.fianl1 .search-9dtg3L {
+  background-color: transparent;
+  height: 21px;
+  left: 103px;
+  position: absolute;
+  top: 15px;
+  width: 53px;
+}
+.fianl1 .search-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 512px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 64px;
+}
+.fianl1 .search-filter-9dtg3L {
+  background-color: transparent;
+  height: 21px;
+  left: 333px;
+  position: absolute;
+  top: 15px;
+  width: 92px;
+}
+.fianl1 .settings-E582nk {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 740px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 415px;
+  white-space: nowrap;
+  width: 78px;
+}
+.fianl1 .settings-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 733px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 273px;
+  white-space: nowrap;
+  width: 69px;
+}
+.fianl1 .sketches-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 107px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 5152px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .span1-BOofMc {
+
+}
+.fianl1 .span1-DPMtZx {
+
+}
+.fianl1 .span1-EmS8s9 {
+
+}
+.fianl1 .span1-LdIYcg {
+
+}
+.fianl1 .span1-VQ1xWr {
+
+}
+.fianl1 .span1-alzIj0 {
+
+}
+.fianl1 .span1-iw6cKl {
+
+}
+.fianl1 .span1-vbzYbe {
+
+}
+.fianl1 .span1-yUh150 {
+
+}
+.fianl1 .span2-BOofMc {
+
+}
+.fianl1 .span2-DPMtZx {
+
+}
+.fianl1 .span2-EmS8s9 {
+
+}
+.fianl1 .span2-LdIYcg {
+
+}
+.fianl1 .span2-VQ1xWr {
+
+}
+.fianl1 .span2-alzIj0 {
+
+}
+.fianl1 .span2-iw6cKl {
+
+}
+.fianl1 .span2-vbzYbe {
+
+}
+.fianl1 .span2-yUh150 {
+
+}
+.fianl1 .splash-screen-3cZhlu {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 100px;
+  letter-spacing: 0.00px;
+  line-height: 23px;
+  position: absolute;
+  text-align: left;
+  top: 23px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .splash-screen-E582nk {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 252px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 117px;
+}
+.fianl1 .splash-screen-IxEnRr {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 251px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 415px;
+  white-space: nowrap;
+  width: 109px;
+}
+.fianl1 .splash-screen-NOXmfT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 35px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 12px;
+  white-space: nowrap;
+  width: 125px;
+}
+.fianl1 .splash-screen-VrYlAT {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 715px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 117px;
+}
+.fianl1 .splash-screen-iMAlWq {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 477px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 170px;
+  white-space: nowrap;
+  width: 117px;
+}
+.fianl1 .splash-screen-jsbgv1 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 714px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: right;
+  top: 415px;
+  white-space: nowrap;
+  width: 117px;
+}
+.fianl1 .style-guide-FnxWB8 {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .tags-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 302px;
+  white-space: nowrap;
+  width: 36px;
+}
+.fianl1 .the-application-has-Qwfpuv {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: justify;
+  top: 225px;
+  width: 576px;
+}
+.fianl1 .the-application-time-SJCx52 {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: justify;
+  top: 235px;
+  width: 576px;
+}
+.fianl1 .tracking-the-cooking-MLW1n6 {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 47px;
+  position: absolute;
+  text-align: left;
+  top: 114px;
+  width: 562px;
+}
+.fianl1 .trending-recipes-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 495px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 216px;
+  white-space: nowrap;
+  width: 126px;
+}
+.fianl1 .untitled-artwork-3cZhlu {
+  background-color: transparent;
+  height: 333px;
+  left: 0px;
+  position: absolute;
+  top: 21px;
+  width: 1230px;
+}
+.fianl1 .untitled-artwork-9dtg3L {
+  background-color: transparent;
+  height: 314px;
+  left: 0px;
+  position: absolute;
+  top: 41px;
+  width: 1188px;
+}
+.fianl1 .untitled-artwork-CcEnn8 {
+  background-color: transparent;
+  height: 376px;
+  left: 0px;
+  position: absolute;
+  top: 26px;
+  width: 1229px;
+}
+.fianl1 .username-NOXmfT {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 39px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: right;
+  top: 216px;
+  white-space: nowrap;
+  width: 76px;
+}
+.fianl1 .vijay-is-a-developer-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 775px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: justify;
+  top: 3861px;
+  width: 468px;
+}
+.fianl1 .visual-design-kK8Vvv {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .welcome-copy-3-WQXeF1 {
+  background-color: transparent;
+  height: 310px;
+  left: 0px;
+  position: absolute;
+  top: 4px;
+  width: 143px;
+}
+.fianl1 .what-type-of-food-is-Qwfpuv {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 47px;
+  position: absolute;
+  text-align: left;
+  top: 114px;
+  width: 562px;
+}
+.fianl1 .wireframes-hvAGCq {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .x033-recipe-feed-cal-scroll-copy-0kOvHB {
+  background-color: transparent;
+  height: 43px;
+  left: 735px;
+  position: absolute;
+  top: 624px;
+  width: 133px;
+}
+.fianl1 .x033-recipe-feed-cal-scroll-copy-Iru44i {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .x033-recipe-feed-cal-scroll-copy-Mg79e2 {
+  background-color: transparent;
+  height: 42px;
+  left: 0px;
+  position: absolute;
+  top: 266px;
+  width: 133px;
+}
+.fianl1 .x033-recipe-feed-cal-scroll-copy-WQXeF1 {
+  background-color: transparent;
+  height: 308px;
+  left: 735px;
+  position: absolute;
+  top: 358px;
+  width: 133px;
+}
+.fianl1 .x033-recipe-feed-cal-scroll-copy-fSpzM4 {
+  background-color: transparent;
+  height: 308px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 133px;
+}
+.fianl1 .x033-recipe-feed-cal-scroll-copy-tlEK3G {
+  background-color: transparent;
+  height: 42px;
+  left: 0px;
+  position: absolute;
+  top: 266px;
+  width: 133px;
+}
+.fianl1 .x033-recipe-feed-l-scroll-copy-2-WQXeF1 {
+  background-color: transparent;
+  height: 310px;
+  left: 183px;
+  position: absolute;
+  top: 4px;
+  width: 140px;
+}
+.fianl1 .x033-recipe-feed-l-scroll-copy-3-WQXeF1 {
+  background-color: transparent;
+  height: 310px;
+  left: 337px;
+  position: absolute;
+  top: 4px;
+  width: 140px;
+}
+.fianl1 .x051-edit-recipe-WQXeF1 {
+  background-color: transparent;
+  height: 492px;
+  left: 879px;
+  position: absolute;
+  top: 357px;
+  width: 140px;
+}
+.fianl1 .x06-new-recipe-WQXeF1 {
+  background-color: transparent;
+  height: 377px;
+  left: 1032px;
+  position: absolute;
+  top: 358px;
+  width: 139px;
+}
+.fianl1 .x071-cooking-mode-WQXeF1 {
+  background-color: transparent;
+  height: 218px;
+  left: 547px;
+  position: absolute;
+  top: 2px;
+  width: 142px;
+}
+.fianl1 .x071-cooking-mode-nhjzXJ {
+  background-color: transparent;
+  height: 219px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 142px;
+}
+.fianl1 .x081-search-suggestion-WQXeF1 {
+  background-color: transparent;
+  height: 308px;
+  left: 1px;
+  position: absolute;
+  top: 358px;
+  width: 142px;
+}
+.fianl1 .x091-user-profile-WQXeF1 {
+  background-color: transparent;
+  height: 308px;
+  left: 364px;
+  position: absolute;
+  top: 358px;
+  width: 142px;
+}
+.fianl1 .x093-edit-profile-WQXeF1 {
+  background-color: transparent;
+  height: 308px;
+  left: 530px;
+  position: absolute;
+  top: 358px;
+  width: 142px;
+}
+.fianl1 .x1-allow-users-to-fo-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 743px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: justify;
+  top: 651px;
+  width: 514px;
+}
+</style>
+    
+    
+    
+    <meta name="author" content="AnimaApp.com - Design to code, Automated.">
+</head>
+<body style="margin: 0;background: #ffffff;">
+<input type="hidden" id="anPageName" name="page" value="fianl1"/>
+
+    <div class="container-center-horizontal">
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="fianl1 screen " >
+    
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-03-at-113057-am-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="mask-VjCs8a" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-06-at-70330-pm-VjCs8a"  
+src="./img/fianl1-screenshot-2021-05-06-at-70330-pm-24C6CB79-D5AA-4B99-ABBB-8B92EABC8D0F.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-06-at-70330-pm-j8S3dD"  
+src="./img/fianl1-screenshot-2021-05-06-at-70330-pm-55EA9346-35E0-444A-8A93-DD505EC12CE6.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-mzXdH9" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-QxM5SU" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="name-sara-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-iw6cKl poppins-medium-midnight-moss-24px">Name</span><span class="span2-iw6cKl poppins-normal-midnight-moss-24px">: Sara</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="age-20-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-yUh150 poppins-medium-midnight-moss-24px">Age</span><span class="span2-yUh150 poppins-normal-midnight-moss-24px">: 20</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ocupation-chef-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-DPMtZx poppins-medium-midnight-moss-24px">Ocupation: </span><span class="span2-DPMtZx poppins-normal-midnight-moss-24px">Chef</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="cook-book-C61RwL" 
+>CookBook</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="project-cook-book-C61RwL poppins-semi-bold-shark-22px" 
+><span class="span1-alzIj0 poppins-semi-bold-shark-22px">PROJECT</span><span class="span2-alzIj0 poppins-normal-shark-22px">: CookBook</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="role-concept-resea-C61RwL poppins-semi-bold-shark-22px" 
+><span class="span1-EmS8s9 poppins-semi-bold-shark-22px">ROLE:</span><span class="span2-EmS8s9 poppins-normal-shark-22px"> Concept, Research, Visuals</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="duration-jan-feb-C61RwL poppins-semi-bold-shark-22px" 
+><span class="span1-BOofMc poppins-semi-bold-shark-22px">DURATION: </span><span class="span2-BOofMc poppins-normal-shark-22px">Jan - Feb 2021</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="project-vision-C61RwL poppins-medium-midnight-moss-36px" 
+>Project Vision</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="kick-off-C61RwL poppins-medium-midnight-moss-36px" 
+>Kick Off</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="i-initially-started-C61RwL poppins-normal-sonic-silver-20px" 
+>I initially started off myself with a few questions. <br>&nbsp;&nbsp; Who are our primary users? <br>&nbsp;&nbsp; What kind of features do they require in this application? <br>&nbsp;&nbsp; Why would someone want to use this application? <br>&nbsp;&nbsp; How many features can be integrated in this project? <br>&nbsp;&nbsp; After brainstorming the ideas to establish users, information architecture, etc. <br><br>It became evident that the primary goal of the application is to provide guidance during cooking, also it can accomplish a few tasks within the same categories like generating Groceries list, scheduling reminders during the cooking process, etc.</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="competitive-analysis-C61RwL poppins-medium-midnight-moss-36px" 
+>Competitive Analysis</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="meet-the-users-C61RwL poppins-medium-midnight-moss-36px" 
+>Meet the Users</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="information-architec-C61RwL poppins-medium-midnight-moss-36px" 
+>Information Architecture</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="sketches-C61RwL poppins-medium-midnight-moss-36px" 
+>Sketches</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="in-order-to-evaluate-C61RwL poppins-normal-sonic-silver-20px" 
+>In order to evaluate the problem space, I had to venture out and see what are the possible applications and solutions present which solve the similar problem and what are the pain-points faced by users in achieving the goals. I evaluated several features that seemed critical from user surveys and identified which ones the application could capitalize on to have an edge over other applications. <br><br>I found that primarily users rely on Youtube channels for guided cooking where the chefs prepare dishes and showcases various stages of preparation for a dish. The other options are through blogs, books and some podcasts. Even then, majority of users don&#39;t get the experience of guided cooking using the existing solutions available.</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-mzXdH9" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-QxM5SU" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-2P4qUJ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="cook-book-app-is-a-gu-C61RwL poppins-normal-sonic-silver-20px" 
+>CookBook App is a Guided cooking service primarily focussed for newbies to recreate the authentic taste from their favorite chefs. With current advancements in mobile applications and IoT devices at homes especially in kitchens we leverage on these platforms and frameworks for our application. Our application primarily focus on guidance for the users by seamlessly integrating with the environment and providing guidance during the cook time.</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-allow-users-to-fo-C61RwL poppins-normal-sonic-silver-20px" 
+>1. Allow users to follow along with the cooking procedure and monitor the environment for keeping track of the status<br>2. Application to seamlessly integrate with Smart Speakers like Google Home, Alexa, for convenience <br>3. Reduce the burden for employee by providing all necessary details at one go</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="challenges-C61RwL poppins-medium-midnight-moss-36px" 
+>Challenges</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-qr8e7q" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-GoEWZg"  
+src="./img/fianl1-bitmap-FE9064F9-14B4-41FF-8AE0-B12DFA870A29@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-copy-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-copy-TUaSoE"  
+src="./img/fianl1-bitmap-copy-F8A00AB3-8D6D-45CD-97A2-2C0737315AC4@2x.png"
+/>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="sara-is-junior-chef-C61RwL poppins-normal-midnight-moss-20px" 
+>Sara is Junior Chef at a restaurant in India. She always tries to learn authentic recipes, but has a hard time finding an application that lets her easily learn a dish. </div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-2P4qUJ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="name-vijay-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-vbzYbe poppins-medium-midnight-moss-24px">Name</span><span class="span2-vbzYbe poppins-normal-midnight-moss-24px">: Vijay</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="age-45-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-VQ1xWr poppins-medium-midnight-moss-24px">Age</span><span class="span2-VQ1xWr poppins-normal-midnight-moss-24px">: 45</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ocupation-developer-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-LdIYcg poppins-medium-midnight-moss-24px">Ocupation: </span><span class="span2-LdIYcg poppins-normal-midnight-moss-24px">Developer</span></div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-J1YQmd" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="vijay-is-a-developer-C61RwL poppins-normal-midnight-moss-20px" 
+>Vijay is a developer, who stays in a room away with his parents. He always checks for quick dishes to prepare before going to office. He found difficult looking at videos in youtube while cooking.</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-NOXmfT border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-NOXmfT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-E582nk" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-E582nk" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-NOXmfT poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-NOXmfT"  
+src="./img/fianl1-path-8-A85BA909-4B1F-47F7-BC54-7413135DA0D6@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-E582nk"  
+src="./img/fianl1-path-8-225F88B8-0398-4058-8FB0-ACD18730C1FF@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-iMAlWq border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-VrYlAT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="register-NOXmfT poppins-medium-white-16px" 
+>REGISTER</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-E582nk poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-jsbgv1 border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-IxEnRr" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="feed-NOXmfT poppins-medium-white-16px" 
+>FEED</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-iMAlWq"  
+src="./img/fianl1-path-8-79F7C84E-D2C7-4391-8506-2307891BD6CC@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-VrYlAT"  
+src="./img/fianl1-path-8-AFCEA82C-AB6C-495B-B07D-F125AFB3A088@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-jsbgv1"  
+src="./img/fianl1-path-8-0C587D53-CFBE-4FB8-9446-7B63762AFCFC@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="login-NOXmfT poppins-normal-sonic-silver-14px" 
+>Login</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="register-E582nk poppins-normal-sonic-silver-14px" 
+>Register</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-iMAlWq" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-VrYlAT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="username-NOXmfT poppins-normal-sonic-silver-14px" 
+>Username</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="email-NOXmfT poppins-normal-sonic-silver-14px" 
+>Email</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-jsbgv1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="recent-recipes-NOXmfT poppins-normal-sonic-silver-14px" 
+>Recent Recipes</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-iMAlWq poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-uojbMS border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-yfnr7g" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="search-NOXmfT poppins-medium-white-16px" 
+>SEARCH</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-IxEnRr" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="trending-recipes-NOXmfT poppins-normal-sonic-silver-14px" 
+>Trending Recipes</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-uojbMS" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="recommendations-NOXmfT poppins-normal-sonic-silver-14px" 
+>Recommendations</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-yfnr7g" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="other-profiles-NOXmfT poppins-normal-sonic-silver-14px" 
+>Other Profiles</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-KhVtzg" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="tags-NOXmfT poppins-normal-sonic-silver-14px" 
+>Tags</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-s2JxyW" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="filter-NOXmfT poppins-normal-sonic-silver-14px" 
+>Filter</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-IxEnRr"  
+src="./img/fianl1-path-8-DD1C5F33-2F64-481E-B2E7-E6A8915101CD@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-VrYlAT poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-KhVtzg border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-s2JxyW" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-kGFtrF border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="my-profile-NOXmfT poppins-medium-white-16px" 
+>MY PROFILE</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-kGFtrF" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="add-recipe-NOXmfT poppins-normal-sonic-silver-14px" 
+>Add Recipe</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-ZH4vOj" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="edit-profile-NOXmfT poppins-normal-sonic-silver-14px" 
+>Edit Profile</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-10KR2y" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="settings-NOXmfT poppins-normal-sonic-silver-14px" 
+>Settings</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-pO6V4x" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="followers-NOXmfT poppins-normal-sonic-silver-14px" 
+>Followers</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-Wh5CmH" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="profile-picture-NOXmfT poppins-normal-sonic-silver-14px" 
+>Profile Picture</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-jsbgv1 poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-ZH4vOj" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="settings-E582nk poppins-medium-white-16px" 
+>SETTINGS</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-q26NeC" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="log-out-NOXmfT poppins-normal-sonic-silver-14px" 
+>Log Out</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-odhd3Z" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="change-password-NOXmfT poppins-normal-sonic-silver-14px" 
+>Change Password</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-NxlUOU" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="privacy-settings-NOXmfT poppins-normal-sonic-silver-14px" 
+>Privacy Settings</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-wynS9M" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="notification-setting-NOXmfT poppins-normal-sonic-silver-14px" 
+>Notification Settings</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-uojbMS"  
+src="./img/fianl1-path-8-15867ADF-C239-4700-9E49-95CA469F515B@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-10KR2y border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-IxEnRr poppins-medium-white-16px" 
+>SPLASH SCREEN</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-pO6V4x" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="other-profiles-E582nk poppins-medium-white-16px" 
+>OTHER PROFILES</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-1n9Xo5" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="profile-picture-E582nk poppins-normal-sonic-silver-14px" 
+>Profile Picture</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-mOLTFT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="recipes-NOXmfT poppins-normal-sonic-silver-14px" 
+>Recipes</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-B0a7gX" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="followers-E582nk poppins-normal-sonic-silver-14px" 
+>Followers</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-JxQPVm" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="notification-setting-E582nk poppins-normal-sonic-silver-14px" 
+>Notification Settings</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="add-NOXmfT poppins-medium-white-16px" 
+>ADD</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-Wh5CmH border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-q26NeC" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="add-recipe-E582nk poppins-medium-white-16px" 
+>ADD RECIPE</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-qFbsfk" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="edit-recipe-NOXmfT poppins-normal-sonic-silver-14px" 
+>Edit Recipe</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-935aTa" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="gallery-NOXmfT poppins-normal-sonic-silver-14px" 
+>Gallery</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-PIZntI" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ingredients-NOXmfT poppins-normal-sonic-silver-14px" 
+>Ingredients</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-nUNztg" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="post-to-feed-NOXmfT poppins-normal-sonic-silver-14px" 
+>Post to feed</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-9-NOXmfT"  
+src="./img/fianl1-path-9-A13C7927-1A5A-42BA-99A9-3D7A5E3E0FFF@2x.png"
+/>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="before-moving-onto-h-C61RwL poppins-normal-midnight-moss-20px" 
+>Before moving onto high fidelity wireframes and mocks, I wanted to get a feel for what the core of the app would look like when put in front of me.</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="wireframes-hvAGCq poppins-medium-midnight-moss-36px" 
+>Wireframes</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="before-moving-onto-v-hvAGCq poppins-normal-midnight-moss-20px" 
+>Before moving onto visual design, I have created wireframes. Wireframing is a quick and effective way to identify usability issues early on in your design process.</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-copy-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="visual-design-kK8Vvv poppins-medium-midnight-moss-36px" 
+>Visual Design</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="before-moving-onto-v-kK8Vvv poppins-normal-midnight-moss-20px" 
+>Before moving onto visual design, I have created wireframes. Wireframing is a quick and effective way to identify usability issues early on in your design process.</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-copy-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="style-guide-FnxWB8 poppins-medium-midnight-moss-36px" 
+>Style Guide</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="in-order-make-our-wo-FnxWB8 poppins-normal-midnight-moss-20px" 
+>In order make our work much easier and organized, we have created a style guide.</div>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-11-C61RwL"  
+src="./img/fianl1-group-11-53DA658D-6441-4483-AC0C-BDE0713B3F50.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-8-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="untitled-artwork-3cZhlu"  
+src="./img/fianl1-untitled-artwork-DB417EEE-0744-4575-B449-4E3AFA62CE7F@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-10-3cZhlu"  
+src="./img/fianl1-path-10-1B59E495-4205-46AC-A270-7D41CFD3676C.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-3cZhlu" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-8v7f9Z" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="splash-screen-3cZhlu poppins-normal-midnight-moss-15px" 
+>Splash Screen</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-aX2jdN" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="feed-3cZhlu poppins-normal-midnight-moss-15px" 
+>Feed</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-BIx5Oq" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="profile-3cZhlu poppins-normal-midnight-moss-15px" 
+>Profile</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-9-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-9dtg3L"  
+src="./img/fianl1-oval-CB68B670-6B42-4269-AB50-FECC84985B9A@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-d5UlOQ"  
+src="./img/fianl1-oval-FB5DB943-0308-4C71-84CA-3D162DEDF2FB@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="search-9dtg3L"  
+src="./img/fianl1-search-71FF873C-C53D-4A21-9B72-83508BB92EB4@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-k4MoSL"  
+src="./img/fianl1-oval-113B0D93-E468-4440-A688-10BEC7CC1066@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="search-filter-9dtg3L"  
+src="./img/fianl1-search-filter-FC5446C5-1D73-4431-BDBA-9EB49E9CC0B3@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-EVvNu8"  
+src="./img/fianl1-oval-8935C44A-11B7-4525-87C7-464A402E9787@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-10-9dtg3L"  
+src="./img/fianl1-path-10-9FD62E54-3156-4624-8568-9F0B8BF8EBF5@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="my-recipes-9dtg3L"  
+src="./img/fianl1-my-recipes-DF29760C-F6BB-4037-BB56-5A0B6E79FED2@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="untitled-artwork-9dtg3L"  
+src="./img/fianl1-untitled-artwork-37618C6B-E368-4872-8677-48EC125066C0@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-10-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="untitled-artwork-CcEnn8"  
+src="./img/fianl1-untitled-artwork-1F0C3A11-AE70-4E29-A1E8-931E0D204D2D@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-2-CcEnn8"  
+src="./img/fianl1-group-2-D30F8F4F-7775-404B-92C1-3F452B00CE08@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-13-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x033-recipe-feed-l-scroll-copy-2-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-U0KV5x"  
+src="./img/fianl1-bitmap-888C2B86-488A-431B-A28C-EFBF8C04B077.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-1-link-U0KV5x border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-1-ouncD5 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x091-user-profile-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-ttavVl"  
+src="./img/fianl1-bitmap-F695DE6D-06A4-4042-9B5A-3EA0A48087CC.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-2-link-ttavVl border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-2-gsO4iE border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="welcome-copy-3-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-F7OKnx"  
+src="./img/fianl1-bitmap-41710D9E-3E05-4420-B09A-36736406902E.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-3-link-F7OKnx border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-3-fbDwi3 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x033-recipe-feed-l-scroll-copy-3-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-Fyhjkd"  
+src="./img/fianl1-bitmap-E47CA84D-7BFA-4D93-A0ED-6C0748051B74.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-4-link-Fyhjkd border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-4-cQSbwz border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x081-search-suggestion-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-2TzeM5"  
+src="./img/fianl1-bitmap-054F7EBD-CE06-41E7-9AAF-364ACA2FD274.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-5-link-2TzeM5 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-5-gjJhDI border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x093-edit-profile-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-XAW5mx"  
+src="./img/fianl1-bitmap-C19FC16E-579D-4981-B285-3D8A4DE0D058.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-6-link-XAW5mx border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-6-zgpLmn border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-11-WQXeF1"  
+src="./img/fianl1-path-11-59003706-148B-44B9-AB86-FF2B53208CD1@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-WQXeF1 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-0kOvHB border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-11-0kOvHB"  
+src="./img/fianl1-path-11-3D214054-8896-422D-9ED5-FC183CA65B66@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-WO1ew4"  
+src="./img/fianl1-oval-51F81BAB-2285-421B-AD3A-A9F62A7B57E6@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-snh6SV"  
+src="./img/fianl1-oval-35645AAC-4D03-4B1F-A24E-2A0B3A47EE8D@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-11-WO1ew4"  
+src="./img/fianl1-path-11-EFE94342-F473-4BCD-BEEB-B85EB68091F2@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-uUCLfB border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-Dzgab5 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-9-WQXeF1"  
+src="./img/fianl1-group-9-5F4638AE-1FF0-4573-BB9E-155898E27AAC@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-wLBeD7 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-GAxYsH border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x051-edit-recipe-WQXeF1"  
+src="./img/fianl1-051---edit-recipe-654EAB38-E283-423A-BD5A-9F9BEBDF03B5.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x033-recipe-feed-cal-scroll-copy-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-oPGucQ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clipped-TTx5dp" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-WIzNie" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-WIzNie" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-qPkZVN"  
+src="./img/fianl1-bitmap-5A5BABCC-6C83-45DB-BE6B-E18C97453A28.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-10-link-qPkZVN border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-10-6gWKeM border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clipped-8k29n2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-8-grFyyT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-grFyyT" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-rIAxu5"  
+src="./img/fianl1-bitmap-74229550-1497-4B8E-A5E5-65873C0FF6DA.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-11-link-rIAxu5 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-11-ZmLVXg border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x033-recipe-feed-cal-scroll-copy-0kOvHB" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clipped-uyifZx" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-12-RWN935" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-RWN935"  
+src="./img/fianl1-bitmap-DDA19601-C696-489F-924C-E9F4436D7190.png"
+/>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-PTXWcf border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-11-snh6SV"  
+src="./img/fianl1-path-11-677E6651-ECF1-4760-B7AC-0791159DA6EE@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-7PrKg3 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-yMmxsz border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-13-WQXeF1"  
+src="./img/fianl1-path-13-73986994-92CD-4DDC-A869-0C8D532B4AF5@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-mB5fqI border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-AMUKPY border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="save-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="save-r6hIF5" 
+>Save</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-0kOvHB border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x071-cooking-mode-WQXeF1"  
+src="./img/fianl1-071---cooking-mode-27E9FBA5-5C86-4AFF-8A90-C3508505B0EA@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-WO1ew4 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-11-uUCLfB"  
+src="./img/fianl1-path-11-E8156748-BD90-42E5-8529-DA7F6C8A7A9B.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-12-WQXeF1"  
+src="./img/fianl1-path-12-565A8E3E-1E39-40F0-8F11-16B661814B4D@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-9yWA2f border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-16-WQXeF1"  
+src="./img/fianl1-path-16-B041DA12-8446-40A4-BC00-00C2A5486488@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-snh6SV" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x06-new-recipe-WQXeF1"  
+src="./img/fianl1-06---new-recipe-97430C78-39D8-4512-BCD4-3399C4BAF640.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-zVzI8p border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-MJhzU1 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-uUCLfB border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-Dzgab5 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-11-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x033-recipe-feed-cal-scroll-copy-fSpzM4" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-aoME9c" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clipped-56a4US" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-15-ti2iyy" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-ti2iyy" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-znuZ3T"  
+src="./img/fianl1-bitmap-A7DAB6F4-4CB4-46C9-B1BC-241E0A965057.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-17-link-znuZ3T border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-17-9nW5hG border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clipped-9d531R" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-15-YXmhOI" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-YXmhOI" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-R80W4S"  
+src="./img/fianl1-bitmap-9CC7977C-919C-4D10-9D30-6180EDE8A3C3.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-18-link-R80W4S border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-18-8gnEWD border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x033-recipe-feed-cal-scroll-copy-Mg79e2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clipped-jxrRzZ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-19-vjdpZY" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-vjdpZY"  
+src="./img/fianl1-bitmap-A1B84B8E-CDF4-428B-A15C-F9B77E5A4F1D.png"
+/>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-fSpzM4 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-11-0kOvHB" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x033-recipe-feed-cal-scroll-copy-Iru44i" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3Szh1U" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clipped-TBiyhA" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-22-VRFRKg" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-VRFRKg" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-OgyUZn"  
+src="./img/fianl1-bitmap-B0B335FD-154A-47FA-A834-CD29A9090426.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-24-link-OgyUZn border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-24-UfnzMK border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clipped-609sHQ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-22-5onaRx" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-5onaRx" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-HK5PSN"  
+src="./img/fianl1-bitmap-29AFA389-8988-4047-88A6-179A163E1674.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-25-link-HK5PSN border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rect-25-EfmkN4 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x033-recipe-feed-cal-scroll-copy-tlEK3G" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="clipped-T6MxIZ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-26-oorHpU" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-oorHpU"  
+src="./img/fianl1-bitmap-24EA220A-208E-4388-9BDB-437FC3E1F81F.png"
+/>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-Iru44i border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-14-WQXeF1"  
+src="./img/fianl1-path-14-99625A0B-E2BC-4EC6-AF6C-68767881445D.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-16-0kOvHB"  
+src="./img/fianl1-path-16-C2D989CA-5D34-4303-ACB6-9AEE621F873D@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-10-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-12-Ngo5aa" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-nhjzXJ border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x071-cooking-mode-nhjzXJ"  
+src="./img/fianl1-071---cooking-mode-97274447-4813-4EB1-930E-A6E5C452FD94@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-2RZRR5 border-1px-monte-carlo-2" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-Ngo5aa" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="process-1-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="process-1-CTqNVN poppins-normal-black-8px" 
+>Process 1</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="process-2-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="process-2-YVIknx poppins-normal-black-8px" 
+>Process 2</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="process-3-WQXeF1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="process-3-to8NLN poppins-normal-black-8px" 
+>Process 3</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-wLBeD7" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-GAxYsH" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-PTXWcf" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-qr8e7q" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-06-at-52659-pm-C61RwL"  
+src="./img/fianl1-screenshot-2021-05-06-at-52659-pm-2BB64780-CA5B-4024-823B-64492F44EC9C.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-VMr6Om"  
+src="./img/fianl1-bitmap-8AD6221E-12C0-4404-A74F-32E23FF1A66A.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-06-at-113654-pm-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="mask-rJmpkO" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="screenshot-2021-06-at-113654-pm-rJmpkO"  
+src="./img/fianl1-screenshot-2021-05-06-at-113654-pm-8D6205DE-8736-49ED-B573-5B9D15B6DC69.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-9-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-ufhbXJ"  
+src="./img/fianl1-path-510D05DC-818F-4A9F-A7F5-FA335EB1629C.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-aD65qG"  
+src="./img/fianl1-path-BACC710D-3CA1-45FD-8CCE-E29DB5D7A540.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-nxJxoR"  
+src="./img/fianl1-path-8023822E-A89D-4F27-942A-D25BDBE67D59.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-sR9OkK"  
+src="./img/fianl1-path-EDDDD809-3D33-4F14-8DC9-6956C7382D1C.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-SZ6ZfY"  
+src="./img/fianl1-path-55698918-B835-4E71-BD92-08D636CB8F79.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path-2-ufhbXJ"  
+src="./img/fianl1-path-2-332C7035-3183-4B37-B6CF-BCB3EBA573B3.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="descriptive-ufhbXJ poppins-normal-sonic-silver-18px" 
+>Descriptive</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="guidance-ufhbXJ poppins-normal-sonic-silver-18px" 
+>Guidance</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="progress-tracking-ufhbXJ poppins-normal-sonic-silver-18px" 
+>Progress Tracking</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="offline-access-ufhbXJ poppins-normal-sonic-silver-18px" 
+>Offline Access</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="authenticity-ufhbXJ poppins-normal-sonic-silver-18px" 
+>Authenticity</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-ufhbXJ"  
+src="./img/fianl1-bitmap-E696525D-6EDE-4BBB-BB5E-AE23683C296B@2x.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="books-magazines-ufhbXJ" 
+>Books/Magazines</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-ufhbXJ border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="personalised-options-ufhbXJ" 
+>Personalised Options</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-aD65qG" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-nxJxoR" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-sR9OkK" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-SZ6ZfY" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-PpNnA2 border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-12cwrM border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-eSbDB4 border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-SqBzKP border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-Cj8Cb9 border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-brvx35 border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-l78eZL border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-JTYf6j border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-mI35Ka border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-MoXXhw border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-ep1hS4 border-2px-monte-carlo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-copy-2-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="challenge-1-MLW1n6 poppins-medium-monte-carlo-36px" 
+>Challenge 1</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="tracking-the-cooking-MLW1n6 poppins-semi-bold-midnight-moss-36px" 
+>Tracking the Cooking Process<br></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="often-during-cooking-MLW1n6 poppins-normal-midnight-moss-20px" 
+>Often during cooking keeping track of the progress is a huge task as the users normally do multi tasking while working/doing household chores while cooking. Our application helps to keep track of the ambience using audio sensors in the phone to record few key elements in cooking and track the progress.</div>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-mzXdH9"  
+src="./img/fianl1-bitmap-0005AD7D-999F-4FC3-9F87-023AA0007F6D.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-copy-2-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="challenge-3-Qwfpuv poppins-medium-monte-carlo-36px" 
+>Challenge 3</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="what-type-of-food-is-Qwfpuv poppins-semi-bold-midnight-moss-36px" 
+>What type of food is famous in the locality?</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="the-application-has-Qwfpuv poppins-normal-midnight-moss-20px" 
+>The application has a curated list of recipes for the authentic dishes, users can browse the recipes with customised filters available in the application. For ex: users primarily use the application after relocating to a new place or a localility, hence the question &#34;What are famous dishes in the locality?&#34; Answering this question is no longer an issue as users are able to browse and share&nbsp;&nbsp;their dishes conveniently with the community.</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-copy-2-mzXdH9" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="challenge-2-SJCx52 poppins-medium-monte-carlo-36px" 
+>Challenge 2</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="seamless-integration-SJCx52 poppins-semi-bold-midnight-moss-36px" 
+>Seamless integration with devices</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="the-application-time-SJCx52 poppins-normal-midnight-moss-20px" 
+>The application timer seamlessly integrates with other devices to keep track of the cooking process. The application can be seamlessly integrate with smart devices and provide alerts, reminders, that can enhance the cooking process. </div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-8-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-8p1NQq"  
+src="./img/fianl1-bitmap-544181F3-DBCC-4988-A7E4-37BCDC18ECE1.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-8p1NQq" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ouch-water-is-boili-8p1NQq" 
+>Ouch, Water is boiling, its time to add noodles and maggi masala</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-8p1NQq" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-6-8p1NQq" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group16-nxX0j0" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group15-F3619W" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group14-rRHKs1" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group13-hHWpaJ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group9-KUe2YO" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group7-hyFoNB" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path7-fww64x"  
+src="./img/fianl1-path7-03F5A3CA-5D57-4E33-A014-D67F47A1C5D8@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path8-fww64x"  
+src="./img/fianl1-path8-B989016A-E10A-42E6-BFAB-7420F6A81B6D@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group8-hyFoNB" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ellipse2-trVNTN" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path9-trVNTN"  
+src="./img/fianl1-path9-81B03960-93C9-4542-8309-F8FA53D395AF@2x.png"
+/>
+
+</div>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle3-KUe2YO"  
+src="./img/fianl1-rectangle3-D1E82302-57C3-4813-9BD2-560801FA80F3@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group12-KUe2YO" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path10-ny8xxp"  
+src="./img/fianl1-path10-667E4270-B622-4F38-BFCD-141DA8041858@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group10-ny8xxp" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path11-DTOFdC"  
+src="./img/fianl1-path11-4F185F6E-8004-42FF-A72C-05D149556973@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path12-DTOFdC"  
+src="./img/fianl1-path12-AAFD0B14-0EB3-407A-A185-9B68DF3AC878@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group11-ny8xxp" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path13-939mlu"  
+src="./img/fianl1-path13-9DA08105-17CF-49DD-BA02-F1C04F2F6031@2x.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path14-939mlu"  
+src="./img/fianl1-path14-C9126B93-2BCB-4A43-BAAE-A4AC98014FF2@2x.png"
+/>
+
+</div>
+
+</div>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="path16-hHWpaJ"  
+src="./img/fianl1-path16-1FEB1A7D-FFAC-44F0-8171-106D487C40EB@2x.png"
+/>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-nxX0j0" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="fill-61-Z9eCye"  
+src="./img/fianl1-fill-61-FC74C4C1-3B3A-44B5-809D-818637FB643C@2x.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-70-Z9eCye" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-70-Ho6yPV"  
+src="./img/fianl1-group-70-D0915D84-0257-4969-AD1B-459CB90AA8D5@2x.png"
+/>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-rF4OeA" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-rF4OeA" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="cookbook-8p1NQq" 
+>COOKBOOK</div>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-QxM5SU"  
+src="./img/fianl1-bitmap-062DD1D0-29D4-4ED5-BC7C-33C56802D064.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-2P4qUJ"  
+src="./img/fianl1-bitmap-1208C4A3-EC2A-43B4-98AC-2FC8F67C5D93.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="mask-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-J1YQmd" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-I0knkT"  
+src="./img/fianl1-rectangle-E16FD6F5-1DFB-44C7-A8E6-34A8376697A2.png"
+/>
+
+</div>
+
+ </div>
+    </div>
+    
+
+
+
+    <!-- V 6bc81b51112ee56100c1866cb896c5e72cff143a Mon May 10 10:56:55 UTC 2021 -->
+</body>
+</html>
