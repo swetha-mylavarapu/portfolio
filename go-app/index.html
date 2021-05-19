@@ -1,0 +1,5433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>window.addEventListener('DOMContentLoaded', function () {
+    for (var ls = document.links, numLinks = ls.length, i=0; i<numLinks; i++){
+        var currLink = ls[i].href;
+        if (currLink.startsWith("anima://")) {
+            ls[i].href = currLink.replace("anima://", "/");
+            console.log(ls[i].href);
+        } else if (currLink.startsWith("http")) {
+            ls[i].href = "/" + currLink;
+            console.log(ls[i].href);
+        }
+    }
+});
+
+</script>   
+    <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=1366, maximum-scale=1.0"/>
+    
+        <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png"/>
+    
+    
+        <style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600|Cabin:400,500');
+
+* {
+
+box-sizing: border-box;
+}
+.align-self-flex-center {
+
+align-self: flex-center;
+}
+.align-self-flex-end {
+
+align-self: flex-end;
+}
+.align-self-flex-start {
+
+align-self: flex-start;
+}
+.animate-nodelay {
+
+animation-delay: 0s;
+}
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+
+opacity: 1;
+}
+.auto-animated div {
+
+opacity: 0;
+position: absolute;
+--z-index: -1;
+}
+.component-wrapper * {
+
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+pointer-events: none
+}
+.component-wrapper a {
+
+text-decoration: none;
+display: contents;
+pointer-events: auto
+}
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+
+pointer-events: auto;
+}
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+
+visibility: hidden !important;
+}
+.container-center-horizontal {
+
+pointer-events: none;
+display: flex;
+flex-direction: row;
+justify-content: center;
+width: 100%;
+}
+.container-center-horizontal > * {
+
+pointer-events: auto;
+flex-shrink: 0;
+}
+.container-center-vertical {
+
+pointer-events: none;
+display: flex;
+flex-direction: row;
+align-items: center;
+height: 100%;
+}
+.container-center-vertical > * {
+
+pointer-events: auto;
+flex-shrink: 0;
+}
+.full-height-a {
+
+height: 100%;
+}
+.full-width-a {
+
+width: 100%;
+}
+.hidden,
+.hidden * {
+
+visibility: hidden;
+pointer-events: none;
+}
+.listeners-active,
+.listeners-active * {
+
+pointer-events: auto;
+}
+.listeners-active-click,
+.listeners-active-click * {
+
+cursor: pointer;
+}
+.overlay {
+
+position: absolute;
+opacity: 0;
+display: none;
+top: 0;
+width: 100%;
+height: 100%;
+position: fixed;
+}
+.overlay.animate-appear {
+
+opacity: 0;
+display: block;
+animation: reveal 0.3s ease-in-out 1 normal forwards;
+}
+.overlay.animate-disappear {
+
+opacity: 1;
+display: block;
+animation: reveal 0.3s ease-in-out 1 reverse forwards;
+}
+.screen * {
+
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+}
+.screen a {
+
+text-decoration: none;
+display: contents;
+}
+.screen div {
+
+-webkit-text-size-adjust: none;
+}
+.screen textarea:focus,
+.screen input:focus {
+
+outline: none;
+}
+.smart-layers-pointers,
+.smart-layers-pointers * {
+
+pointer-events: auto;
+visibility: visible;
+}
+.valign-text-bottom {
+
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+.valign-text-middle {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+@keyframes reveal {
+
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+input:focus {
+
+outline: none;
+}
+
+:root {
+  --black: #000000;
+  --copperfield: #e28569;
+  --midnight-moss: #030f09;
+  --mine-shaft: #2f2f2f;
+  --mountain-mist: #969696;
+  --shark: #262626;
+  --white: #ffffff;
+
+  --font-size-l: 24px;
+  --font-size-m: 22px;
+  --font-size-s: 20px;
+  --font-size-xl: 30px;
+  --font-size-xs: 18px;
+  --font-size-xxl: 34px;
+  --font-size-xxxl: 36px;
+  --font-size-xxxxl: 140px;
+
+  --font-family-cabin: "Cabin", Helvetica;
+  --font-family-poppins: "Poppins", Helvetica;
+}
+.poppins-medium-midnight-moss-24px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-normal-midnight-moss-24px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-semi-bold-shark-24px {
+  color: var(--shark);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+.cabin-normal-mine-shaft-22px {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-cabin);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.poppins-medium-midnight-moss-36px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 500;
+}
+.cabin-medium-black-20px {
+  color: var(--black);
+  font-family: var(--font-family-cabin);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 500;
+}
+.cabin-medium-midnight-moss-36px {
+  color: var(--midnight-moss);
+  font-family: var(--font-family-cabin);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-semi-bold-black-22px {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+.poppins-normal-shark-24px {
+  color: var(--shark);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+.border-1px-mountain-mist {
+  border: 1px solid var(--mountain-mist);
+}
+
+/* screen - fianl1 */
+
+.fianl1 {
+  background-color: var(--white);
+  height: 8614px;
+  overflow-x: hidden;
+  position: relative;
+  width: 1366px;
+}
+.fianl1 .aa-bb-cc-KrRxTc {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 709px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: justify;
+  top: 6px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .aa-bb-cc-NmAHLx {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 431px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: justify;
+  top: 8px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .aa-bb-cc-iZjIT4 {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 142px;
+  letter-spacing: 0.00px;
+  line-height: 51px;
+  position: absolute;
+  text-align: justify;
+  top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .age-21-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 944px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 2954px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .age-36-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 325px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 2954px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .b7-b4-b4-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 942px;
+  letter-spacing: 0.00px;
+  line-height: 24px;
+  position: absolute;
+  text-align: right;
+  top: 8042px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .bitmap-C61RwL {
+  background-color: transparent;
+  height: 162px;
+  left: 112px;
+  position: absolute;
+  top: 2895px;
+  width: 162px;
+}
+.fianl1 .bitmap-GoEWZg {
+  background-color: transparent;
+  height: 162px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 162px;
+}
+.fianl1 .bitmap-MjShnF {
+  background-color: transparent;
+  height: 791px;
+  left: 123px;
+  position: absolute;
+  top: -334px;
+  width: 367px;
+}
+.fianl1 .bitmap-QxM5SU {
+  background-color: transparent;
+  height: 468px;
+  left: 883px;
+  position: absolute;
+  top: 29px;
+  width: 217px;
+}
+.fianl1 .bitmap-VMr6Om {
+  background-color: transparent;
+  height: 457px;
+  left: 932px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 642px;
+}
+.fianl1 .bitmap-copy-C61RwL {
+  background-color: transparent;
+  height: 162px;
+  left: 730px;
+  position: absolute;
+  top: 2894px;
+  width: 162px;
+}
+.fianl1 .bitmap-copy-TUaSoE {
+  background-color: transparent;
+  height: 162px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 162px;
+}
+.fianl1 .bitmap-mzXdH9 {
+  background-color: transparent;
+  height: 406px;
+  left: 779px;
+  overflow: hidden;
+  position: absolute;
+  top: 108px;
+  width: 339px;
+}
+.fianl1 .button-BUv9c7 {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 95px;
+  letter-spacing: 0.00px;
+  line-height: 33px;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .button-EDCij0 {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 95px;
+  letter-spacing: 0.00px;
+  line-height: 33px;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .button-pNWxyn {
+  background-color: transparent;
+  color: var(--copperfield);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 95px;
+  letter-spacing: 0.00px;
+  line-height: 33px;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .buttons-SO40Oe {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: -28px;
+  letter-spacing: 0.00px;
+  line-height: 33px;
+  position: absolute;
+  text-align: left;
+  top: 28px;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .colors-PIEh7b {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: -21px;
+  letter-spacing: 0.00px;
+  line-height: 33px;
+  position: absolute;
+  text-align: left;
+  top: 80px;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .competitive-analysis-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 520px;
+  letter-spacing: 0.00px;
+  line-height: 44px;
+  position: absolute;
+  text-align: right;
+  top: 2110px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .ddebe9-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 263px;
+  letter-spacing: 0.00px;
+  line-height: 24px;
+  position: absolute;
+  text-align: right;
+  top: 8042px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .duration-currently-C61RwL {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 182px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 382px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .e28569-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 490px;
+  letter-spacing: 0.00px;
+  line-height: 24px;
+  position: absolute;
+  text-align: right;
+  top: 8045px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .go-C61RwL {
+  background-color: transparent;
+  color: var(--copperfield);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 169px;
+  letter-spacing: 0.00px;
+  line-height: 210px;
+  position: absolute;
+  text-align: left;
+  top: 113px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .go-app-differs-from-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 98px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: justify;
+  top: 1789px;
+  width: 500px;
+}
+.fianl1 .go-app-provides-user-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 768px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: justify;
+  top: 1789px;
+  width: 500px;
+}
+.fianl1 .go-is-a-mobile-appli-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 144px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: right;
+  top: 747px;
+  white-space: nowrap;
+  width: 1075px;
+}
+.fianl1 .group-2-C61RwL {
+  background-color: transparent;
+  height: 589px;
+  left: 486px;
+  position: absolute;
+  top: 895px;
+  width: 474px;
+}
+.fianl1 .group-3-PIEh7b {
+  background-color: transparent;
+  height: 191px;
+  left: 142px;
+  position: absolute;
+  top: 0px;
+  width: 871px;
+}
+.fianl1 .group-4-Og4NVI {
+  background-color: transparent;
+  height: 60px;
+  left: 760px;
+  position: absolute;
+  top: 13px;
+  width: 265px;
+}
+.fianl1 .group-4-SO40Oe {
+  background-color: transparent;
+  height: 60px;
+  left: 142px;
+  position: absolute;
+  top: 13px;
+  width: 265px;
+}
+.fianl1 .group-4-Uh8Hn6 {
+  background-color: transparent;
+  height: 60px;
+  left: 451px;
+  position: absolute;
+  top: 13px;
+  width: 265px;
+}
+.fianl1 .group-5-C61RwL {
+  background-color: transparent;
+  height: 77px;
+  left: 72px;
+  position: absolute;
+  top: 8254px;
+  width: 921px;
+}
+.fianl1 .group-6-C61RwL {
+  background-color: transparent;
+  height: 191px;
+  left: 72px;
+  position: absolute;
+  top: 7959px;
+  width: 1013px;
+}
+.fianl1 .group-7-C61RwL {
+  background-color: transparent;
+  height: 87px;
+  left: 72px;
+  position: absolute;
+  top: 8435px;
+  width: 1025px;
+}
+.fianl1 .group-C61RwL {
+  background-color: transparent;
+  height: 1829px;
+  left: 72px;
+  position: absolute;
+  top: 5791px;
+  width: 1223px;
+}
+.fianl1 .in-order-to-evaluate-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 98px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: justify;
+  top: 2201px;
+  width: 1170px;
+}
+.fianl1 .mask-483Zit {
+  background-color: transparent;
+  height: 406px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 339px;
+}
+.fianl1 .mask-MjShnF {
+  background-color: transparent;
+  height: 457px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 642px;
+}
+.fianl1 .meet-the-users-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 550px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 2734px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .name-shraddha-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 325px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 2903px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .name-sujit-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 944px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 2903px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .ocupation-developer-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 944px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 3005px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .ocupation-it-employ-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 325px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 3005px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .oval-C61RwL {
+  background-color: transparent;
+  border: 5px solid #e28265;
+  border-radius: 171px;
+  height: 171px;
+  left: 107px;
+  position: absolute;
+  top: 2890px;
+  width: 171px;
+}
+.fianl1 .oval-VMr6Om {
+  background-color: transparent;
+  border: 5px solid #e28265;
+  border-radius: 171px;
+  height: 171px;
+  left: 726px;
+  position: absolute;
+  top: 2890px;
+  width: 171px;
+}
+.fianl1 .personalized-journey-C61RwL {
+  background-color: transparent;
+  color: #e28568;
+  font-family: var(--font-family-cabin);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 877px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: right;
+  top: 1730px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .privacy-C61RwL {
+  background-color: transparent;
+  color: var(--copperfield);
+  font-family: var(--font-family-cabin);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 301px;
+  letter-spacing: 0.00px;
+  line-height: 37px;
+  position: absolute;
+  text-align: right;
+  top: 1730px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .project-go-app-C61RwL {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 182px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 290px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .rectangle-00LGpa {
+  background-color: transparent;
+  height: 563px;
+  left: 1025px;
+  position: absolute;
+  top: 4335px;
+  width: 260px;
+}
+.fianl1 .rectangle-0Wn9XG {
+  background-color: #ddebe9;
+  border-radius: 20px;
+  height: 135px;
+  left: 28px;
+  position: absolute;
+  top: 28px;
+  transform: rotate(45deg);
+  width: 135px;
+}
+.fianl1 .rectangle-2P4qUJ {
+  background-color: transparent;
+  border: 3px solid #ef7c5d;
+  height: 122px;
+  left: 118px;
+  position: absolute;
+  top: 3126px;
+  width: 3px;
+}
+.fianl1 .rectangle-3kIbHG {
+  background-color: transparent;
+  height: 563px;
+  left: 385px;
+  position: absolute;
+  top: 4335px;
+  width: 260px;
+}
+.fianl1 .rectangle-4FfKur {
+  background-color: #436e8e;
+  border-radius: 20px;
+  height: 135px;
+  left: 481px;
+  position: absolute;
+  top: 28px;
+  transform: rotate(45deg);
+  width: 135px;
+}
+.fianl1 .rectangle-9KCgMo {
+  background-color: var(--copperfield);
+  border-radius: 20px;
+  height: 135px;
+  left: 255px;
+  position: absolute;
+  top: 28px;
+  transform: rotate(45deg);
+  width: 135px;
+}
+.fianl1 .rectangle-BUv9c7 {
+  background-color: var(--copperfield);
+  border-radius: 10px;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 265px;
+}
+.fianl1 .rectangle-C61RwL {
+  background: linear-gradient(222deg, #E28569 0%, #DDEBE9 0%, #DFECEB 100%);
+  background-color: transparent;
+  height: 581px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1440px;
+}
+.fianl1 .rectangle-E582nk {
+  background-color: transparent;
+  height: 563px;
+  left: 321px;
+  position: absolute;
+  top: 0px;
+  width: 260px;
+}
+.fianl1 .rectangle-EDCij0 {
+  background-color: #b7b4b4;
+  border-radius: 10px;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 265px;
+}
+.fianl1 .rectangle-HlKRTo {
+  background-color: transparent;
+  height: 563px;
+  left: 705px;
+  position: absolute;
+  top: 3740px;
+  width: 260px;
+}
+.fianl1 .rectangle-IxEnRr {
+  background-color: transparent;
+  height: 563px;
+  left: 322px;
+  position: absolute;
+  top: 633px;
+  width: 260px;
+}
+.fianl1 .rectangle-J1YQmd {
+  background-color: transparent;
+  height: 563px;
+  left: 65px;
+  position: absolute;
+  top: 3740px;
+  width: 260px;
+}
+.fianl1 .rectangle-KhVtzg {
+  background-color: transparent;
+  height: 563px;
+  left: 1px;
+  position: absolute;
+  top: 1266px;
+  width: 260px;
+}
+.fianl1 .rectangle-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 260px;
+}
+.fianl1 .rectangle-QxM5SU {
+  background: linear-gradient(139deg, #E2EEEC 0%, #FFFFFF 100%);
+  background-color: transparent;
+  height: 990px;
+  left: -340px;
+  position: absolute;
+  top: 7724px;
+  width: 1706px;
+}
+.fianl1 .rectangle-R7WrHk {
+  background-color: transparent;
+  height: 563px;
+  left: 385px;
+  position: absolute;
+  top: 4928px;
+  width: 260px;
+}
+.fianl1 .rectangle-VMr6Om {
+  background: linear-gradient(139deg, #E2EEEC 0%, #FFFFFF 100%);
+  background-color: transparent;
+  height: 503px;
+  left: 1px;
+  position: absolute;
+  top: 1551px;
+  width: 1366px;
+}
+.fianl1 .rectangle-VkPPtx {
+  background-color: transparent;
+  height: 563px;
+  left: 1025px;
+  position: absolute;
+  top: 3740px;
+  width: 260px;
+}
+.fianl1 .rectangle-VrYlAT {
+  background-color: transparent;
+  height: 563px;
+  left: 960px;
+  position: absolute;
+  top: 0px;
+  width: 260px;
+}
+.fianl1 .rectangle-WednB3 {
+  background-color: #b6b4b4;
+  border-radius: 20px;
+  height: 135px;
+  left: 708px;
+  position: absolute;
+  top: 28px;
+  transform: rotate(45deg);
+  width: 135px;
+}
+.fianl1 .rectangle-YWzA7M {
+  background-color: transparent;
+  height: 563px;
+  left: 65px;
+  position: absolute;
+  top: 4335px;
+  width: 260px;
+}
+.fianl1 .rectangle-ZH4vOj {
+  background-color: transparent;
+  height: 563px;
+  left: 960px;
+  position: absolute;
+  top: 1266px;
+  width: 260px;
+}
+.fianl1 .rectangle-a5WPlX {
+  background-color: transparent;
+  height: 563px;
+  left: 385px;
+  position: absolute;
+  top: 3740px;
+  width: 260px;
+}
+.fianl1 .rectangle-a73nmY {
+  background-color: transparent;
+  height: 563px;
+  left: 65px;
+  position: absolute;
+  top: 4928px;
+  width: 260px;
+}
+.fianl1 .rectangle-iMAlWq {
+  background-color: transparent;
+  height: 563px;
+  left: 641px;
+  position: absolute;
+  top: 0px;
+  width: 260px;
+}
+.fianl1 .rectangle-jsbgv1 {
+  background-color: transparent;
+  height: 563px;
+  left: 2px;
+  position: absolute;
+  top: 633px;
+  width: 260px;
+}
+.fianl1 .rectangle-kGFtrF {
+  background-color: transparent;
+  height: 563px;
+  left: 641px;
+  position: absolute;
+  top: 1266px;
+  width: 260px;
+}
+.fianl1 .rectangle-mzXdH9 {
+  background: linear-gradient(139deg, #E2EEEC 0%, #FFFFFF 100%);
+  background-color: transparent;
+  height: 843px;
+  left: 0px;
+  position: absolute;
+  top: 2677px;
+  width: 1366px;
+}
+.fianl1 .rectangle-pNWxyn {
+  background-color: transparent;
+  border: 2px solid #f07f61;
+  border-radius: 10px;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 265px;
+}
+.fianl1 .rectangle-qr8e7q {
+  background-color: transparent;
+  border: 3px solid #ef7c5d;
+  height: 122px;
+  left: 737px;
+  position: absolute;
+  top: 3126px;
+  width: 3px;
+}
+.fianl1 .rectangle-rxvq3k {
+  background-color: transparent;
+  height: 563px;
+  left: 705px;
+  position: absolute;
+  top: 4335px;
+  width: 260px;
+}
+.fianl1 .rectangle-s2JxyW {
+  background-color: transparent;
+  height: 563px;
+  left: 321px;
+  position: absolute;
+  top: 1266px;
+  width: 260px;
+}
+.fianl1 .rectangle-uojbMS {
+  background-color: transparent;
+  height: 563px;
+  left: 642px;
+  position: absolute;
+  top: 633px;
+  width: 260px;
+}
+.fianl1 .rectangle-yfnr7g {
+  background-color: transparent;
+  height: 563px;
+  left: 961px;
+  position: absolute;
+  top: 633px;
+  width: 260px;
+}
+.fianl1 .role-concept-visua-C61RwL {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: 182px;
+  letter-spacing: 0.00px;
+  line-height: 35px;
+  position: absolute;
+  text-align: left;
+  top: 336px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .shraddha-recently-go-C61RwL {
+  background-color: transparent;
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 156px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: justify;
+  top: 3113px;
+  width: 527px;
+}
+.fianl1 .span1-CImQKF {
+
+}
+.fianl1 .span1-LdIYcg {
+
+}
+.fianl1 .span1-RjCiLN {
+
+}
+.fianl1 .span1-WRaKGH {
+
+}
+.fianl1 .span1-Xb2pvw {
+
+}
+.fianl1 .span1-Z7fpPM {
+
+}
+.fianl1 .span1-cNMqCD {
+
+}
+.fianl1 .span1-ooYILv {
+
+}
+.fianl1 .span1-vyY6Lc {
+
+}
+.fianl1 .span2-CImQKF {
+
+}
+.fianl1 .span2-LdIYcg {
+
+}
+.fianl1 .span2-RjCiLN {
+
+}
+.fianl1 .span2-WRaKGH {
+
+}
+.fianl1 .span2-Xb2pvw {
+
+}
+.fianl1 .span2-Z7fpPM {
+
+}
+.fianl1 .span2-cNMqCD {
+
+}
+.fianl1 .span2-ooYILv {
+
+}
+.fianl1 .span2-vyY6Lc {
+
+}
+.fianl1 .style-guide-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 581px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 7815px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .sujit-is-a-young-dev-C61RwL {
+  background-color: transparent;
+  color: var(--midnight-moss);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 775px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: justify;
+  top: 3113px;
+  width: 493px;
+}
+.fianl1 .the-application-prov-C61RwL {
+  background-color: transparent;
+  font-weight: 400;
+  height: auto;
+  left: 315px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: right;
+  top: 785px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .type-iZjIT4 {
+  background-color: transparent;
+  font-weight: 600;
+  height: auto;
+  left: -12px;
+  letter-spacing: 0.00px;
+  line-height: 33px;
+  position: absolute;
+  text-align: left;
+  top: 28px;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .visual-designs-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 551px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 5645px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .what-is-go-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 585px;
+  letter-spacing: 0.00px;
+  line-height: 44px;
+  position: absolute;
+  text-align: right;
+  top: 681px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .why-go-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 606px;
+  letter-spacing: 0.00px;
+  line-height: 44px;
+  position: absolute;
+  text-align: right;
+  top: 1609px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .wireframing-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 570px;
+  letter-spacing: 0.00px;
+  line-height: 55px;
+  position: absolute;
+  text-align: left;
+  top: 3600px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .x1-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 260px;
+}
+.fianl1 .x1-copy-10-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 65px;
+  position: absolute;
+  top: 4928px;
+  width: 260px;
+}
+.fianl1 .x1-copy-11-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 1025px;
+  position: absolute;
+  top: 4335px;
+  width: 260px;
+}
+.fianl1 .x1-copy-12-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 385px;
+  position: absolute;
+  top: 4928px;
+  width: 260px;
+}
+.fianl1 .x1-copy-4-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 385px;
+  position: absolute;
+  top: 3740px;
+  width: 260px;
+}
+.fianl1 .x1-copy-5-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 705px;
+  position: absolute;
+  top: 3740px;
+  width: 260px;
+}
+.fianl1 .x1-copy-6-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 1023px;
+  position: absolute;
+  top: 3738px;
+  width: 260px;
+}
+.fianl1 .x1-copy-7-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 65px;
+  position: absolute;
+  top: 4335px;
+  width: 260px;
+}
+.fianl1 .x1-copy-8-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 385px;
+  position: absolute;
+  top: 4335px;
+  width: 260px;
+}
+.fianl1 .x1-copy-9-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 705px;
+  position: absolute;
+  top: 4335px;
+  width: 260px;
+}
+.fianl1 .x1-copy-C61RwL {
+  background-color: transparent;
+  height: 563px;
+  left: 65px;
+  position: absolute;
+  top: 3740px;
+  width: 260px;
+}
+.fianl1 .x10-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 321px;
+  position: absolute;
+  top: 1266px;
+  width: 260px;
+}
+.fianl1 .x11-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 635px;
+  position: absolute;
+  top: 1266px;
+  width: 260px;
+}
+.fianl1 .x12-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 953px;
+  position: absolute;
+  top: 1266px;
+  width: 260px;
+}
+.fianl1 .x16px-semibold-popp-iZjIT4 {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 709px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: justify;
+  top: 50px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .x2-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 321px;
+  position: absolute;
+  top: 0px;
+  width: 260px;
+}
+.fianl1 .x24px-semibold-popp-iZjIT4 {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 431px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: justify;
+  top: 52px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .x3-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 640px;
+  position: absolute;
+  top: 0px;
+  width: 260px;
+}
+.fianl1 .x34px-semibold-popp-iZjIT4 {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 142px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: justify;
+  top: 52px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .x4-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 960px;
+  position: absolute;
+  top: 0px;
+  width: 260px;
+}
+.fianl1 .x436-e8-e-C61RwL {
+  background-color: transparent;
+  font-weight: 500;
+  height: auto;
+  left: 719px;
+  letter-spacing: 0.00px;
+  line-height: 24px;
+  position: absolute;
+  text-align: right;
+  top: 8045px;
+  white-space: nowrap;
+  width: auto;
+}
+.fianl1 .x5-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 1px;
+  position: absolute;
+  top: 633px;
+  width: 260px;
+}
+.fianl1 .x6-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 322px;
+  position: absolute;
+  top: 633px;
+  width: 260px;
+}
+.fianl1 .x7-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 640px;
+  position: absolute;
+  top: 633px;
+  width: 260px;
+}
+.fianl1 .x8-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 0px;
+  position: absolute;
+  top: 1266px;
+  width: 260px;
+}
+.fianl1 .x9-NOXmfT {
+  background-color: transparent;
+  height: 563px;
+  left: 963px;
+  position: absolute;
+  top: 633px;
+  width: 260px;
+}
+</style>
+    
+    
+    
+    <meta name="author" content="AnimaApp.com - Design to code, Automated.">
+</head>
+<body style="margin: 0;background: #ffffff;">
+<input type="hidden" id="anPageName" name="page" value="fianl1"/>
+
+    <div class="container-center-horizontal">
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="fianl1 screen " >
+    
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="what-is-go-C61RwL cabin-medium-midnight-moss-36px" 
+>What is GO?</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-mzXdH9" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-QxM5SU" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="why-go-C61RwL cabin-medium-midnight-moss-36px" 
+>Why GO?</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="competitive-analysis-C61RwL cabin-medium-midnight-moss-36px" 
+>Competitive Analysis</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="privacy-C61RwL" 
+>Privacy</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="personalized-journey-C61RwL" 
+>Personalized Journeys</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="go-app-differs-from-C61RwL cabin-normal-mine-shaft-22px" 
+>Go app differs from other shared driving services with complete isolation of data and details about users. The framework is built by compliance with identity access management principles in focus.</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="go-app-provides-user-C61RwL cabin-normal-mine-shaft-22px" 
+>Go App provides users with a variety of options for choosing their vehicles and options of tagging additional riders for their journeys. The application makes travel of the users within a locality more convenient and personalized.</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="in-order-to-evaluate-C61RwL cabin-normal-mine-shaft-22px" 
+>In order to evaluate the application features, I had ventured out to study the possible applications present currently and the features they provide making the travel as convenient as possible for the users and analyzed the gap so that I can make Go application enhance the user travel experience more convenient. I evaluated several features that seemed critical from user surveys and identified which features in the application could be capitalized on to have an edge over other applications.<br><br>I found that primarily users rely on Shared riding options&nbsp;&nbsp;for travel like Grab/ Uber where the users can rent/hire a vehicle for their travel from one place to another.&nbsp;&nbsp;The other options are renting bicycles, e-scooters, etc where the users can unlock a bike of their choice from the vendor specified location and drop-off the bike at the destination spot. Even with these options currently available, majority of users felt that during the rides if they want to have private rides and make ad-hoc stops during the travel and such options where not available.I place Go application here for such users as the Go app is designed with lot of privacy features and personalized travel experience</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="go-is-a-mobile-appli-C61RwL cabin-normal-mine-shaft-22px" 
+>Go is a mobile application providing shared locomotive services for users to travel from one location to another. <br></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="the-application-prov-C61RwL cabin-normal-mine-shaft-22px" 
+>The application provides a framework for users to share/rent&nbsp;&nbsp;bikes for their use.</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-2P4qUJ" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="name-shraddha-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-CImQKF poppins-medium-midnight-moss-24px">Name</span><span class="span2-CImQKF poppins-normal-midnight-moss-24px">: Shraddha</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="age-36-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-Z7fpPM poppins-medium-midnight-moss-24px">Age</span><span class="span2-Z7fpPM poppins-normal-midnight-moss-24px">: 36</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ocupation-it-employ-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-cNMqCD poppins-medium-midnight-moss-24px">Ocupation: </span><span class="span2-cNMqCD poppins-normal-midnight-moss-24px">IT Employee</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="meet-the-users-C61RwL poppins-medium-midnight-moss-36px" 
+>Meet the Users</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-GoEWZg"  
+src="./img/fianl1-bitmap-9A333F9F-32A0-4809-A1E7-ACE4D7AC97E9@2x.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-copy-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-copy-TUaSoE"  
+src="./img/fianl1-bitmap-copy-5C5BE8AD-5380-40FA-8C4D-DBE74B292F47@2x.png"
+/>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="shraddha-recently-go-C61RwL" 
+>Shraddha recently got married and relocated to a new locality along with her husband. They liked to explore the locality together looking for amenities and travel to nearby places. She was looking for personalized travel options where she can rent a vehicle near their locality that can allow them to explore. The major challenges she faced for travel are if they need to go to multiple locations they need to hire multiple cabs for the travel.</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-qr8e7q" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-8-C61RwL"  
+src="./img/fianl1-1-copy-8-77DCAF2A-0751-4097-8BE4-04D2B9CDAA33.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="name-sujit-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-ooYILv poppins-medium-midnight-moss-24px">Name</span><span class="span2-ooYILv poppins-normal-midnight-moss-24px">: Sujit</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="age-21-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-RjCiLN poppins-medium-midnight-moss-24px">Age</span><span class="span2-RjCiLN poppins-normal-midnight-moss-24px">: 21</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ocupation-developer-C61RwL poppins-medium-midnight-moss-24px" 
+><span class="span1-LdIYcg poppins-medium-midnight-moss-24px">Ocupation: </span><span class="span2-LdIYcg poppins-normal-midnight-moss-24px">Developer</span></div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-10-C61RwL"  
+src="./img/fianl1-1-copy-10-B77F805E-8D00-4BA9-87ED-E4FDE8AC9B1E.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="oval-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-5-C61RwL"  
+src="./img/fianl1-1-copy-5-599D50A2-1BA8-4F26-A817-DD8F777967CC.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-12-C61RwL"  
+src="./img/fianl1-1-copy-12-3F56E0BA-820B-44AB-B598-66214408011F.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-11-C61RwL"  
+src="./img/fianl1-1-copy-11-216680F1-D4E6-4C14-A8C0-CAD4FD19761E.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-4-C61RwL"  
+src="./img/fianl1-1-copy-4-4D13503D-B98A-4D40-A17F-B5A90E5871AE.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-6-C61RwL"  
+src="./img/fianl1-1-copy-6-130ADE8D-BB5C-42EF-B5F1-C588C8CF637F.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="sujit-is-a-young-dev-C61RwL" 
+>Sujit is a young developer, who recently started working in a company. He likes to drive off to remote places for adventures, trekking and long drives during the weekends or free time. He couldn&#39;t afford to buy a personal vehicle for his own. The available options for travel does not provide him the experience he needed, hence he preferred to use a personal rental/hiring option where he can travel on his own.</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-7-C61RwL"  
+src="./img/fianl1-1-copy-7-610D40CA-7D45-4621-97A6-3261982F532F.png"
+/>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="wireframing-C61RwL poppins-medium-midnight-moss-36px" 
+>Wireframing</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="visual-designs-C61RwL poppins-medium-midnight-moss-36px" 
+>Visual Designs</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="style-guide-C61RwL poppins-medium-midnight-moss-36px" 
+>Style Guide</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-C61RwL"  
+src="./img/fianl1-1-copy-FB8291E8-32C7-4F38-9A90-9DF6C4DCBE7F.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-J1YQmd border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-a5WPlX border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-HlKRTo border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-VkPPtx border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-YWzA7M border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-3kIbHG border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-a73nmY border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-R7WrHk border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-rxvq3k border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-00LGpa border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-copy-9-C61RwL"  
+src="./img/fianl1-1-copy-9-E293CD59-8377-48BF-AFF7-BE3EF19AE05E.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x1-NOXmfT"  
+src="./img/fianl1-1-AC5DA717-5DF3-4318-BDBE-44C2F10D7042.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x2-NOXmfT"  
+src="./img/fianl1-2-80B90164-5D1A-49C4-8B55-A23EBF2E60A1.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x3-NOXmfT"  
+src="./img/fianl1-3-824B2662-2164-4AB4-BAD0-340B11656AB5.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x4-NOXmfT"  
+src="./img/fianl1-4-3B77D3CF-5F7F-46C2-8752-09177CFBA9F2.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x5-NOXmfT"  
+src="./img/fianl1-5-AE0A4469-6909-448B-9D19-7BD4A0390DB5.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x6-NOXmfT"  
+src="./img/fianl1-6-0486FC7E-255A-42A0-9B9E-3BF64CE1F1BF.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x7-NOXmfT"  
+src="./img/fianl1-7-7CB91699-1C7A-4416-AD02-8A3B24441468.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x9-NOXmfT"  
+src="./img/fianl1-9-A9719E71-6F79-4C08-AC94-81F7C53BEF05.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x8-NOXmfT"  
+src="./img/fianl1-8-5A5431A4-0407-4D76-9EA1-B177FF57ABBE.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x10-NOXmfT"  
+src="./img/fianl1-10-A726987E-8505-4935-B4DA-8D88B4EB50F5.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x12-NOXmfT"  
+src="./img/fianl1-12-A74D7B64-B0E6-41C7-AF32-7ACDFA66C1AD.png"
+/>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x11-NOXmfT"  
+src="./img/fianl1-11-40C9DA00-7596-4389-AE2C-86DEA48AE26F.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-NOXmfT border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-E582nk border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-iMAlWq border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-VrYlAT border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-jsbgv1 border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-IxEnRr border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-uojbMS border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-yfnr7g border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-KhVtzg border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-s2JxyW border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-kGFtrF border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-ZH4vOj border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-2-C61RwL"  
+src="./img/fianl1-group-2-015261DF-28C3-4F38-A332-78E0FEFA2E82.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-VMr6Om" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="mask-MjShnF" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-MjShnF"  
+src="./img/fianl1-bitmap-12730E9D-43BC-422C-B518-4D89E8041078.png"
+/>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-mzXdH9" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="mask-483Zit" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+<img
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="bitmap-QxM5SU"  
+src="./img/fianl1-bitmap-AC55C0F7-693B-4978-AD23-6AD626A51714.png"
+/>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-6-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="colors-PIEh7b poppins-semi-bold-black-22px" 
+>Colors</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-3-PIEh7b" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-0Wn9XG" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-9KCgMo" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-4FfKur" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-WednB3 border-1px-mountain-mist" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+
+</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-5-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="type-iZjIT4 poppins-semi-bold-black-22px" 
+>Type</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="aa-bb-cc-iZjIT4" 
+>AaBbCc</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x34px-semibold-popp-iZjIT4" 
+>34px, Semibold, Poppins</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="aa-bb-cc-NmAHLx" 
+>AaBbCc</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x24px-semibold-popp-iZjIT4" 
+>24px, Semibold, Poppins</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="aa-bb-cc-KrRxTc" 
+>AaBbCc</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x16px-semibold-popp-iZjIT4" 
+>16px, Semibold, Poppins</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-7-C61RwL" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+><div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="buttons-SO40Oe poppins-semi-bold-black-22px" 
+>Buttons</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-4-SO40Oe" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-BUv9c7" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-BUv9c7" 
+>Button</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-4-Uh8Hn6" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-pNWxyn" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-pNWxyn" 
+>Button</div>
+
+</div>
+
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="group-4-Og4NVI" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="rectangle-EDCij0" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+>
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="button-EDCij0" 
+>Button</div>
+
+</div>
+
+</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="ddebe9-C61RwL cabin-medium-black-20px" 
+>#DDEBE9</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="e28569-C61RwL cabin-medium-black-20px" 
+>#E28569</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="x436-e8-e-C61RwL cabin-medium-black-20px" 
+>#436E8E</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="b7-b4-b4-C61RwL cabin-medium-black-20px" 
+>#B7B4B4</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="go-C61RwL" 
+>GO</div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="project-go-app-C61RwL poppins-semi-bold-shark-24px" 
+><span class="span1-vyY6Lc poppins-semi-bold-shark-24px">PROJECT</span><span class="span2-vyY6Lc poppins-normal-shark-24px">: Go App</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="role-concept-visua-C61RwL poppins-semi-bold-shark-24px" 
+><span class="span1-WRaKGH poppins-semi-bold-shark-24px">ROLE:</span><span class="span2-WRaKGH poppins-normal-shark-24px"> Concept, Visuals</span></div>
+<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        class="duration-currently-C61RwL poppins-semi-bold-shark-24px" 
+><span class="span1-Xb2pvw poppins-semi-bold-shark-24px">DURATION: </span><span class="span2-Xb2pvw poppins-normal-shark-24px">Currently Working</span></div>
+
+ </div>
+    </div>
+    
+
+
+
+    <!-- V c2de9a86e47f497a12a742afa198608dd7d7f1c0 Tue May 18 14:25:34 UTC 2021 -->
+</body>
+</html>
