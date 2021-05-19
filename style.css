@@ -1,0 +1,253 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.projects{
+    padding-top: 2px;
+    margin:0px;
+}
+ 
+#resume {
+    border: 1px solid black;
+    direction:ltr;
+    width: 100%;   
+}
+  
+a {
+    color: #000;
+}
+
+.line-1 {
+    height: 0.5px;
+    border: 0;
+    background:#e4e4e4;
+  }
+
+/* header */
+.header .row .col li{
+    text-decoration: none;
+}
+
+.header .row .col .sm-logo {
+    display: none;
+}
+
+.header {
+width: 100%;
+padding-left:0px; 
+padding-right: 0px;
+padding-bottom: 10px;
+
+}
+  
+.header ul {
+background-color: black;
+margin: 0;
+padding: 0;
+list-style: none;
+overflow: hidden;
+}
+
+
+.header li a {
+font-size: 14px;
+color: #fff;
+float:left;
+display: block;
+padding: 15px;
+text-decoration: none;
+z-index: 1;
+}
+
+.header li a:hover{
+    color:#fff;
+    text-decoration: underline;
+}
+.header .menu-btn:hover {
+background-color: #f4f4f4;
+}
+
+#my-name{
+    font-size: 18px; 
+    padding-top:15px  
+}
+
+#caption{
+    color:#7f7f7f; 
+    font-size:13px; 
+    padding-bottom: 15px;  
+}
+/* menu */
+
+.header .row .col .menu {
+clear: both;
+max-height: 0;
+transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .row .col .menu-icon {
+cursor: pointer;
+display: inline-block;
+float: right;
+position: absolute;
+right:10%;
+top: 7.5%;
+user-select: none;
+}
+
+.header .menu-icon .navicon {
+background: #333;
+display: block;
+height: 2px;
+position: absolute;
+transition: background .2s ease-out;
+width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+background: #333;
+content: '';
+display: block;
+height: 100%;
+position: absolute;
+transition: all .2s ease-out;
+width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+max-height: 100%;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+top: 0;
+}
+
+#about_me {
+    font-size:16px;
+    text-align:justify;
+    line-height: 34px;
+    margin-right: 5%;
+    padding-top: 2%;
+}
+
+#amh3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+
+.header {
+    width:100%;
+    margin-left: 2%;
+    margin-right:4%;
+    margin-top:1.5em;
+}
+
+.line-1 {
+    margin: 1%;
+}
+.header .row .col .banner{
+    text-align: center;   
+}
+
+#my-name{
+    font-size: 24px; 
+    padding-top:15px;  
+}
+
+#caption{
+    color:#7f7f7f; 
+    font-size:18px; 
+    padding-bottom: 15px;  
+}
+
+.header .row .col .menu{
+    background-color: #fff;
+    position: absolute;
+    top:7.5%;
+    right:2%;
+    
+}
+.header .row .col .menu li{
+    float: left;
+}
+.header .row .col li a {
+    color:#000;
+    padding: 20px 20px;
+}
+
+.header .row .col li a:hover{
+    color:#000;
+    text-decoration: underline;
+}
+.header .row .col .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+}
+.header .row .col .menu-icon {
+    display: none;
+}
+
+.header .row .col .sm-logo {
+    display: inline;
+    width: 4%;
+    position: absolute;
+    top:7.5%;
+}
+
+#about_me {
+    font-size:18px;
+    text-align:left;
+    line-height: 40px;
+    margin-right: 5%;
+    padding-top: 2%;
+}
+
+#amh3 {
+    font-size: 24px;
+}
+
+#amp {
+    margin-left: 25%;
+    width:65%
+}
+
+}
+
