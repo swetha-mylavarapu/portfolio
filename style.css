@@ -159,7 +159,7 @@ top: 0;
 
 #about_me {
     font-size:16px;
-    text-align:justify;
+    text-align:left;
     line-height: 34px;
     margin-right: 5%;
     padding-top: 2%;
@@ -249,21 +249,26 @@ top: 0;
     top:2.5%;
 }
 
-#about_me {
-    font-size:18px;
+#about_me{
     text-align:left;
-    line-height: 40px;
     margin-right: 5%;
-    padding-top: 2%;
+    padding-top: 5%;
 }
 
 #amh3 {
-    font-size: 24px;
+    font-size: 44px;
+    text-decoration: #414141;
 }
 
 #amp {
+    padding-top: 2%;
     margin-left: 25%;
-    width:65%
+    width:60%
+}
+
+#my-content {
+    font-size: 38px;
+    line-height: 175%;
 }
 
 }
