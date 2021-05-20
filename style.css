@@ -190,16 +190,16 @@ top: 0;
 }
 
 #my-name{
-    font-size: 38px; 
-    padding-top:15px;  
+    font-size: 30px; 
+    padding-top:0%;  
     text-align: center;
     
 }
 
 #caption{
     color:#7f7f7f; 
-    font-size:28px; 
-    padding-bottom: 15px;  
+    font-size:20px; 
+    padding-top: 2%;  
     
 }
 
@@ -221,7 +221,7 @@ top: 0;
     float: left;
 }
 .header .row .col li a {
-    font-size: 28px;
+    font-size: 20px;
     color:#000;
     padding: 20px 20px;
 }
@@ -242,8 +242,9 @@ top: 0;
 .header .row .col .sm-logo {
     display: inline;
     width: 4%;
+    padding-top: 2%;
     position: absolute;
-    top:2.5%;
+    top:3%;
 }
 
 #about_me{
